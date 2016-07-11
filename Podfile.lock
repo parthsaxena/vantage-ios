@@ -1,0 +1,134 @@
+PODS:
+  - Firebase (3.3.0):
+    - Firebase/Core (= 3.3.0)
+  - Firebase/AdMob (3.3.0):
+    - Firebase/Analytics (= 3.3.0)
+    - Google-Mobile-Ads-SDK (= 7.8.1)
+  - Firebase/Analytics (3.3.0):
+    - FirebaseAnalytics (= 3.2.1)
+  - Firebase/AppIndexing (3.3.0):
+    - Firebase/Analytics (= 3.3.0)
+    - FirebaseAppIndexing (= 1.0.3)
+  - Firebase/Auth (3.3.0):
+    - Firebase/Analytics (= 3.3.0)
+    - FirebaseAuth (= 3.0.3)
+  - Firebase/Core (3.3.0):
+    - Firebase/Analytics (= 3.3.0)
+  - Firebase/Crash (3.3.0):
+    - Firebase/Analytics (= 3.3.0)
+    - FirebaseCrash (= 1.0.6)
+  - Firebase/Database (3.3.0):
+    - Firebase/Analytics (= 3.3.0)
+    - FirebaseDatabase (= 3.0.2)
+  - Firebase/DynamicLinks (3.3.0):
+    - Firebase/Analytics (= 3.3.0)
+    - FirebaseDynamicLinks (= 1.1.0)
+  - Firebase/Messaging (3.3.0):
+    - Firebase/Analytics (= 3.3.0)
+    - FirebaseMessaging (= 1.1.0)
+  - Firebase/RemoteConfig (3.3.0):
+    - Firebase/Analytics (= 3.3.0)
+    - FirebaseRemoteConfig (= 1.1.1)
+  - Firebase/Storage (3.3.0):
+    - Firebase/Analytics (= 3.3.0)
+    - FirebaseStorage (= 1.0.2)
+  - FirebaseAnalytics (3.2.1):
+    - FirebaseInstanceID (~> 1.0)
+    - GoogleInterchangeUtilities (~> 1.2)
+    - GoogleSymbolUtilities (~> 1.1)
+    - GoogleUtilities (~> 1.3)
+  - FirebaseAppIndexing (1.0.3)
+  - FirebaseAuth (3.0.3):
+    - FirebaseAnalytics (~> 3.2)
+    - GoogleNetworkingUtilities (~> 1.2)
+    - GoogleParsingUtilities (~> 1.1)
+    - GoogleUtilities (~> 1.3)
+  - FirebaseCrash (1.0.6):
+    - FirebaseAnalytics (~> 3.0)
+    - FirebaseInstanceID (~> 1.0)
+    - GoogleInterchangeUtilities (~> 1.0)
+    - GoogleSymbolUtilities (~> 1.0)
+    - GoogleUtilities (~> 1.0)
+  - FirebaseDatabase (3.0.2):
+    - FirebaseAnalytics (~> 3.2)
+  - FirebaseDynamicLinks (1.1.0):
+    - FirebaseAnalytics (~> 3.2)
+  - FirebaseInstanceID (1.0.7)
+  - FirebaseMessaging (1.1.0):
+    - FirebaseAnalytics (~> 3.2)
+    - GoogleInterchangeUtilities (~> 1.2)
+    - GoogleIPhoneUtilities (~> 1.2)
+    - GoogleSymbolUtilities (~> 1.1)
+  - FirebaseRemoteConfig (1.1.1):
+    - FirebaseAnalytics (~> 3.2)
+    - FirebaseInstanceID (~> 1.0)
+    - GoogleInterchangeUtilities (~> 1.2)
+    - GoogleIPhoneUtilities (~> 1.2)
+    - GoogleSymbolUtilities (~> 1.1)
+    - GoogleUtilities (~> 1.3)
+  - FirebaseStorage (1.0.2):
+    - FirebaseAnalytics (~> 3.2)
+    - GoogleNetworkingUtilities (~> 1.2)
+  - Google-Mobile-Ads-SDK (7.8.1)
+  - GoogleInterchangeUtilities (1.2.1):
+    - GoogleSymbolUtilities (~> 1.0)
+  - GoogleIPhoneUtilities (1.2.1):
+    - GoogleSymbolUtilities (~> 1.0)
+    - GoogleUtilities (~> 1.0)
+  - GoogleNetworkingUtilities (1.2.1):
+    - GoogleSymbolUtilities (~> 1.0)
+  - GoogleParsingUtilities (1.1.1):
+    - GoogleNetworkingUtilities (~> 1.0)
+    - GoogleSymbolUtilities (~> 1.0)
+  - GoogleSymbolUtilities (1.1.1)
+  - GoogleUtilities (1.3.1):
+    - GoogleSymbolUtilities (~> 1.0)
+  - JSQMessagesViewController (7.3.3):
+    - JSQSystemSoundPlayer (~> 2.0.1)
+  - JSQSystemSoundPlayer (2.0.1)
+  - PureLayout (3.0.2)
+  - SwiftyButton/CustomContent (0.4.0):
+    - PureLayout (~> 3.0)
+
+DEPENDENCIES:
+  - Firebase
+  - Firebase/AdMob
+  - Firebase/Analytics
+  - Firebase/AppIndexing
+  - Firebase/Auth
+  - Firebase/Crash
+  - Firebase/Database
+  - Firebase/DynamicLinks
+  - Firebase/Messaging
+  - Firebase/RemoteConfig
+  - Firebase/Storage
+  - JSQMessagesViewController
+  - SwiftyButton/CustomContent
+
+SPEC CHECKSUMS:
+  Firebase: 6250071f0e2440a5c4c67b8cb6b868f868237ac3
+  FirebaseAnalytics: 0fd6532cb2c3d03cd5cf26ad295ccb091efd3104
+  FirebaseAppIndexing: abbefc167746ac131b4f70cb09ea98bd62c5ae30
+  FirebaseAuth: 5efddc3fae47042b73585f083f956462be4f5b8e
+  FirebaseCrash: 899d0abc23b411d01087094e3da24527eaecabf7
+  FirebaseDatabase: 59bea2e7dfd81b3b8b2f8e396caf1a52c2ced6f7
+  FirebaseDynamicLinks: bcf3c63482c1a120bbab65312e62573bb5a0d068
+  FirebaseInstanceID: a9d923f3d0b6fbf9fac89310860357aaadc34be5
+  FirebaseMessaging: 8a92e9ea70673605aa7d1803d2d5aa3eb946009c
+  FirebaseRemoteConfig: 3260ced812d2adcbb9bcefe0dc78fdce7b8090e6
+  FirebaseStorage: fa2a87dee81f682f553af6839daa37a750e65f6a
+  Google-Mobile-Ads-SDK: 3c2a6656117989469bfe7645640aa1de024a4c6c
+  GoogleInterchangeUtilities: def8415a862effc67d549d5b5b0b9c7a2f97d4de
+  GoogleIPhoneUtilities: 63f25e93a3ddcb66884d182aab3a660d98f1479b
+  GoogleNetworkingUtilities: 3e83269048cfb498dc7ec83ab36813360965c74f
+  GoogleParsingUtilities: 30b3896f9ee167dc78747f013d3de157ced1cadf
+  GoogleSymbolUtilities: 33117db1b5f290c6fbf259585e4885b4c84b98d7
+  GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
+  JSQMessagesViewController: 0ee3f80237268192a3e8337fd0d787f1a1bf5a7a
+  JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+  SwiftyButton: fffcc0d82b2b5f9ec1681f20ee9c67bed0d5c73b
+
+PODFILE CHECKSUM: bda288205370d3a8271de36d0e19215d90e5c9e4
+
+COCOAPODS: 1.0.1

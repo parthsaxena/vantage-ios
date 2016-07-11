@@ -1,0 +1,6 @@
+framework module Pods_VantageUITests {
+  umbrella header "Pods-VantageUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,10 @@
+framework module TextFieldEffects {
+  umbrella header "TextFieldEffects.h"
+
+  export *
+  module * { export * }
+}
+
+module TextFieldEffects.Swift {
+    header "TextFieldEffects-Swift.h"
+}

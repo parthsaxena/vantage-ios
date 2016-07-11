@@ -1,0 +1,891 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0C69B16452A49BCA0BFE829C /* Pods_Vantage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073F5B3E3D3AFB5CFE7D0973 /* Pods_Vantage.framework */; };
+		8B47E1441D32C1F5002488E9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B47E1431D32C1F5002488E9 /* MainViewController.swift */; };
+		8B47E1481D32C3B9002488E9 /* ChooseSubjectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B47E1471D32C3B9002488E9 /* ChooseSubjectTableViewController.swift */; };
+		8B4D477C1D26F62800CB0763 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B4D476A1D26F62800CB0763 /* Roboto-Black.ttf */; };
+		8B4D477D1D26F62800CB0763 /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B4D476B1D26F62800CB0763 /* Roboto-BlackItalic.ttf */; };
+		8B4D477E1D26F62800CB0763 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B4D476C1D26F62800CB0763 /* Roboto-Bold.ttf */; };
+		8B4D477F1D26F62800CB0763 /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B4D476D1D26F62800CB0763 /* Roboto-BoldItalic.ttf */; };
+		8B4D47801D26F62800CB0763 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B4D476E1D26F62800CB0763 /* Roboto-Italic.ttf */; };
+		8B4D47811D26F62800CB0763 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B4D476F1D26F62800CB0763 /* Roboto-Light.ttf */; };
+		8B4D47821D26F62800CB0763 /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B4D47701D26F62800CB0763 /* Roboto-LightItalic.ttf */; };
+		8B4D47831D26F62800CB0763 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B4D47711D26F62800CB0763 /* Roboto-Medium.ttf */; };
+		8B4D47841D26F62800CB0763 /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B4D47721D26F62800CB0763 /* Roboto-MediumItalic.ttf */; };
+		8B4D47851D26F62800CB0763 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B4D47731D26F62800CB0763 /* Roboto-Regular.ttf */; };
+		8B4D47861D26F62800CB0763 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B4D47741D26F62800CB0763 /* Roboto-Thin.ttf */; };
+		8B4D47871D26F62800CB0763 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B4D47751D26F62800CB0763 /* Roboto-ThinItalic.ttf */; };
+		8B4D47881D26F62800CB0763 /* RobotoCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B4D47761D26F62800CB0763 /* RobotoCondensed-Bold.ttf */; };
+		8B4D47891D26F62800CB0763 /* RobotoCondensed-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B4D47771D26F62800CB0763 /* RobotoCondensed-BoldItalic.ttf */; };
+		8B4D478A1D26F62800CB0763 /* RobotoCondensed-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B4D47781D26F62800CB0763 /* RobotoCondensed-Italic.ttf */; };
+		8B4D478B1D26F62800CB0763 /* RobotoCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B4D47791D26F62800CB0763 /* RobotoCondensed-Light.ttf */; };
+		8B4D478C1D26F62800CB0763 /* RobotoCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B4D477A1D26F62800CB0763 /* RobotoCondensed-LightItalic.ttf */; };
+		8B4D478D1D26F62800CB0763 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B4D477B1D26F62800CB0763 /* RobotoCondensed-Regular.ttf */; };
+		8B6F5E241D25E48E00008FE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6F5E231D25E48E00008FE6 /* AppDelegate.swift */; };
+		8B6F5E261D25E48E00008FE6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6F5E251D25E48E00008FE6 /* ViewController.swift */; };
+		8B6F5E291D25E48E00008FE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B6F5E271D25E48E00008FE6 /* Main.storyboard */; };
+		8B6F5E2B1D25E48E00008FE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B6F5E2A1D25E48E00008FE6 /* Assets.xcassets */; };
+		8B6F5E2E1D25E48E00008FE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B6F5E2C1D25E48E00008FE6 /* LaunchScreen.storyboard */; };
+		8B6F5E391D25E48E00008FE6 /* VantageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6F5E381D25E48E00008FE6 /* VantageTests.swift */; };
+		8B6F5E441D25E48E00008FE6 /* VantageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6F5E431D25E48E00008FE6 /* VantageUITests.swift */; };
+		8B6F5E5F1D25E51900008FE6 /* AkiraTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6F5E521D25E51900008FE6 /* AkiraTextField.swift */; };
+		8B6F5E601D25E51900008FE6 /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6F5E531D25E51900008FE6 /* HoshiTextField.swift */; };
+		8B6F5E611D25E51900008FE6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B6F5E541D25E51900008FE6 /* Info.plist */; };
+		8B6F5E621D25E51900008FE6 /* IsaoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6F5E551D25E51900008FE6 /* IsaoTextField.swift */; };
+		8B6F5E631D25E51900008FE6 /* JiroTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6F5E561D25E51900008FE6 /* JiroTextField.swift */; };
+		8B6F5E641D25E51900008FE6 /* KaedeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6F5E571D25E51900008FE6 /* KaedeTextField.swift */; };
+		8B6F5E651D25E51900008FE6 /* MadokaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6F5E581D25E51900008FE6 /* MadokaTextField.swift */; };
+		8B6F5E661D25E51900008FE6 /* MinoruTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6F5E591D25E51900008FE6 /* MinoruTextField.swift */; };
+		8B6F5E671D25E51900008FE6 /* TextFieldEffects.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B6F5E5A1D25E51900008FE6 /* TextFieldEffects.framework */; };
+		8B6F5E681D25E51900008FE6 /* TextFieldsEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6F5E5C1D25E51900008FE6 /* TextFieldsEffects.swift */; };
+		8B6F5E691D25E51900008FE6 /* YokoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6F5E5D1D25E51900008FE6 /* YokoTextField.swift */; };
+		8B6F5E6A1D25E51900008FE6 /* YoshikoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6F5E5E1D25E51900008FE6 /* YoshikoTextField.swift */; };
+		8B6F5E6C1D25E79B00008FE6 /* PSAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6F5E6B1D25E79B00008FE6 /* PSAlert.swift */; };
+		8B6F5E6F1D25EB4900008FE6 /* TextFieldEffects.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B6F5E5A1D25E51900008FE6 /* TextFieldEffects.framework */; };
+		8B6F5E701D25EB4900008FE6 /* TextFieldEffects.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8B6F5E5A1D25E51900008FE6 /* TextFieldEffects.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8B6F5E751D25FD0800008FE6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6F5E741D25FD0800008FE6 /* SignUpViewController.swift */; };
+		8B6F5E771D2602BB00008FE6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B6F5E761D2602BB00008FE6 /* GoogleService-Info.plist */; };
+		8B6F5E791D26065900008FE6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6F5E781D26065900008FE6 /* Post.swift */; };
+		8B6F5EA41D266FE500008FE6 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6F5EA31D266FE400008FE6 /* PostViewController.swift */; };
+		8BBF55131D277A1500AED9B4 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF55121D277A1500AED9B4 /* GlobalVariables.swift */; };
+		9CECF16D73129EE16B538735 /* Pods_VantageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBF1DDF3F588BC4C3394EE85 /* Pods_VantageTests.framework */; };
+		DFEA1F3FDE12DC0C5DB2CABA /* Pods_VantageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10DA9A1586B7D20D7F6D4693 /* Pods_VantageUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8B6F5E351D25E48E00008FE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B6F5E181D25E48E00008FE6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B6F5E1F1D25E48E00008FE6;
+			remoteInfo = Vantage;
+		};
+		8B6F5E401D25E48E00008FE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B6F5E181D25E48E00008FE6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B6F5E1F1D25E48E00008FE6;
+			remoteInfo = Vantage;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8B6F5E711D25EB4900008FE6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8B6F5E701D25EB4900008FE6 /* TextFieldEffects.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		073F5B3E3D3AFB5CFE7D0973 /* Pods_Vantage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vantage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		10DA9A1586B7D20D7F6D4693 /* Pods_VantageUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VantageUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22125C53D8047A8E7AC94767 /* Pods-VantageUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VantageUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VantageUITests/Pods-VantageUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4C391D012ED784466CCC035E /* Pods-VantageUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VantageUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VantageUITests/Pods-VantageUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		62D17090C8279DD4843C6C7F /* Pods-VantageTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VantageTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VantageTests/Pods-VantageTests.release.xcconfig"; sourceTree = "<group>"; };
+		8B47E1431D32C1F5002488E9 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		8B47E1471D32C3B9002488E9 /* ChooseSubjectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseSubjectTableViewController.swift; sourceTree = "<group>"; };
+		8B4D476A1D26F62800CB0763 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Black.ttf"; path = "Fonts/Roboto-Black.ttf"; sourceTree = "<group>"; };
+		8B4D476B1D26F62800CB0763 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-BlackItalic.ttf"; path = "Fonts/Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
+		8B4D476C1D26F62800CB0763 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Bold.ttf"; path = "Fonts/Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		8B4D476D1D26F62800CB0763 /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-BoldItalic.ttf"; path = "Fonts/Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
+		8B4D476E1D26F62800CB0763 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Italic.ttf"; path = "Fonts/Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		8B4D476F1D26F62800CB0763 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Light.ttf"; path = "Fonts/Roboto-Light.ttf"; sourceTree = "<group>"; };
+		8B4D47701D26F62800CB0763 /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-LightItalic.ttf"; path = "Fonts/Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
+		8B4D47711D26F62800CB0763 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Medium.ttf"; path = "Fonts/Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		8B4D47721D26F62800CB0763 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-MediumItalic.ttf"; path = "Fonts/Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
+		8B4D47731D26F62800CB0763 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "Fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		8B4D47741D26F62800CB0763 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Thin.ttf"; path = "Fonts/Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		8B4D47751D26F62800CB0763 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-ThinItalic.ttf"; path = "Fonts/Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		8B4D47761D26F62800CB0763 /* RobotoCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RobotoCondensed-Bold.ttf"; path = "Fonts/RobotoCondensed-Bold.ttf"; sourceTree = "<group>"; };
+		8B4D47771D26F62800CB0763 /* RobotoCondensed-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RobotoCondensed-BoldItalic.ttf"; path = "Fonts/RobotoCondensed-BoldItalic.ttf"; sourceTree = "<group>"; };
+		8B4D47781D26F62800CB0763 /* RobotoCondensed-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RobotoCondensed-Italic.ttf"; path = "Fonts/RobotoCondensed-Italic.ttf"; sourceTree = "<group>"; };
+		8B4D47791D26F62800CB0763 /* RobotoCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RobotoCondensed-Light.ttf"; path = "Fonts/RobotoCondensed-Light.ttf"; sourceTree = "<group>"; };
+		8B4D477A1D26F62800CB0763 /* RobotoCondensed-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RobotoCondensed-LightItalic.ttf"; path = "Fonts/RobotoCondensed-LightItalic.ttf"; sourceTree = "<group>"; };
+		8B4D477B1D26F62800CB0763 /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RobotoCondensed-Regular.ttf"; path = "Fonts/RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
+		8B6F5E201D25E48E00008FE6 /* Vantage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vantage.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B6F5E231D25E48E00008FE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8B6F5E251D25E48E00008FE6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8B6F5E281D25E48E00008FE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8B6F5E2A1D25E48E00008FE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8B6F5E2D1D25E48E00008FE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8B6F5E2F1D25E48E00008FE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B6F5E341D25E48E00008FE6 /* VantageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VantageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B6F5E381D25E48E00008FE6 /* VantageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VantageTests.swift; sourceTree = "<group>"; };
+		8B6F5E3A1D25E48E00008FE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B6F5E3F1D25E48E00008FE6 /* VantageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VantageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B6F5E431D25E48E00008FE6 /* VantageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VantageUITests.swift; sourceTree = "<group>"; };
+		8B6F5E451D25E48E00008FE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B6F5E521D25E51900008FE6 /* AkiraTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AkiraTextField.swift; sourceTree = "<group>"; };
+		8B6F5E531D25E51900008FE6 /* HoshiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoshiTextField.swift; sourceTree = "<group>"; };
+		8B6F5E541D25E51900008FE6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B6F5E551D25E51900008FE6 /* IsaoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsaoTextField.swift; sourceTree = "<group>"; };
+		8B6F5E561D25E51900008FE6 /* JiroTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JiroTextField.swift; sourceTree = "<group>"; };
+		8B6F5E571D25E51900008FE6 /* KaedeTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KaedeTextField.swift; sourceTree = "<group>"; };
+		8B6F5E581D25E51900008FE6 /* MadokaTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MadokaTextField.swift; sourceTree = "<group>"; };
+		8B6F5E591D25E51900008FE6 /* MinoruTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinoruTextField.swift; sourceTree = "<group>"; };
+		8B6F5E5A1D25E51900008FE6 /* TextFieldEffects.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TextFieldEffects.framework; sourceTree = "<group>"; };
+		8B6F5E5B1D25E51900008FE6 /* TextFieldEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldEffects.h; sourceTree = "<group>"; };
+		8B6F5E5C1D25E51900008FE6 /* TextFieldsEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldsEffects.swift; sourceTree = "<group>"; };
+		8B6F5E5D1D25E51900008FE6 /* YokoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YokoTextField.swift; sourceTree = "<group>"; };
+		8B6F5E5E1D25E51900008FE6 /* YoshikoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoshikoTextField.swift; sourceTree = "<group>"; };
+		8B6F5E6B1D25E79B00008FE6 /* PSAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSAlert.swift; sourceTree = "<group>"; };
+		8B6F5E741D25FD0800008FE6 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		8B6F5E761D2602BB00008FE6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8B6F5E781D26065900008FE6 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		8B6F5EA31D266FE400008FE6 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		8BBF55121D277A1500AED9B4 /* GlobalVariables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
+		9A343B00619E030DC63C812E /* Pods-Vantage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vantage.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vantage/Pods-Vantage.release.xcconfig"; sourceTree = "<group>"; };
+		CA3DB715400AFB65ED9D6C3F /* Pods-Vantage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vantage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vantage/Pods-Vantage.debug.xcconfig"; sourceTree = "<group>"; };
+		D06CA38762B270CFA1FBD151 /* Pods-VantageTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VantageTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VantageTests/Pods-VantageTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EBF1DDF3F588BC4C3394EE85 /* Pods_VantageTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VantageTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8B6F5E1D1D25E48E00008FE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C69B16452A49BCA0BFE829C /* Pods_Vantage.framework in Frameworks */,
+				8B6F5E6F1D25EB4900008FE6 /* TextFieldEffects.framework in Frameworks */,
+				8B6F5E671D25E51900008FE6 /* TextFieldEffects.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B6F5E311D25E48E00008FE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CECF16D73129EE16B538735 /* Pods_VantageTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B6F5E3C1D25E48E00008FE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFEA1F3FDE12DC0C5DB2CABA /* Pods_VantageUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		322AB89A1593120E414C842B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CA3DB715400AFB65ED9D6C3F /* Pods-Vantage.debug.xcconfig */,
+				9A343B00619E030DC63C812E /* Pods-Vantage.release.xcconfig */,
+				D06CA38762B270CFA1FBD151 /* Pods-VantageTests.debug.xcconfig */,
+				62D17090C8279DD4843C6C7F /* Pods-VantageTests.release.xcconfig */,
+				4C391D012ED784466CCC035E /* Pods-VantageUITests.debug.xcconfig */,
+				22125C53D8047A8E7AC94767 /* Pods-VantageUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3B045CF0796A83305F5443A2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				073F5B3E3D3AFB5CFE7D0973 /* Pods_Vantage.framework */,
+				EBF1DDF3F588BC4C3394EE85 /* Pods_VantageTests.framework */,
+				10DA9A1586B7D20D7F6D4693 /* Pods_VantageUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8B6F5E171D25E48E00008FE6 = {
+			isa = PBXGroup;
+			children = (
+				8B6F5E221D25E48E00008FE6 /* Vantage */,
+				8B6F5E371D25E48E00008FE6 /* VantageTests */,
+				8B6F5E421D25E48E00008FE6 /* VantageUITests */,
+				8B6F5E211D25E48E00008FE6 /* Products */,
+				322AB89A1593120E414C842B /* Pods */,
+				3B045CF0796A83305F5443A2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8B6F5E211D25E48E00008FE6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8B6F5E201D25E48E00008FE6 /* Vantage.app */,
+				8B6F5E341D25E48E00008FE6 /* VantageTests.xctest */,
+				8B6F5E3F1D25E48E00008FE6 /* VantageUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8B6F5E221D25E48E00008FE6 /* Vantage */ = {
+			isa = PBXGroup;
+			children = (
+				8B6F5EA21D26562500008FE6 /* Fonts */,
+				8B6F5E231D25E48E00008FE6 /* AppDelegate.swift */,
+				8BBF55121D277A1500AED9B4 /* GlobalVariables.swift */,
+				8B47E1471D32C3B9002488E9 /* ChooseSubjectTableViewController.swift */,
+				8B47E1431D32C1F5002488E9 /* MainViewController.swift */,
+				8B6F5EA31D266FE400008FE6 /* PostViewController.swift */,
+				8B6F5E251D25E48E00008FE6 /* ViewController.swift */,
+				8B6F5E741D25FD0800008FE6 /* SignUpViewController.swift */,
+				8B6F5E6B1D25E79B00008FE6 /* PSAlert.swift */,
+				8B6F5E271D25E48E00008FE6 /* Main.storyboard */,
+				8B6F5E781D26065900008FE6 /* Post.swift */,
+				8B6F5E2A1D25E48E00008FE6 /* Assets.xcassets */,
+				8B6F5E2C1D25E48E00008FE6 /* LaunchScreen.storyboard */,
+				8B6F5E761D2602BB00008FE6 /* GoogleService-Info.plist */,
+				8B6F5E2F1D25E48E00008FE6 /* Info.plist */,
+				8B6F5E511D25E51900008FE6 /* TextFieldEffects */,
+			);
+			path = Vantage;
+			sourceTree = "<group>";
+		};
+		8B6F5E371D25E48E00008FE6 /* VantageTests */ = {
+			isa = PBXGroup;
+			children = (
+				8B6F5E381D25E48E00008FE6 /* VantageTests.swift */,
+				8B6F5E3A1D25E48E00008FE6 /* Info.plist */,
+			);
+			path = VantageTests;
+			sourceTree = "<group>";
+		};
+		8B6F5E421D25E48E00008FE6 /* VantageUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8B6F5E431D25E48E00008FE6 /* VantageUITests.swift */,
+				8B6F5E451D25E48E00008FE6 /* Info.plist */,
+			);
+			path = VantageUITests;
+			sourceTree = "<group>";
+		};
+		8B6F5E511D25E51900008FE6 /* TextFieldEffects */ = {
+			isa = PBXGroup;
+			children = (
+				8B6F5E521D25E51900008FE6 /* AkiraTextField.swift */,
+				8B6F5E531D25E51900008FE6 /* HoshiTextField.swift */,
+				8B6F5E541D25E51900008FE6 /* Info.plist */,
+				8B6F5E551D25E51900008FE6 /* IsaoTextField.swift */,
+				8B6F5E561D25E51900008FE6 /* JiroTextField.swift */,
+				8B6F5E571D25E51900008FE6 /* KaedeTextField.swift */,
+				8B6F5E581D25E51900008FE6 /* MadokaTextField.swift */,
+				8B6F5E591D25E51900008FE6 /* MinoruTextField.swift */,
+				8B6F5E5A1D25E51900008FE6 /* TextFieldEffects.framework */,
+				8B6F5E5B1D25E51900008FE6 /* TextFieldEffects.h */,
+				8B6F5E5C1D25E51900008FE6 /* TextFieldsEffects.swift */,
+				8B6F5E5D1D25E51900008FE6 /* YokoTextField.swift */,
+				8B6F5E5E1D25E51900008FE6 /* YoshikoTextField.swift */,
+			);
+			path = TextFieldEffects;
+			sourceTree = "<group>";
+		};
+		8B6F5EA21D26562500008FE6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8B4D476A1D26F62800CB0763 /* Roboto-Black.ttf */,
+				8B4D476B1D26F62800CB0763 /* Roboto-BlackItalic.ttf */,
+				8B4D476C1D26F62800CB0763 /* Roboto-Bold.ttf */,
+				8B4D476D1D26F62800CB0763 /* Roboto-BoldItalic.ttf */,
+				8B4D476E1D26F62800CB0763 /* Roboto-Italic.ttf */,
+				8B4D476F1D26F62800CB0763 /* Roboto-Light.ttf */,
+				8B4D47701D26F62800CB0763 /* Roboto-LightItalic.ttf */,
+				8B4D47711D26F62800CB0763 /* Roboto-Medium.ttf */,
+				8B4D47721D26F62800CB0763 /* Roboto-MediumItalic.ttf */,
+				8B4D47731D26F62800CB0763 /* Roboto-Regular.ttf */,
+				8B4D47741D26F62800CB0763 /* Roboto-Thin.ttf */,
+				8B4D47751D26F62800CB0763 /* Roboto-ThinItalic.ttf */,
+				8B4D47761D26F62800CB0763 /* RobotoCondensed-Bold.ttf */,
+				8B4D47771D26F62800CB0763 /* RobotoCondensed-BoldItalic.ttf */,
+				8B4D47781D26F62800CB0763 /* RobotoCondensed-Italic.ttf */,
+				8B4D47791D26F62800CB0763 /* RobotoCondensed-Light.ttf */,
+				8B4D477A1D26F62800CB0763 /* RobotoCondensed-LightItalic.ttf */,
+				8B4D477B1D26F62800CB0763 /* RobotoCondensed-Regular.ttf */,
+			);
+			name = Fonts;
+			path = ..;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8B6F5E1F1D25E48E00008FE6 /* Vantage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B6F5E481D25E48E00008FE6 /* Build configuration list for PBXNativeTarget "Vantage" */;
+			buildPhases = (
+				56CFA431491423F8197AD6E5 /* [CP] Check Pods Manifest.lock */,
+				8B6F5E1C1D25E48E00008FE6 /* Sources */,
+				8B6F5E1D1D25E48E00008FE6 /* Frameworks */,
+				8B6F5E1E1D25E48E00008FE6 /* Resources */,
+				88365ED4789513D6E0999D63 /* [CP] Embed Pods Frameworks */,
+				9DD4ECF42F9C55C83A670DBC /* [CP] Copy Pods Resources */,
+				8B6F5E711D25EB4900008FE6 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Vantage;
+			productName = Vantage;
+			productReference = 8B6F5E201D25E48E00008FE6 /* Vantage.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8B6F5E331D25E48E00008FE6 /* VantageTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B6F5E4B1D25E48E00008FE6 /* Build configuration list for PBXNativeTarget "VantageTests" */;
+			buildPhases = (
+				F29B6C3F11317BEDFAC7BE60 /* [CP] Check Pods Manifest.lock */,
+				8B6F5E301D25E48E00008FE6 /* Sources */,
+				8B6F5E311D25E48E00008FE6 /* Frameworks */,
+				8B6F5E321D25E48E00008FE6 /* Resources */,
+				8D24E50A872C1BB8ADDCCD1A /* [CP] Embed Pods Frameworks */,
+				901287F5B17CC1C541DD83FE /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8B6F5E361D25E48E00008FE6 /* PBXTargetDependency */,
+			);
+			name = VantageTests;
+			productName = VantageTests;
+			productReference = 8B6F5E341D25E48E00008FE6 /* VantageTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8B6F5E3E1D25E48E00008FE6 /* VantageUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B6F5E4E1D25E48E00008FE6 /* Build configuration list for PBXNativeTarget "VantageUITests" */;
+			buildPhases = (
+				56D68029D497B39AE5702E67 /* [CP] Check Pods Manifest.lock */,
+				8B6F5E3B1D25E48E00008FE6 /* Sources */,
+				8B6F5E3C1D25E48E00008FE6 /* Frameworks */,
+				8B6F5E3D1D25E48E00008FE6 /* Resources */,
+				B0E9E3CD83170C5063EAED45 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8B6F5E411D25E48E00008FE6 /* PBXTargetDependency */,
+			);
+			name = VantageUITests;
+			productName = VantageUITests;
+			productReference = 8B6F5E3F1D25E48E00008FE6 /* VantageUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8B6F5E181D25E48E00008FE6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Socify;
+				TargetAttributes = {
+					8B6F5E1F1D25E48E00008FE6 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = H3MR536ERJ;
+					};
+					8B6F5E331D25E48E00008FE6 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 8B6F5E1F1D25E48E00008FE6;
+					};
+					8B6F5E3E1D25E48E00008FE6 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 8B6F5E1F1D25E48E00008FE6;
+					};
+				};
+			};
+			buildConfigurationList = 8B6F5E1B1D25E48E00008FE6 /* Build configuration list for PBXProject "Vantage" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8B6F5E171D25E48E00008FE6;
+			productRefGroup = 8B6F5E211D25E48E00008FE6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8B6F5E1F1D25E48E00008FE6 /* Vantage */,
+				8B6F5E331D25E48E00008FE6 /* VantageTests */,
+				8B6F5E3E1D25E48E00008FE6 /* VantageUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8B6F5E1E1D25E48E00008FE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B4D47891D26F62800CB0763 /* RobotoCondensed-BoldItalic.ttf in Resources */,
+				8B4D47861D26F62800CB0763 /* Roboto-Thin.ttf in Resources */,
+				8B4D478C1D26F62800CB0763 /* RobotoCondensed-LightItalic.ttf in Resources */,
+				8B4D47831D26F62800CB0763 /* Roboto-Medium.ttf in Resources */,
+				8B4D477F1D26F62800CB0763 /* Roboto-BoldItalic.ttf in Resources */,
+				8B4D478B1D26F62800CB0763 /* RobotoCondensed-Light.ttf in Resources */,
+				8B6F5E771D2602BB00008FE6 /* GoogleService-Info.plist in Resources */,
+				8B4D47821D26F62800CB0763 /* Roboto-LightItalic.ttf in Resources */,
+				8B4D47841D26F62800CB0763 /* Roboto-MediumItalic.ttf in Resources */,
+				8B6F5E611D25E51900008FE6 /* Info.plist in Resources */,
+				8B4D47811D26F62800CB0763 /* Roboto-Light.ttf in Resources */,
+				8B4D478D1D26F62800CB0763 /* RobotoCondensed-Regular.ttf in Resources */,
+				8B4D478A1D26F62800CB0763 /* RobotoCondensed-Italic.ttf in Resources */,
+				8B6F5E2E1D25E48E00008FE6 /* LaunchScreen.storyboard in Resources */,
+				8B4D477D1D26F62800CB0763 /* Roboto-BlackItalic.ttf in Resources */,
+				8B4D47871D26F62800CB0763 /* Roboto-ThinItalic.ttf in Resources */,
+				8B6F5E2B1D25E48E00008FE6 /* Assets.xcassets in Resources */,
+				8B4D47881D26F62800CB0763 /* RobotoCondensed-Bold.ttf in Resources */,
+				8B6F5E291D25E48E00008FE6 /* Main.storyboard in Resources */,
+				8B4D47801D26F62800CB0763 /* Roboto-Italic.ttf in Resources */,
+				8B4D47851D26F62800CB0763 /* Roboto-Regular.ttf in Resources */,
+				8B4D477E1D26F62800CB0763 /* Roboto-Bold.ttf in Resources */,
+				8B4D477C1D26F62800CB0763 /* Roboto-Black.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B6F5E321D25E48E00008FE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B6F5E3D1D25E48E00008FE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		56CFA431491423F8197AD6E5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		56D68029D497B39AE5702E67 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		88365ED4789513D6E0999D63 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Vantage/Pods-Vantage-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D24E50A872C1BB8ADDCCD1A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VantageTests/Pods-VantageTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		901287F5B17CC1C541DD83FE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VantageTests/Pods-VantageTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9DD4ECF42F9C55C83A670DBC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Vantage/Pods-Vantage-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B0E9E3CD83170C5063EAED45 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VantageUITests/Pods-VantageUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F29B6C3F11317BEDFAC7BE60 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8B6F5E1C1D25E48E00008FE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B6F5EA41D266FE500008FE6 /* PostViewController.swift in Sources */,
+				8B6F5E5F1D25E51900008FE6 /* AkiraTextField.swift in Sources */,
+				8B6F5E261D25E48E00008FE6 /* ViewController.swift in Sources */,
+				8B6F5E661D25E51900008FE6 /* MinoruTextField.swift in Sources */,
+				8B6F5E641D25E51900008FE6 /* KaedeTextField.swift in Sources */,
+				8B6F5E6A1D25E51900008FE6 /* YoshikoTextField.swift in Sources */,
+				8BBF55131D277A1500AED9B4 /* GlobalVariables.swift in Sources */,
+				8B6F5E681D25E51900008FE6 /* TextFieldsEffects.swift in Sources */,
+				8B6F5E6C1D25E79B00008FE6 /* PSAlert.swift in Sources */,
+				8B6F5E241D25E48E00008FE6 /* AppDelegate.swift in Sources */,
+				8B6F5E751D25FD0800008FE6 /* SignUpViewController.swift in Sources */,
+				8B6F5E791D26065900008FE6 /* Post.swift in Sources */,
+				8B6F5E691D25E51900008FE6 /* YokoTextField.swift in Sources */,
+				8B6F5E601D25E51900008FE6 /* HoshiTextField.swift in Sources */,
+				8B6F5E621D25E51900008FE6 /* IsaoTextField.swift in Sources */,
+				8B47E1441D32C1F5002488E9 /* MainViewController.swift in Sources */,
+				8B6F5E651D25E51900008FE6 /* MadokaTextField.swift in Sources */,
+				8B47E1481D32C3B9002488E9 /* ChooseSubjectTableViewController.swift in Sources */,
+				8B6F5E631D25E51900008FE6 /* JiroTextField.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B6F5E301D25E48E00008FE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B6F5E391D25E48E00008FE6 /* VantageTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B6F5E3B1D25E48E00008FE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B6F5E441D25E48E00008FE6 /* VantageUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8B6F5E361D25E48E00008FE6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8B6F5E1F1D25E48E00008FE6 /* Vantage */;
+			targetProxy = 8B6F5E351D25E48E00008FE6 /* PBXContainerItemProxy */;
+		};
+		8B6F5E411D25E48E00008FE6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8B6F5E1F1D25E48E00008FE6 /* Vantage */;
+			targetProxy = 8B6F5E401D25E48E00008FE6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8B6F5E271D25E48E00008FE6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B6F5E281D25E48E00008FE6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8B6F5E2C1D25E48E00008FE6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B6F5E2D1D25E48E00008FE6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8B6F5E461D25E48E00008FE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8B6F5E471D25E48E00008FE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8B6F5E491D25E48E00008FE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA3DB715400AFB65ED9D6C3F /* Pods-Vantage.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Vantage/TextFieldEffects",
+				);
+				INFOPLIST_FILE = Vantage/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.socify.Vantage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8B6F5E4A1D25E48E00008FE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A343B00619E030DC63C812E /* Pods-Vantage.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Vantage/TextFieldEffects",
+				);
+				INFOPLIST_FILE = Vantage/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.socify.Vantage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8B6F5E4C1D25E48E00008FE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D06CA38762B270CFA1FBD151 /* Pods-VantageTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = VantageTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.socify.VantageTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vantage.app/Vantage";
+			};
+			name = Debug;
+		};
+		8B6F5E4D1D25E48E00008FE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62D17090C8279DD4843C6C7F /* Pods-VantageTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = VantageTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.socify.VantageTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vantage.app/Vantage";
+			};
+			name = Release;
+		};
+		8B6F5E4F1D25E48E00008FE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C391D012ED784466CCC035E /* Pods-VantageUITests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = VantageUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.socify.VantageUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Vantage;
+			};
+			name = Debug;
+		};
+		8B6F5E501D25E48E00008FE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22125C53D8047A8E7AC94767 /* Pods-VantageUITests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = VantageUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.socify.VantageUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Vantage;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8B6F5E1B1D25E48E00008FE6 /* Build configuration list for PBXProject "Vantage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B6F5E461D25E48E00008FE6 /* Debug */,
+				8B6F5E471D25E48E00008FE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B6F5E481D25E48E00008FE6 /* Build configuration list for PBXNativeTarget "Vantage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B6F5E491D25E48E00008FE6 /* Debug */,
+				8B6F5E4A1D25E48E00008FE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B6F5E4B1D25E48E00008FE6 /* Build configuration list for PBXNativeTarget "VantageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B6F5E4C1D25E48E00008FE6 /* Debug */,
+				8B6F5E4D1D25E48E00008FE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B6F5E4E1D25E48E00008FE6 /* Build configuration list for PBXNativeTarget "VantageUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B6F5E4F1D25E48E00008FE6 /* Debug */,
+				8B6F5E501D25E48E00008FE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8B6F5E181D25E48E00008FE6 /* Project object */;
+}
