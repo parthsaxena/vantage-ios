@@ -13,4 +13,8 @@ class GlobalVariables {
     static var _allChatIDs = [String]()
     static var _school: String!
     static var _currentUserDictionary: [String : AnyObject]!
+    
+    static var _currentSubjectPostingTo: String!
+    
+    static var _currentInquiryIDAnswering: String!
 }

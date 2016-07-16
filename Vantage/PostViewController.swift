@@ -25,6 +25,10 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         // Do any additional setup after loading the view.
         
         contentTextView.delegate = self
+        
+        self.navigationController!.navigationBar.barTintColor = UIColor.blackColor()
+        self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Roboto", size: 30)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.title = "Post To \(GlobalVariables._currentSubjectPostingTo)"
     }
 
     override func didReceiveMemoryWarning() {
@@ -94,30 +98,42 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
             let currentUID = FIRAuth.auth()?.currentUser?.uid
         
+            let timestamp = FIRServerValue.timestamp()
+            
+            let randomID = randomStringWithLength(15)
+            
             let post: Dictionary<String, AnyObject> = [
                 "title": self.titleTextField.text!,
                 "content": self.contentTextView.text!,
                 "image": self.imageFileName,
                 "username": currentUID!,
-                "school": GlobalVariables._school,
-                "subject": self.subjectField.text!,
+                "subject": GlobalVariables._currentSubjectPostingTo,
+                "createdAt": timestamp,
+                "id": randomID
             ]
         
             let postObject = FIRDatabase.database().reference().child("posts").childByAutoId()
             postObject.setValue(post)
-            
-            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("feedVC")
-            self.presentViewController(vc!, animated: true, completion: nil)
+                        
+            let alert = UIAlertController(title: "Success", message: "Your inquiry has been sent! Expect a reply within the next 6 hours!", preferredStyle: .Alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: { (action) in
+                let vc = self.storyboard?.instantiateViewControllerWithIdentifier("mainVC")
+                self.presentViewController(vc!, animated: false, completion: nil)
+            })
+            alert.addAction(defaultAction)
+            self.presentViewController(alert, animated: true, completion: nil)
         }        
     }
     
     func textViewDidBeginEditing(textView: UITextView) {
-        contentTextView.text = nil
+        if contentTextView.text == "Explain your assignment or problem..." {
+            contentTextView.text = nil
+        }
     }
     
     func textViewDidEndEditing(textView: UITextView) {
         if textView.text.isEmpty {
-            textView.text = "Content..."
+            textView.text = "Explain your assignment or problem..."
         }
     }
     

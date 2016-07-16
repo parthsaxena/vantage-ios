@@ -54,6 +54,12 @@
 		8B6F5E771D2602BB00008FE6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B6F5E761D2602BB00008FE6 /* GoogleService-Info.plist */; };
 		8B6F5E791D26065900008FE6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6F5E781D26065900008FE6 /* Post.swift */; };
 		8B6F5EA41D266FE500008FE6 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6F5EA31D266FE400008FE6 /* PostViewController.swift */; };
+		8BA59BD41D3372B600DD82FC /* AnswerChooseSubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA59BD31D3372B600DD82FC /* AnswerChooseSubjectViewController.swift */; };
+		8BA59BD61D337B1F00DD82FC /* InquiriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA59BD51D337B1F00DD82FC /* InquiriesViewController.swift */; };
+		8BA59BD81D337B7B00DD82FC /* InquiryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA59BD71D337B7B00DD82FC /* InquiryTableViewCell.swift */; };
+		8BA59BDA1D341EA000DD82FC /* ViewInquiryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA59BD91D341EA000DD82FC /* ViewInquiryViewController.swift */; };
+		8BA59BDC1D3427C800DD82FC /* ViewInquiryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA59BDB1D3427C800DD82FC /* ViewInquiryTableViewCell.swift */; };
+		8BA59BDE1D3458D000DD82FC /* LoadingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA59BDD1D3458D000DD82FC /* LoadingTableView.swift */; };
 		8BBF55131D277A1500AED9B4 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF55121D277A1500AED9B4 /* GlobalVariables.swift */; };
 		9CECF16D73129EE16B538735 /* Pods_VantageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBF1DDF3F588BC4C3394EE85 /* Pods_VantageTests.framework */; };
 		DFEA1F3FDE12DC0C5DB2CABA /* Pods_VantageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10DA9A1586B7D20D7F6D4693 /* Pods_VantageUITests.framework */; };
@@ -147,6 +153,12 @@
 		8B6F5E761D2602BB00008FE6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8B6F5E781D26065900008FE6 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		8B6F5EA31D266FE400008FE6 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		8BA59BD31D3372B600DD82FC /* AnswerChooseSubjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerChooseSubjectViewController.swift; sourceTree = "<group>"; };
+		8BA59BD51D337B1F00DD82FC /* InquiriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InquiriesViewController.swift; sourceTree = "<group>"; };
+		8BA59BD71D337B7B00DD82FC /* InquiryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InquiryTableViewCell.swift; sourceTree = "<group>"; };
+		8BA59BD91D341EA000DD82FC /* ViewInquiryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewInquiryViewController.swift; sourceTree = "<group>"; };
+		8BA59BDB1D3427C800DD82FC /* ViewInquiryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewInquiryTableViewCell.swift; sourceTree = "<group>"; };
+		8BA59BDD1D3458D000DD82FC /* LoadingTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingTableView.swift; sourceTree = "<group>"; };
 		8BBF55121D277A1500AED9B4 /* GlobalVariables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
 		9A343B00619E030DC63C812E /* Pods-Vantage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vantage.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vantage/Pods-Vantage.release.xcconfig"; sourceTree = "<group>"; };
 		CA3DB715400AFB65ED9D6C3F /* Pods-Vantage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vantage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vantage/Pods-Vantage.debug.xcconfig"; sourceTree = "<group>"; };
@@ -235,13 +247,19 @@
 				8B6F5EA21D26562500008FE6 /* Fonts */,
 				8B6F5E231D25E48E00008FE6 /* AppDelegate.swift */,
 				8BBF55121D277A1500AED9B4 /* GlobalVariables.swift */,
+				8BA59BD31D3372B600DD82FC /* AnswerChooseSubjectViewController.swift */,
 				8B47E1471D32C3B9002488E9 /* ChooseSubjectTableViewController.swift */,
+				8BA59BDD1D3458D000DD82FC /* LoadingTableView.swift */,
 				8B47E1431D32C1F5002488E9 /* MainViewController.swift */,
 				8B6F5EA31D266FE400008FE6 /* PostViewController.swift */,
 				8B6F5E251D25E48E00008FE6 /* ViewController.swift */,
 				8B6F5E741D25FD0800008FE6 /* SignUpViewController.swift */,
 				8B6F5E6B1D25E79B00008FE6 /* PSAlert.swift */,
 				8B6F5E271D25E48E00008FE6 /* Main.storyboard */,
+				8BA59BD91D341EA000DD82FC /* ViewInquiryViewController.swift */,
+				8BA59BDB1D3427C800DD82FC /* ViewInquiryTableViewCell.swift */,
+				8BA59BD51D337B1F00DD82FC /* InquiriesViewController.swift */,
+				8BA59BD71D337B7B00DD82FC /* InquiryTableViewCell.swift */,
 				8B6F5E781D26065900008FE6 /* Post.swift */,
 				8B6F5E2A1D25E48E00008FE6 /* Assets.xcassets */,
 				8B6F5E2C1D25E48E00008FE6 /* LaunchScreen.storyboard */,
@@ -602,6 +620,7 @@
 			files = (
 				8B6F5EA41D266FE500008FE6 /* PostViewController.swift in Sources */,
 				8B6F5E5F1D25E51900008FE6 /* AkiraTextField.swift in Sources */,
+				8BA59BDA1D341EA000DD82FC /* ViewInquiryViewController.swift in Sources */,
 				8B6F5E261D25E48E00008FE6 /* ViewController.swift in Sources */,
 				8B6F5E661D25E51900008FE6 /* MinoruTextField.swift in Sources */,
 				8B6F5E641D25E51900008FE6 /* KaedeTextField.swift in Sources */,
@@ -609,10 +628,15 @@
 				8BBF55131D277A1500AED9B4 /* GlobalVariables.swift in Sources */,
 				8B6F5E681D25E51900008FE6 /* TextFieldsEffects.swift in Sources */,
 				8B6F5E6C1D25E79B00008FE6 /* PSAlert.swift in Sources */,
+				8BA59BD61D337B1F00DD82FC /* InquiriesViewController.swift in Sources */,
 				8B6F5E241D25E48E00008FE6 /* AppDelegate.swift in Sources */,
+				8BA59BD41D3372B600DD82FC /* AnswerChooseSubjectViewController.swift in Sources */,
 				8B6F5E751D25FD0800008FE6 /* SignUpViewController.swift in Sources */,
 				8B6F5E791D26065900008FE6 /* Post.swift in Sources */,
 				8B6F5E691D25E51900008FE6 /* YokoTextField.swift in Sources */,
+				8BA59BDC1D3427C800DD82FC /* ViewInquiryTableViewCell.swift in Sources */,
+				8BA59BDE1D3458D000DD82FC /* LoadingTableView.swift in Sources */,
+				8BA59BD81D337B7B00DD82FC /* InquiryTableViewCell.swift in Sources */,
 				8B6F5E601D25E51900008FE6 /* HoshiTextField.swift in Sources */,
 				8B6F5E621D25E51900008FE6 /* IsaoTextField.swift in Sources */,
 				8B47E1441D32C1F5002488E9 /* MainViewController.swift in Sources */,
