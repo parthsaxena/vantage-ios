@@ -54,6 +54,8 @@
 		8B6F5E771D2602BB00008FE6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B6F5E761D2602BB00008FE6 /* GoogleService-Info.plist */; };
 		8B6F5E791D26065900008FE6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6F5E781D26065900008FE6 /* Post.swift */; };
 		8B6F5EA41D266FE500008FE6 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6F5EA31D266FE400008FE6 /* PostViewController.swift */; };
+		8B7B641B1D3AD1E10074F35F /* YourInquiriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B641A1D3AD1E10074F35F /* YourInquiriesViewController.swift */; };
+		8B7B641D1D3ADDED0074F35F /* ViewOwnInquiryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B641C1D3ADDED0074F35F /* ViewOwnInquiryViewController.swift */; };
 		8BA59BD41D3372B600DD82FC /* AnswerChooseSubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA59BD31D3372B600DD82FC /* AnswerChooseSubjectViewController.swift */; };
 		8BA59BD61D337B1F00DD82FC /* InquiriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA59BD51D337B1F00DD82FC /* InquiriesViewController.swift */; };
 		8BA59BD81D337B7B00DD82FC /* InquiryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA59BD71D337B7B00DD82FC /* InquiryTableViewCell.swift */; };
@@ -153,6 +155,8 @@
 		8B6F5E761D2602BB00008FE6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8B6F5E781D26065900008FE6 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		8B6F5EA31D266FE400008FE6 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		8B7B641A1D3AD1E10074F35F /* YourInquiriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YourInquiriesViewController.swift; sourceTree = "<group>"; };
+		8B7B641C1D3ADDED0074F35F /* ViewOwnInquiryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewOwnInquiryViewController.swift; sourceTree = "<group>"; };
 		8BA59BD31D3372B600DD82FC /* AnswerChooseSubjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerChooseSubjectViewController.swift; sourceTree = "<group>"; };
 		8BA59BD51D337B1F00DD82FC /* InquiriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InquiriesViewController.swift; sourceTree = "<group>"; };
 		8BA59BD71D337B7B00DD82FC /* InquiryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InquiryTableViewCell.swift; sourceTree = "<group>"; };
@@ -249,6 +253,7 @@
 				8BBF55121D277A1500AED9B4 /* GlobalVariables.swift */,
 				8BA59BD31D3372B600DD82FC /* AnswerChooseSubjectViewController.swift */,
 				8B47E1471D32C3B9002488E9 /* ChooseSubjectTableViewController.swift */,
+				8B7B641A1D3AD1E10074F35F /* YourInquiriesViewController.swift */,
 				8BA59BDD1D3458D000DD82FC /* LoadingTableView.swift */,
 				8B47E1431D32C1F5002488E9 /* MainViewController.swift */,
 				8B6F5EA31D266FE400008FE6 /* PostViewController.swift */,
@@ -256,6 +261,7 @@
 				8B6F5E741D25FD0800008FE6 /* SignUpViewController.swift */,
 				8B6F5E6B1D25E79B00008FE6 /* PSAlert.swift */,
 				8B6F5E271D25E48E00008FE6 /* Main.storyboard */,
+				8B7B641C1D3ADDED0074F35F /* ViewOwnInquiryViewController.swift */,
 				8BA59BD91D341EA000DD82FC /* ViewInquiryViewController.swift */,
 				8BA59BDB1D3427C800DD82FC /* ViewInquiryTableViewCell.swift */,
 				8BA59BD51D337B1F00DD82FC /* InquiriesViewController.swift */,
@@ -412,6 +418,11 @@
 					8B6F5E1F1D25E48E00008FE6 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = H3MR536ERJ;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					8B6F5E331D25E48E00008FE6 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -627,6 +638,7 @@
 				8B6F5E6A1D25E51900008FE6 /* YoshikoTextField.swift in Sources */,
 				8BBF55131D277A1500AED9B4 /* GlobalVariables.swift in Sources */,
 				8B6F5E681D25E51900008FE6 /* TextFieldsEffects.swift in Sources */,
+				8B7B641B1D3AD1E10074F35F /* YourInquiriesViewController.swift in Sources */,
 				8B6F5E6C1D25E79B00008FE6 /* PSAlert.swift in Sources */,
 				8BA59BD61D337B1F00DD82FC /* InquiriesViewController.swift in Sources */,
 				8B6F5E241D25E48E00008FE6 /* AppDelegate.swift in Sources */,
@@ -634,6 +646,7 @@
 				8B6F5E751D25FD0800008FE6 /* SignUpViewController.swift in Sources */,
 				8B6F5E791D26065900008FE6 /* Post.swift in Sources */,
 				8B6F5E691D25E51900008FE6 /* YokoTextField.swift in Sources */,
+				8B7B641D1D3ADDED0074F35F /* ViewOwnInquiryViewController.swift in Sources */,
 				8BA59BDC1D3427C800DD82FC /* ViewInquiryTableViewCell.swift in Sources */,
 				8BA59BDE1D3458D000DD82FC /* LoadingTableView.swift in Sources */,
 				8BA59BD81D337B7B00DD82FC /* InquiryTableViewCell.swift in Sources */,

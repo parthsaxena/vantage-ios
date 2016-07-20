@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var usernameField: HoshiTextField!
     @IBOutlet var emailField: HoshiTextField!
@@ -19,9 +19,19 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        usernameField.delegate = self
+        emailField.delegate = self
+        passwordField.delegate = self
+        schoolField.delegate = self
+        
         // Do any additional setup after loading the view.
     }
 
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

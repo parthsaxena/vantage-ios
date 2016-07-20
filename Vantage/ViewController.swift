@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var usernameField: HoshiTextField!
     @IBOutlet var passwordField: HoshiTextField!
@@ -22,7 +22,26 @@ class ViewController: UIViewController {
         } catch {
             NSLog("Error while signing out user.")
         }*/
+        
+        self.usernameField.delegate = self
+        self.passwordField.delegate = self
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.errorLoadingPosts(_:)), name:"errorLoadingPosts", object: nil)
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            self.view.frame.origin.y -= keyboardSize.height
+        }
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     func errorLoadingPosts(notification: NSNotification) {
