@@ -67,7 +67,7 @@ class YourInquiriesViewController: UIViewController, UITableViewDelegate, UITabl
                     NSLog("No inquiries found.")
                 } else {
                     for inquiry in inquiryDictionary {
-                        self.inquiries.addObject(inquiry.1)
+                        self.inquiries.insertObject(inquiry.1, atIndex: 0)
                     }
                     self.inquiriesTableView.hideLoadingIndicator()
                     self.inquiriesTableView.reloadData()

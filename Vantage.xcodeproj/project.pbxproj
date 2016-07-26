@@ -56,6 +56,10 @@
 		8B6F5EA41D266FE500008FE6 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6F5EA31D266FE400008FE6 /* PostViewController.swift */; };
 		8B7B641B1D3AD1E10074F35F /* YourInquiriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B641A1D3AD1E10074F35F /* YourInquiriesViewController.swift */; };
 		8B7B641D1D3ADDED0074F35F /* ViewOwnInquiryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B641C1D3ADDED0074F35F /* ViewOwnInquiryViewController.swift */; };
+		8B988D231D4721F900D0133B /* ModalSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B988D221D4721F900D0133B /* ModalSignUpViewController.swift */; };
+		8B988D251D472A0F00D0133B /* FirstActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B988D241D472A0F00D0133B /* FirstActionViewController.swift */; };
+		8B988D271D47343500D0133B /* ModalLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B988D261D47343500D0133B /* ModalLoginViewController.swift */; };
+		8B988D291D47642A00D0133B /* ModalSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B988D281D47642A00D0133B /* ModalSettingsViewController.swift */; };
 		8BA59BD41D3372B600DD82FC /* AnswerChooseSubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA59BD31D3372B600DD82FC /* AnswerChooseSubjectViewController.swift */; };
 		8BA59BD61D337B1F00DD82FC /* InquiriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA59BD51D337B1F00DD82FC /* InquiriesViewController.swift */; };
 		8BA59BD81D337B7B00DD82FC /* InquiryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA59BD71D337B7B00DD82FC /* InquiryTableViewCell.swift */; };
@@ -157,6 +161,10 @@
 		8B6F5EA31D266FE400008FE6 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		8B7B641A1D3AD1E10074F35F /* YourInquiriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YourInquiriesViewController.swift; sourceTree = "<group>"; };
 		8B7B641C1D3ADDED0074F35F /* ViewOwnInquiryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewOwnInquiryViewController.swift; sourceTree = "<group>"; };
+		8B988D221D4721F900D0133B /* ModalSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalSignUpViewController.swift; sourceTree = "<group>"; };
+		8B988D241D472A0F00D0133B /* FirstActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstActionViewController.swift; sourceTree = "<group>"; };
+		8B988D261D47343500D0133B /* ModalLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalLoginViewController.swift; sourceTree = "<group>"; };
+		8B988D281D47642A00D0133B /* ModalSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalSettingsViewController.swift; sourceTree = "<group>"; };
 		8BA59BD31D3372B600DD82FC /* AnswerChooseSubjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerChooseSubjectViewController.swift; sourceTree = "<group>"; };
 		8BA59BD51D337B1F00DD82FC /* InquiriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InquiriesViewController.swift; sourceTree = "<group>"; };
 		8BA59BD71D337B7B00DD82FC /* InquiryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InquiryTableViewCell.swift; sourceTree = "<group>"; };
@@ -248,25 +256,23 @@
 		8B6F5E221D25E48E00008FE6 /* Vantage */ = {
 			isa = PBXGroup;
 			children = (
-				8B6F5EA21D26562500008FE6 /* Fonts */,
+				8B6F5E6B1D25E79B00008FE6 /* PSAlert.swift */,
+				8B6F5E781D26065900008FE6 /* Post.swift */,
 				8B6F5E231D25E48E00008FE6 /* AppDelegate.swift */,
 				8BBF55121D277A1500AED9B4 /* GlobalVariables.swift */,
-				8BA59BD31D3372B600DD82FC /* AnswerChooseSubjectViewController.swift */,
-				8B47E1471D32C3B9002488E9 /* ChooseSubjectTableViewController.swift */,
-				8B7B641A1D3AD1E10074F35F /* YourInquiriesViewController.swift */,
 				8BA59BDD1D3458D000DD82FC /* LoadingTableView.swift */,
 				8B47E1431D32C1F5002488E9 /* MainViewController.swift */,
 				8B6F5EA31D266FE400008FE6 /* PostViewController.swift */,
 				8B6F5E251D25E48E00008FE6 /* ViewController.swift */,
 				8B6F5E741D25FD0800008FE6 /* SignUpViewController.swift */,
-				8B6F5E6B1D25E79B00008FE6 /* PSAlert.swift */,
+				8B6F5EA21D26562500008FE6 /* Fonts */,
+				8B988D211D4721BE00D0133B /* Answer */,
+				8B988D221D4721F900D0133B /* ModalSignUpViewController.swift */,
+				8B988D261D47343500D0133B /* ModalLoginViewController.swift */,
+				8B988D281D47642A00D0133B /* ModalSettingsViewController.swift */,
 				8B6F5E271D25E48E00008FE6 /* Main.storyboard */,
-				8B7B641C1D3ADDED0074F35F /* ViewOwnInquiryViewController.swift */,
-				8BA59BD91D341EA000DD82FC /* ViewInquiryViewController.swift */,
-				8BA59BDB1D3427C800DD82FC /* ViewInquiryTableViewCell.swift */,
-				8BA59BD51D337B1F00DD82FC /* InquiriesViewController.swift */,
-				8BA59BD71D337B7B00DD82FC /* InquiryTableViewCell.swift */,
-				8B6F5E781D26065900008FE6 /* Post.swift */,
+				8B988D241D472A0F00D0133B /* FirstActionViewController.swift */,
+				8B988D201D4721AB00D0133B /* Inquiry */,
 				8B6F5E2A1D25E48E00008FE6 /* Assets.xcassets */,
 				8B6F5E2C1D25E48E00008FE6 /* LaunchScreen.storyboard */,
 				8B6F5E761D2602BB00008FE6 /* GoogleService-Info.plist */,
@@ -338,6 +344,28 @@
 			);
 			name = Fonts;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		8B988D201D4721AB00D0133B /* Inquiry */ = {
+			isa = PBXGroup;
+			children = (
+				8B7B641A1D3AD1E10074F35F /* YourInquiriesViewController.swift */,
+				8B7B641C1D3ADDED0074F35F /* ViewOwnInquiryViewController.swift */,
+				8BA59BD91D341EA000DD82FC /* ViewInquiryViewController.swift */,
+				8BA59BDB1D3427C800DD82FC /* ViewInquiryTableViewCell.swift */,
+				8BA59BD51D337B1F00DD82FC /* InquiriesViewController.swift */,
+				8BA59BD71D337B7B00DD82FC /* InquiryTableViewCell.swift */,
+			);
+			name = Inquiry;
+			sourceTree = "<group>";
+		};
+		8B988D211D4721BE00D0133B /* Answer */ = {
+			isa = PBXGroup;
+			children = (
+				8BA59BD31D3372B600DD82FC /* AnswerChooseSubjectViewController.swift */,
+				8B47E1471D32C3B9002488E9 /* ChooseSubjectTableViewController.swift */,
+			);
+			name = Answer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -640,7 +668,9 @@
 				8B6F5E681D25E51900008FE6 /* TextFieldsEffects.swift in Sources */,
 				8B7B641B1D3AD1E10074F35F /* YourInquiriesViewController.swift in Sources */,
 				8B6F5E6C1D25E79B00008FE6 /* PSAlert.swift in Sources */,
+				8B988D291D47642A00D0133B /* ModalSettingsViewController.swift in Sources */,
 				8BA59BD61D337B1F00DD82FC /* InquiriesViewController.swift in Sources */,
+				8B988D231D4721F900D0133B /* ModalSignUpViewController.swift in Sources */,
 				8B6F5E241D25E48E00008FE6 /* AppDelegate.swift in Sources */,
 				8BA59BD41D3372B600DD82FC /* AnswerChooseSubjectViewController.swift in Sources */,
 				8B6F5E751D25FD0800008FE6 /* SignUpViewController.swift in Sources */,
@@ -650,7 +680,9 @@
 				8BA59BDC1D3427C800DD82FC /* ViewInquiryTableViewCell.swift in Sources */,
 				8BA59BDE1D3458D000DD82FC /* LoadingTableView.swift in Sources */,
 				8BA59BD81D337B7B00DD82FC /* InquiryTableViewCell.swift in Sources */,
+				8B988D251D472A0F00D0133B /* FirstActionViewController.swift in Sources */,
 				8B6F5E601D25E51900008FE6 /* HoshiTextField.swift in Sources */,
+				8B988D271D47343500D0133B /* ModalLoginViewController.swift in Sources */,
 				8B6F5E621D25E51900008FE6 /* IsaoTextField.swift in Sources */,
 				8B47E1441D32C1F5002488E9 /* MainViewController.swift in Sources */,
 				8B6F5E651D25E51900008FE6 /* MadokaTextField.swift in Sources */,

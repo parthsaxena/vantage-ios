@@ -55,7 +55,7 @@ class InquiriesViewController: UIViewController, UITableViewDelegate, UITableVie
                     NSLog("Inquiries found.")
                     for object in inquiryDictionary {
                         print(object.1)
-                        self.inquiries.addObject(object.1)
+                        self.inquiries.insertObject(object.1, atIndex: 0)
                     }
                     self.inquiriesTableView.reloadData()
                     self.inquiriesTableView.hideLoadingIndicator()
