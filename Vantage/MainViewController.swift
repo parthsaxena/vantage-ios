@@ -23,6 +23,23 @@ class MainViewController: UIViewController {
         self.navigationController!.navigationBar.barTintColor = UIColor.blackColor()
         self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Roboto", size: 30)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
         
+        OneSignal.defaultClient().IdsAvailable({ (userId, pushToken) in
+            NSLog("UserId:%@", userId);
+            if (pushToken != nil) {
+                
+                if let email = FIRAuth.auth()?.currentUser?.email {
+                    let ref = FIRDatabase.database().reference()
+                    let userRef = ref.child("users").queryOrderedByChild("email").queryEqualToValue(email).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+                        if let userDictionary = snapshot.value as? [String : AnyObject] {
+                            let userID = userDictionary.first!.0
+                            FIRDatabase.database().reference().child("users").child(userID).updateChildValues(["notification_id":userId])
+                        }
+                    })
+                    print("User Ref: \(userRef), Email: \(email)")
+                }
+            }
+        });
+        
         // Do any additional setup after loading the view.
     }
 

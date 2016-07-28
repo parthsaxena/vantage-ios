@@ -123,6 +123,10 @@ class ViewInquiryViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     @IBAction func answerTapped(sender: AnyObject) {
+        let inquiry = self.inquiry[0] as! [String : AnyObject]
+        let username = inquiry["username"]
+        GlobalVariables._currentUserAnswering = username as! String
+        
         let vc = self.storyboard?.instantiateViewControllerWithIdentifier("answerVC")
         self.presentViewController(vc!, animated: false, completion: nil)
     }

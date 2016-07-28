@@ -68,7 +68,19 @@ class AnswerViewController: UIViewController, UITextViewDelegate, UIImagePickerC
             let postObject = FIRDatabase.database().reference().child("answers").childByAutoId()
             postObject.setValue(post)
             
-            OneSignal.defaultClient().postNotification(["contents": ["en": "Test Message"], ])
+            let username = GlobalVariables._currentUserAnswering
+            FIRDatabase.database().reference().child("users").child(username).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+                if let userDictionary = snapshot.value as? [String : AnyObject] {
+                    let notificationID = userDictionary["notification_id"] as! String
+                    NSLog("Attempting to send notification to ID: \(notificationID)")
+                    
+                    OneSignal.defaultClient().postNotification(["contents": ["en": "You have received an answer for your inquiry!"], "include_player_ids": [notificationID]], onSuccess: { (nil) in
+                        NSLog("Sent answer-received notification.")
+                        }, onFailure: { (error) in
+                            NSLog("Error sending answer-received notification: \(error.localizedDescription)")
+                    })
+                }
+            })
             
             let alert = UIAlertController(title: "Success", message: "Your answer has been sent! You will be notified if the asker accepts your answer.", preferredStyle: .Alert)
             let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: { (action) in

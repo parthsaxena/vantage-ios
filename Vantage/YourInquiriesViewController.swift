@@ -101,8 +101,7 @@ class YourInquiriesViewController: UIViewController, UITableViewDelegate, UITabl
                         if dictionary.count == 1 {
                             cell.answersLabel!.text = "\(dictionary.count) Answer"                            
                         } else {
-                            cell.answersLabel!.text = "\(dictionary.count) Answers"
-                            cell.answersLabel!.textColor = UIColor(red: 0, green: 128, blue: 0, alpha: 1)
+                            cell.answersLabel!.text = "\(dictionary.count) Answers"                            
                         }
                     } else {
                         cell.answersLabel!.textColor = UIColor.redColor()
