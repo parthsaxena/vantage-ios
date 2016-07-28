@@ -87,13 +87,29 @@ class YourInquiriesViewController: UIViewController, UITableViewDelegate, UITabl
         
         if let inquiry = self.inquiries[indexPath.row] as? String {
             if inquiry == "none" {
-                cell.textLabel!.text = "There are currently no inquiries in \(GlobalVariables._currentSubjectPostingTo)"
+                cell.textLabel!.text = "You do not have any inquiries."
                 self.inquiriesTableView.separatorStyle = .None
                 return cell
             }
         } else {
             
             let inquiry = self.inquiries[indexPath.row] as! [String : AnyObject]
+            
+            let answersRef = FIRDatabase.database().reference().child("answers").queryOrderedByChild("inquiryID").queryEqualToValue(inquiry["id"] as! String).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+                if let dictionary = snapshot.value as? [String : AnyObject] {
+                    if dictionary.count != 0 {
+                        if dictionary.count == 1 {
+                            cell.answersLabel!.text = "\(dictionary.count) Answer"                            
+                        } else {
+                            cell.answersLabel!.text = "\(dictionary.count) Answers"
+                            cell.answersLabel!.textColor = UIColor(red: 0, green: 128, blue: 0, alpha: 1)
+                        }
+                    } else {
+                        cell.answersLabel!.textColor = UIColor.redColor()
+                    }
+                }
+            })
+            
             cell.titleLabel.text = inquiry["title"] as! String
             cell.usernameLabel.text = "Inquiry ID: \(inquiry["id"] as! String)"
             

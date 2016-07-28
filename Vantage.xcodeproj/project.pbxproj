@@ -60,6 +60,9 @@
 		8B988D251D472A0F00D0133B /* FirstActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B988D241D472A0F00D0133B /* FirstActionViewController.swift */; };
 		8B988D271D47343500D0133B /* ModalLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B988D261D47343500D0133B /* ModalLoginViewController.swift */; };
 		8B988D291D47642A00D0133B /* ModalSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B988D281D47642A00D0133B /* ModalSettingsViewController.swift */; };
+		8B988D2B1D48AB2E00D0133B /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B988D2A1D48AB2D00D0133B /* AnswerViewController.swift */; };
+		8B988D2D1D493E8C00D0133B /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B988D2C1D493E8C00D0133B /* AnswerTableViewCell.swift */; };
+		8B988D2F1D493FDB00D0133B /* ViewAnswersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B988D2E1D493FDB00D0133B /* ViewAnswersViewController.swift */; };
 		8BA59BD41D3372B600DD82FC /* AnswerChooseSubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA59BD31D3372B600DD82FC /* AnswerChooseSubjectViewController.swift */; };
 		8BA59BD61D337B1F00DD82FC /* InquiriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA59BD51D337B1F00DD82FC /* InquiriesViewController.swift */; };
 		8BA59BD81D337B7B00DD82FC /* InquiryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA59BD71D337B7B00DD82FC /* InquiryTableViewCell.swift */; };
@@ -161,10 +164,14 @@
 		8B6F5EA31D266FE400008FE6 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		8B7B641A1D3AD1E10074F35F /* YourInquiriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YourInquiriesViewController.swift; sourceTree = "<group>"; };
 		8B7B641C1D3ADDED0074F35F /* ViewOwnInquiryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewOwnInquiryViewController.swift; sourceTree = "<group>"; };
+		8B83C5CC1D49853A0072D423 /* Vantage-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Vantage-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		8B988D221D4721F900D0133B /* ModalSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalSignUpViewController.swift; sourceTree = "<group>"; };
 		8B988D241D472A0F00D0133B /* FirstActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstActionViewController.swift; sourceTree = "<group>"; };
 		8B988D261D47343500D0133B /* ModalLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalLoginViewController.swift; sourceTree = "<group>"; };
 		8B988D281D47642A00D0133B /* ModalSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalSettingsViewController.swift; sourceTree = "<group>"; };
+		8B988D2A1D48AB2D00D0133B /* AnswerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
+		8B988D2C1D493E8C00D0133B /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
+		8B988D2E1D493FDB00D0133B /* ViewAnswersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAnswersViewController.swift; sourceTree = "<group>"; };
 		8BA59BD31D3372B600DD82FC /* AnswerChooseSubjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerChooseSubjectViewController.swift; sourceTree = "<group>"; };
 		8BA59BD51D337B1F00DD82FC /* InquiriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InquiriesViewController.swift; sourceTree = "<group>"; };
 		8BA59BD71D337B7B00DD82FC /* InquiryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InquiryTableViewCell.swift; sourceTree = "<group>"; };
@@ -256,6 +263,7 @@
 		8B6F5E221D25E48E00008FE6 /* Vantage */ = {
 			isa = PBXGroup;
 			children = (
+				8B83C5CC1D49853A0072D423 /* Vantage-Bridging-Header.h */,
 				8B6F5E6B1D25E79B00008FE6 /* PSAlert.swift */,
 				8B6F5E781D26065900008FE6 /* Post.swift */,
 				8B6F5E231D25E48E00008FE6 /* AppDelegate.swift */,
@@ -271,8 +279,11 @@
 				8B988D261D47343500D0133B /* ModalLoginViewController.swift */,
 				8B988D281D47642A00D0133B /* ModalSettingsViewController.swift */,
 				8B6F5E271D25E48E00008FE6 /* Main.storyboard */,
+				8B988D2E1D493FDB00D0133B /* ViewAnswersViewController.swift */,
+				8B988D2C1D493E8C00D0133B /* AnswerTableViewCell.swift */,
 				8B988D241D472A0F00D0133B /* FirstActionViewController.swift */,
 				8B988D201D4721AB00D0133B /* Inquiry */,
+				8B988D2A1D48AB2D00D0133B /* AnswerViewController.swift */,
 				8B6F5E2A1D25E48E00008FE6 /* Assets.xcassets */,
 				8B6F5E2C1D25E48E00008FE6 /* LaunchScreen.storyboard */,
 				8B6F5E761D2602BB00008FE6 /* GoogleService-Info.plist */,
@@ -661,6 +672,7 @@
 				8B6F5E5F1D25E51900008FE6 /* AkiraTextField.swift in Sources */,
 				8BA59BDA1D341EA000DD82FC /* ViewInquiryViewController.swift in Sources */,
 				8B6F5E261D25E48E00008FE6 /* ViewController.swift in Sources */,
+				8B988D2B1D48AB2E00D0133B /* AnswerViewController.swift in Sources */,
 				8B6F5E661D25E51900008FE6 /* MinoruTextField.swift in Sources */,
 				8B6F5E641D25E51900008FE6 /* KaedeTextField.swift in Sources */,
 				8B6F5E6A1D25E51900008FE6 /* YoshikoTextField.swift in Sources */,
@@ -677,6 +689,7 @@
 				8B6F5E791D26065900008FE6 /* Post.swift in Sources */,
 				8B6F5E691D25E51900008FE6 /* YokoTextField.swift in Sources */,
 				8B7B641D1D3ADDED0074F35F /* ViewOwnInquiryViewController.swift in Sources */,
+				8B988D2F1D493FDB00D0133B /* ViewAnswersViewController.swift in Sources */,
 				8BA59BDC1D3427C800DD82FC /* ViewInquiryTableViewCell.swift in Sources */,
 				8BA59BDE1D3458D000DD82FC /* LoadingTableView.swift in Sources */,
 				8BA59BD81D337B7B00DD82FC /* InquiryTableViewCell.swift in Sources */,
@@ -687,6 +700,7 @@
 				8B47E1441D32C1F5002488E9 /* MainViewController.swift in Sources */,
 				8B6F5E651D25E51900008FE6 /* MadokaTextField.swift in Sources */,
 				8B47E1481D32C3B9002488E9 /* ChooseSubjectTableViewController.swift in Sources */,
+				8B988D2D1D493E8C00D0133B /* AnswerTableViewCell.swift in Sources */,
 				8B6F5E631D25E51900008FE6 /* JiroTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -841,6 +855,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.socify.Vantage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Vantage-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -861,6 +876,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.socify.Vantage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Vantage-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

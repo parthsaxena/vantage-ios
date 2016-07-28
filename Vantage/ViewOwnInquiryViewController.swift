@@ -79,7 +79,7 @@ class ViewOwnInquiryViewController: UIViewController, UITableViewDelegate, UITab
             
             cell.titleLabel.text = inquiry["title"] as? String
             cell.contentTextView.text = inquiry["content"] as? String
-            cell.inquiryIDLabel.text = "Inquiry ID: \(inquiry["id"] as! String)"
+            cell.inquiryIDLabel.text = "Inquiry ID: \(inquiry["id"] as! String)"                        
             
             if let timeInterval = inquiry["createdAt"] as? NSTimeInterval {
                 let date = NSDate(timeIntervalSince1970: timeInterval/1000)
@@ -95,21 +95,29 @@ class ViewOwnInquiryViewController: UIViewController, UITableViewDelegate, UITab
             imageRef.dataWithMaxSize(5 * 1024 * 1024) { (data, error) -> Void in
                 if error == nil {
                     let image = UIImage(data: data!)
-                    cell.inquiryImage.image = image
                     
-                    cell.inquiryIDLabel.alpha = 0
-                    cell.dateLabel.alpha = 0
-                    cell.titleLabel.alpha = 0
-                    cell.inquiryImage.alpha = 0
-                    cell.contentTextView.alpha = 0
-                    
-                    UIView.animateWithDuration(0.4) {
-                        cell.inquiryIDLabel.alpha = 1
-                        cell.dateLabel.alpha = 1
-                        cell.titleLabel.alpha = 1
-                        cell.inquiryImage.alpha = 1
-                        cell.contentTextView.alpha = 1
-                    }
+                    FIRDatabase.database().reference().child("answers").queryOrderedByChild("inquiryID").queryEqualToValue(inquiry["id"] as! String).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+                        if let answers = snapshot.value as? [String : AnyObject] {
+                            cell.answerButton.setTitle("View Answers (\(answers.count))", forState: .Normal)
+                            cell.inquiryImage.image = image
+                            
+                            cell.inquiryIDLabel.alpha = 0
+                            cell.dateLabel.alpha = 0
+                            cell.titleLabel.alpha = 0
+                            cell.inquiryImage.alpha = 0
+                            cell.contentTextView.alpha = 0
+                            cell.answerButton.alpha = 0
+                            
+                            UIView.animateWithDuration(0.4) {
+                                cell.inquiryIDLabel.alpha = 1
+                                cell.dateLabel.alpha = 1
+                                cell.titleLabel.alpha = 1
+                                cell.inquiryImage.alpha = 1
+                                cell.contentTextView.alpha = 1
+                                cell.answerButton.alpha = 1
+                            }
+                        }
+                    })
                 } else {
                     // error
                     NSLog("Error while downloading an image.")
@@ -120,6 +128,12 @@ class ViewOwnInquiryViewController: UIViewController, UITableViewDelegate, UITab
             return cell
         }
         
+        @IBAction func viewAnswersTapped(sender: AnyObject) {
+            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("viewAnswersVC")
+            self.presentViewController(vc!, animated: false, completion: nil)
+        }
+    
+    
         /*
          // Override to support conditional editing of the table view.
          override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

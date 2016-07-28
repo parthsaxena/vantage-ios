@@ -86,6 +86,7 @@ PODS:
   - JSQMessagesViewController (7.3.3):
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
+  - OneSignal (1.13.3)
   - PureLayout (3.0.2)
   - SwiftyButton/CustomContent (0.4.0):
     - PureLayout (~> 3.0)
@@ -103,6 +104,7 @@ DEPENDENCIES:
   - Firebase/RemoteConfig
   - Firebase/Storage
   - JSQMessagesViewController
+  - OneSignal
   - SwiftyButton/CustomContent
 
 SPEC CHECKSUMS:
@@ -126,9 +128,10 @@ SPEC CHECKSUMS:
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
   JSQMessagesViewController: 0ee3f80237268192a3e8337fd0d787f1a1bf5a7a
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
+  OneSignal: 434facae3389cb0d4d3fc57b9a6cf66db685205e
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   SwiftyButton: fffcc0d82b2b5f9ec1681f20ee9c67bed0d5c73b
 
-PODFILE CHECKSUM: bda288205370d3a8271de36d0e19215d90e5c9e4
+PODFILE CHECKSUM: c9c6dfafef26509ea7bc5171c707950c3da4b244
 
 COCOAPODS: 1.0.1

@@ -6,7 +6,8 @@ target 'Vantage' do
   use_frameworks!
 
   # Pods for Vantage
- 
+
+  pod 'OneSignal' 
   pod 'SwiftyButton/CustomContent' 
   pod 'Firebase'
   pod 'Firebase/AdMob'

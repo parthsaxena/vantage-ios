@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class PostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate, UITextFieldDelegate {
+class PostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate {
 
     @IBOutlet var letterCounterLabel: UILabel!
     @IBOutlet var selectImageButton: UIButton!
@@ -26,11 +26,9 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         contentTextView.delegate = self
         
-        titleTextField.delegate = self
-        
         self.navigationController!.navigationBar.barTintColor = UIColor.blackColor()
         self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Roboto", size: 30)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
-        self.title = "\(GlobalVariables._currentSubjectPostingTo)"
+        self.title = "Post To \(GlobalVariables._currentSubjectPostingTo)"
     }
 
     override func didReceiveMemoryWarning() {
@@ -128,27 +126,18 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     func textViewDidBeginEditing(textView: UITextView) {
-        if contentTextView.text == "What is your assignment about?" {
+        if contentTextView.text == "Explain your assignment or problem..." {
             contentTextView.text = nil
         }
     }
     
     func textViewDidEndEditing(textView: UITextView) {
         if textView.text.isEmpty {
-            textView.text = "What is your assignment about?"
+            textView.text = "Explain your assignment or problem..."
         }
-    }
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
     }
     
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
-        if (text == "\n") {
-            textView.resignFirstResponder()
-            return false
-        }
         let newText = (contentTextView.text as NSString).stringByReplacingCharactersInRange(range, withString: text)
         let numberOfChars = newText.characters.count // for Swift use count(newText)
         return numberOfChars <= 140;

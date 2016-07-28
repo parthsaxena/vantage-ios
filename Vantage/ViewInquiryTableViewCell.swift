@@ -15,7 +15,8 @@ class ViewInquiryTableViewCell: UITableViewCell {
     @IBOutlet weak var inquiryImage: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var contentTextView: UITextView!
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!    
+    @IBOutlet weak var answerButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,6 +41,7 @@ class ViewInquiryTableViewCell: UITableViewCell {
                 self.titleLabel.alpha = 0
                 self.inquiryImage.alpha = 0
                 self.contentTextView.alpha = 0
+                self.answerButton.alpha = 0
                 
                 UIView.animateWithDuration(0.4) {
                     self.inquiryIDLabel.alpha = 1
@@ -47,6 +49,7 @@ class ViewInquiryTableViewCell: UITableViewCell {
                     self.titleLabel.alpha = 1
                     self.inquiryImage.alpha = 1
                     self.contentTextView.alpha = 1
+                    self.answerButton.alpha = 1
                 }
             } else {
                 // error

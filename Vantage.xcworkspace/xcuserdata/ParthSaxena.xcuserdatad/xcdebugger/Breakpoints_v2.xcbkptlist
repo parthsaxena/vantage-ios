@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Vantage/PostViewController.swift"
-            timestampString = "491252255.73426"
+            timestampString = "491303016.143257"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "PostViewController"
             landmarkType = "3">
          </BreakpointContent>

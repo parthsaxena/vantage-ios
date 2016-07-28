@@ -20,12 +20,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FIRApp.configure()
         
-        let notificationTypes: UIUserNotificationType = [UIUserNotificationType.Alert, UIUserNotificationType.Badge, UIUserNotificationType.Sound]
-        let notificationSettings = UIUserNotificationSettings(forTypes: notificationTypes, categories: nil)
-        application.registerForRemoteNotifications()
-        application.registerUserNotificationSettings(notificationSettings)
+        _ = OneSignal(launchOptions: launchOptions, appId: "9fffb537-914a-481a-9f17-a22e2df2c5bb", handleNotification: nil)
+        
+        OneSignal.defaultClient().enableInAppAlertNotification(true)
+        
+        let oneSignal = OneSignal(launchOptions: launchOptions, appId: "b2f7f966-d8cc-11e4-bed1-df8f05be55ba", handleNotification: { (message, additionalData, isActive) in
+            NSLog("OneSignal Notification opened:\nMessage: %@", message)
+            
+            if additionalData != nil {
+                NSLog("additionalData: %@", additionalData)
+                // Check for and read any custom values you added to the notification
+                // This done with the "Additonal Data" section the dashbaord.
+                // OR setting the 'data' field on our REST API.
+                if let customKey = additionalData["customKey"] as! String? {
+                    NSLog("customKey: %@", customKey)
+                }
+            }
+            }, autoRegister: false)                
         
         return true
+    }
+    
+    func registerForPushNotifications(application: UIApplication) {
+        let notificationSettings = UIUserNotificationSettings(
+            forTypes: [.Badge, .Sound, .Alert], categories: nil)
+        application.registerUserNotificationSettings(notificationSettings)
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -53,6 +72,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         print("MessageID: \(userInfo["gcm_message_id"]!)")
         print(userInfo)
+    }
+    
+    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
+        if notificationSettings.types != .None {
+            application.registerForRemoteNotifications()
+        }
+    }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        let tokenChars = UnsafePointer<CChar>(deviceToken.bytes)
+        var tokenString = ""
+        
+        for i in 0..<deviceToken.length {
+            tokenString += String(format: "%02.2hhx", arguments: [tokenChars[i]])
+        }
+        
+        print("Device Token:", tokenString)
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        print("Failed to register:", error)
     }
     
 }

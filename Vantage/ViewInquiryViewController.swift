@@ -11,7 +11,7 @@ import Firebase
 
 class ViewInquiryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var inquiryTableView: LoadingTableView!
+    @IBOutlet weak var inquiryTableView: LoadingTableView!    
     
     var inquiry = NSMutableArray()
     
@@ -75,7 +75,7 @@ class ViewInquiryViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! ViewInquiryTableViewCell
 
-        let inquiry = self.inquiry[indexPath.row] as! [String : AnyObject]
+        let inquiry = self.inquiry[indexPath.row] as! [String : AnyObject]                
         
         cell.titleLabel.text = inquiry["title"] as? String
         cell.contentTextView.text = inquiry["content"] as? String
@@ -102,6 +102,7 @@ class ViewInquiryViewController: UIViewController, UITableViewDelegate, UITableV
                 cell.titleLabel.alpha = 0
                 cell.inquiryImage.alpha = 0
                 cell.contentTextView.alpha = 0
+                cell.answerButton.alpha = 0
                 
                 UIView.animateWithDuration(0.4) {
                     cell.inquiryIDLabel.alpha = 1
@@ -109,6 +110,7 @@ class ViewInquiryViewController: UIViewController, UITableViewDelegate, UITableV
                     cell.titleLabel.alpha = 1
                     cell.inquiryImage.alpha = 1
                     cell.contentTextView.alpha = 1
+                    cell.answerButton.alpha = 1
                 }
                 self.inquiryTableView.hideLoadingIndicator()
             } else {
@@ -118,6 +120,11 @@ class ViewInquiryViewController: UIViewController, UITableViewDelegate, UITableV
         }
        
         return cell                
+    }
+    
+    @IBAction func answerTapped(sender: AnyObject) {
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("answerVC")
+        self.presentViewController(vc!, animated: false, completion: nil)
     }
     
     /*

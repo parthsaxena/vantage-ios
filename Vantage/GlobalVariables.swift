@@ -16,5 +16,5 @@ class GlobalVariables {
     
     static var _currentSubjectPostingTo: String!
     
-    static var _currentInquiryIDAnswering: String!
+    static var _currentInquiryIDAnswering: String!    
 }
