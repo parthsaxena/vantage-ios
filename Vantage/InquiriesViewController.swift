@@ -21,7 +21,7 @@ class InquiriesViewController: UIViewController, UITableViewDelegate, UITableVie
         self.navigationController!.navigationBar.barTintColor = UIColor.blackColor()
         self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Roboto", size: 30)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
         
-        self.title = "Inquiries In \(GlobalVariables._currentSubjectPostingTo)"
+        self.title = "\(GlobalVariables._currentSubjectPostingTo)"
         
         self.inquiriesTableView.dataSource = self
         self.inquiriesTableView.delegate = self

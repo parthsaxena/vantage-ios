@@ -49,5 +49,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
+    func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
+        print("We made it here! \(shortcutItem)")
+        if shortcutItem.type == "com.socify.Vantage.ask" {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewControllerWithIdentifier("chooseSubjectVC")
+            let rootVC = UIApplication.sharedApplication().keyWindow?.rootViewController
+            rootVC?.presentViewController(vc, animated: false, completion: { 
+                completionHandler(true)
+            })
+        } else if shortcutItem.type == "com.socify.Vantage.answer" {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewControllerWithIdentifier("answerChooseSubjectVC")
+            let rootVC = UIApplication.sharedApplication().keyWindow?.rootViewController
+            rootVC?.presentViewController(vc, animated: false, completion: {
+                completionHandler(true)
+            })
+        }
+    }
+    
 }
 

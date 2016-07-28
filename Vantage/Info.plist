@@ -38,27 +38,13 @@
 	<array>
 		<dict>
 			<key>UIApplicationShortcutItemIconType</key>
-			<string>UIApplicationShortcutIconTypeLove</string>
-			<key>UIApplicationShortcutItemSubtitle</key>
-			<string>Answer a question...</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Want to Help?</string>
-			<key>UIApplicationShortcutItemType</key>
-			<string>$(PRODUCT_BUNDLE_IDENTIFIER).Second</string>
-			<key>UIApplicationShortcutItemUserInfo</key>
-			<dict/>
-			<key>secondShortcutKey1</key>
-			<string>secondShortcutKeyValue1</string>
-		</dict>
-		<dict>
-			<key>UIApplicationShortcutItemIconType</key>
 			<string>UIApplicationShortcutIconTypeAdd</string>
 			<key>UIApplicationShortcutItemSubtitle</key>
 			<string>Submit an inquiry...</string>
 			<key>UIApplicationShortcutItemTitle</key>
 			<string>Need Help?</string>
 			<key>UIApplicationShortcutItemType</key>
-			<string>$(PRODUCT_BUNDLE_IDENTIFIER).First</string>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).ask</string>
 			<key>UIApplicationShortcutItemUserInfo</key>
 			<dict/>
 			<key>firstShortcutKey1</key>
@@ -66,17 +52,17 @@
 		</dict>
 		<dict>
 			<key>UIApplicationShortcutItemIconType</key>
-			<string>UIApplicationShortcutIconTypeShare</string>
+			<string>UIApplicationShortcutIconTypeLove</string>
 			<key>UIApplicationShortcutItemSubtitle</key>
-			<string>Share Vantage...</string>
+			<string>Answer a question...</string>
 			<key>UIApplicationShortcutItemTitle</key>
-			<string>Share</string>
+			<string>Want to Help?</string>
 			<key>UIApplicationShortcutItemType</key>
-			<string>$(PRODUCT_BUNDLE_IDENTIFIER).Third</string>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).answer</string>
 			<key>UIApplicationShortcutItemUserInfo</key>
 			<dict/>
-			<key>thirdShortcutKey1</key>
-			<string>thirdShortcutKeyValue1</string>
+			<key>secondShortcutKey1</key>
+			<string>secondShortcutKeyValue1</string>
 		</dict>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>

@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class PostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate {
+class PostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate, UITextFieldDelegate {
 
     @IBOutlet var letterCounterLabel: UILabel!
     @IBOutlet var selectImageButton: UIButton!
@@ -25,10 +25,11 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         // Do any additional setup after loading the view.
         
         contentTextView.delegate = self
+        titleTextField.delegate = self
         
         self.navigationController!.navigationBar.barTintColor = UIColor.blackColor()
         self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Roboto", size: 30)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
-        self.title = "Post To \(GlobalVariables._currentSubjectPostingTo)"
+        self.title = "\(GlobalVariables._currentSubjectPostingTo)"
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,13 +51,25 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         var newImage: UIImage
         
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            self.selectImageButton.alpha = 0
-            postImageView.image = pickedImage
-            
-            uploadImage(pickedImage)
+            let sizeImage = UIImageJPEGRepresentation(pickedImage, 1.0)
+            if let bytesSize = sizeImage?.length {
+                if (bytesSize > 10 * 1024 * 1024) {
+                    // image is too big
+                    dismissViewControllerAnimated(true, completion: nil)
+                    NSLog("Bytes of image selected: \(bytesSize)")
+                    let xMbSize = bytesSize/1000000
+                    let mbSize = round(100.0 * Double(xMbSize)) / 100.0
+                
+                    let alert = PSAlert.sharedInstance.instantiateAlert("Error", alertText: "Your image is \(mbSize) which exceeds the limit of 10 megabytes. Please pick a new image.")
+                    self.presentViewController(alert, animated: true, completion: nil)
+                } else {
+                    NSLog("Bytes of image selected: \(bytesSize)")
+                    self.selectImageButton.alpha = 0
+                    postImageView.image = pickedImage
+                    uploadImage(pickedImage)
+                }
+            }
         }
-        
-        dismissViewControllerAnimated(true, completion: nil)
     }
     
     func uploadImage(image: UIImage) {
@@ -126,18 +139,27 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     func textViewDidBeginEditing(textView: UITextView) {
-        if contentTextView.text == "Explain your assignment or problem..." {
+        if contentTextView.text == "What is your assignment about?" {
             contentTextView.text = nil
         }
     }
     
     func textViewDidEndEditing(textView: UITextView) {
         if textView.text.isEmpty {
-            textView.text = "Explain your assignment or problem..."
+            textView.text = "What is your assignment about?"
         }
     }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if (text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
         let newText = (contentTextView.text as NSString).stringByReplacingCharactersInRange(range, withString: text)
         let numberOfChars = newText.characters.count // for Swift use count(newText)
         return numberOfChars <= 140;

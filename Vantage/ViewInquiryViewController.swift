@@ -92,7 +92,7 @@ class ViewInquiryViewController: UIViewController, UITableViewDelegate, UITableV
         
         let image = inquiry["image"] as! String
         let imageRef = FIRStorage.storage().referenceForURL("gs://vantage-e9003.appspot.com").child("images/\(image).jpg")
-        imageRef.dataWithMaxSize(5 * 1024 * 1024) { (data, error) -> Void in
+        imageRef.dataWithMaxSize(10 * 1024 * 1024) { (data, error) -> Void in
             if error == nil {
                 let image = UIImage(data: data!)
                 cell.inquiryImage.image = image
@@ -115,7 +115,7 @@ class ViewInquiryViewController: UIViewController, UITableViewDelegate, UITableV
                 self.inquiryTableView.hideLoadingIndicator()
             } else {
                 // error
-                NSLog("Error while downloading an image.")
+                NSLog("Error while downloading an image. Error: \(error?.localizedDescription)")
             }
         }
        
