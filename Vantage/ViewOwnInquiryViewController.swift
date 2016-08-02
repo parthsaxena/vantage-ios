@@ -82,17 +82,33 @@ class ViewOwnInquiryViewController: UIViewController, UITableViewDelegate, UITab
             cell.inquiryIDLabel.text = "Inquiry ID: \(inquiry["id"] as! String)"                        
             
             if let timeInterval = inquiry["createdAt"] as? NSTimeInterval {
-                let date = NSDate(timeIntervalSince1970: timeInterval/1000)
-                let dayTimePeriodFormatter = NSDateFormatter()
-                dayTimePeriodFormatter.dateFormat = "M/d/yyyy h:mm a"
+                let secondsTimeInterval = Int(timeInterval / 1000)
+                let currentTimeInterval = Int(NSDate().timeIntervalSince1970)
                 
-                let dateString = dayTimePeriodFormatter.stringFromDate(date)
-                cell.dateLabel.text = dateString
+                let distanceTimeInterval = (currentTimeInterval - secondsTimeInterval)
+                print("distanceTimeInterval: \(distanceTimeInterval)")
+                let totalMinutes = (distanceTimeInterval / 60)
+                let hours = totalMinutes / 60
+                let minutes = totalMinutes % 60
+                
+                print("hours: \(hours)")
+                //let minutes =
+                if hours != 0 {
+                    // there are hours
+                    cell.dateLabel.text = "\(hours) hours and \(minutes) minutes ago"
+                } else {
+                    // there are no hours
+                    if minutes == 1 {
+                        cell.dateLabel.text = "\(minutes) minute ago"
+                    } else {
+                        cell.dateLabel.text = "\(minutes) minutes ago"
+                    }
+                }
             }
             
             let image = inquiry["image"] as! String
             let imageRef = FIRStorage.storage().referenceForURL("gs://vantage-e9003.appspot.com").child("images/\(image).jpg")
-            imageRef.dataWithMaxSize(5 * 1024 * 1024) { (data, error) -> Void in
+            imageRef.dataWithMaxSize(10 * 1024 * 1024) { (data, error) -> Void in
                 if error == nil {
                     let image = UIImage(data: data!)
                     
@@ -116,11 +132,30 @@ class ViewOwnInquiryViewController: UIViewController, UITableViewDelegate, UITab
                                 cell.contentTextView.alpha = 1
                                 cell.answerButton.alpha = 1
                             }
+                        } else {
+                            cell.answerButton.setTitle("View Answers (0)", forState: .Normal)
+                            cell.inquiryImage.image = image
+                            
+                            cell.inquiryIDLabel.alpha = 0
+                            cell.dateLabel.alpha = 0
+                            cell.titleLabel.alpha = 0
+                            cell.inquiryImage.alpha = 0
+                            cell.contentTextView.alpha = 0
+                            cell.answerButton.alpha = 0
+                            
+                            UIView.animateWithDuration(0.4) {
+                                cell.inquiryIDLabel.alpha = 1
+                                cell.dateLabel.alpha = 1
+                                cell.titleLabel.alpha = 1
+                                cell.inquiryImage.alpha = 1
+                                cell.contentTextView.alpha = 1
+                                cell.answerButton.alpha = 1
+                            }
                         }
                     })
                 } else {
                     // error
-                    NSLog("Error while downloading an image.")
+                    NSLog("Error while downloading an image. Error: \(error?.localizedDescription)")
                 }
             }
             self.inquiryTableView.hideLoadingIndicator()

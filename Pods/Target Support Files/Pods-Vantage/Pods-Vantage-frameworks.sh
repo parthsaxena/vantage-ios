@@ -84,14 +84,18 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
   install_framework "$BUILT_PRODUCTS_DIR/JSQMessagesViewController/JSQMessagesViewController.framework"
   install_framework "$BUILT_PRODUCTS_DIR/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework"
   install_framework "$BUILT_PRODUCTS_DIR/PureLayout/PureLayout.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Stripe/Stripe.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftyButton/SwiftyButton.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
   install_framework "$BUILT_PRODUCTS_DIR/JSQMessagesViewController/JSQMessagesViewController.framework"
   install_framework "$BUILT_PRODUCTS_DIR/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework"
   install_framework "$BUILT_PRODUCTS_DIR/PureLayout/PureLayout.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Stripe/Stripe.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftyButton/SwiftyButton.framework"
 fi

@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (3.4.1)
   - Firebase (3.3.0):
     - Firebase/Core (= 3.3.0)
   - Firebase/AdMob (3.3.0):
@@ -88,10 +89,14 @@ PODS:
   - JSQSystemSoundPlayer (2.0.1)
   - OneSignal (1.13.3)
   - PureLayout (3.0.2)
+  - Stripe (6.2.0):
+    - Stripe/Core (= 6.2.0)
+  - Stripe/Core (6.2.0)
   - SwiftyButton/CustomContent (0.4.0):
     - PureLayout (~> 3.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 3.3)
   - Firebase
   - Firebase/AdMob
   - Firebase/Analytics
@@ -105,9 +110,11 @@ DEPENDENCIES:
   - Firebase/Storage
   - JSQMessagesViewController
   - OneSignal
+  - Stripe (~> 6.2.0)
   - SwiftyButton/CustomContent
 
 SPEC CHECKSUMS:
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
   Firebase: 6250071f0e2440a5c4c67b8cb6b868f868237ac3
   FirebaseAnalytics: 0fd6532cb2c3d03cd5cf26ad295ccb091efd3104
   FirebaseAppIndexing: abbefc167746ac131b4f70cb09ea98bd62c5ae30
@@ -130,8 +137,9 @@ SPEC CHECKSUMS:
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   OneSignal: 434facae3389cb0d4d3fc57b9a6cf66db685205e
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+  Stripe: 275524137e6c4cc1058f6d32ece248adf30a21f9
   SwiftyButton: fffcc0d82b2b5f9ec1681f20ee9c67bed0d5c73b
 
-PODFILE CHECKSUM: c9c6dfafef26509ea7bc5171c707950c3da4b244
+PODFILE CHECKSUM: 0f5d998d993c844e6e59e06263dd5b85c82307af
 
 COCOAPODS: 1.0.1

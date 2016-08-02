@@ -6,7 +6,8 @@ target 'Vantage' do
   use_frameworks!
 
   # Pods for Vantage
-
+  pod 'Stripe', '~> 6.2.0'
+  pod 'Alamofire', '~> 3.3'
   pod 'OneSignal' 
   pod 'SwiftyButton/CustomContent' 
   pod 'Firebase'

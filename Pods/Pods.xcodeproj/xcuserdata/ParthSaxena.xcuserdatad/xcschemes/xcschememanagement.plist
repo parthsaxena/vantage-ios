@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>JSQMessagesViewController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -34,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Stripe.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftyButton.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,17 +57,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0C80DDDE5D794C94D9474453A9927748</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>1ED4DFAAD25E1999D0244868457A351E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2A8723F3974DFB0FC43211ECD05F981B</key>
+		<key>3EDB6AC5F733EB0B61CF43A0192DDEFD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>53636EC61D0AE58AB988C4B6D715EB7C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,12 +77,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>96CBBF1220A1D4E71690E874F9FC5D6A</key>
+		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B3BF006A76419BE7C4894B2691E925D0</key>
+		<key>8019D2D583AF85DF5CE1EB1C019C1EDD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>86374D202554587D153B5557CFD7E1D8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>96CBBF1220A1D4E71690E874F9FC5D6A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

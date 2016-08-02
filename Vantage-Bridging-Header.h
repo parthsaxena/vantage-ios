@@ -13,3 +13,4 @@
 #endif /* Vantage_Bridging_Header_h */
 
 #import <OneSignal/OneSignal.h>
+#import <Stripe/Stripe.h>

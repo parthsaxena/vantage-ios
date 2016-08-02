@@ -1,3 +1,9 @@
+# v2.0.2 - added in full timestamp support, Stripe support added, bug fixes
+- Added algorithm to compute time since inquiry added
+- Added in Stripe library and page in Settings to add credit card
+- Fixed many bugs
+- **Note:** All that is left in the app is reputation, profiles, and payments.
+
 # v2.0.1 - added 3D touch support, bug fixes
 - Fixed bugs with navigation buttons
 - Changed titles of some ViewControllers
