@@ -20,7 +20,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 
         self.navigationController?.navigationBar.alpha = 0
-        self.navigationController!.navigationBar.barTintColor = UIColor.blackColor()
+        self.navigationController!.navigationBar.barTintColor = UIColor.whiteColor()
         self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Roboto", size: 30)!, NSForegroundColorAttributeName: UIColor.blackColor()]
         
         OneSignal.defaultClient().IdsAvailable({ (userId, pushToken) in

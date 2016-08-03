@@ -27,7 +27,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         contentTextView.delegate = self
         titleTextField.delegate = self
         
-        self.navigationController!.navigationBar.barTintColor = UIColor.blackColor()
+        self.navigationController!.navigationBar.barTintColor = UIColor.whiteColor()
         self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Roboto", size: 30)!, NSForegroundColorAttributeName: UIColor.blackColor()]
         self.title = "\(GlobalVariables._currentSubjectPostingTo)"
     }

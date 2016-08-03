@@ -1,3 +1,6 @@
+# v2.0.4 - fixed bugs, [tested build]
+- Fixed bug in which the ViewAnswers page would load forever if no answers.
+- Fixed bugs with UI
 
 # v2.0.3 - changed UI theme to white, fixed image loading in posts, [un-tested build]
 - Changed NavigationBars to white

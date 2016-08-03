@@ -57,7 +57,7 @@ class ViewAnswersViewController: UIViewController, UITableViewDelegate, UITableV
         
         let image = answer["image"] as! String
         let imageRef = FIRStorage.storage().referenceForURL("gs://vantage-e9003.appspot.com").child("images/\(image).jpg")
-        imageRef.dataWithMaxSize(5 * 1024 * 1024) { (data, error) -> Void in
+        imageRef.dataWithMaxSize(10 * 1024 * 1024) { (data, error) -> Void in
             if error == nil {
                 let image = UIImage(data: data!)
                 
@@ -89,10 +89,17 @@ class ViewAnswersViewController: UIViewController, UITableViewDelegate, UITableV
          FIRDatabase.database().reference().child("answers").queryOrderedByChild("inquiryID").queryEqualToValue(GlobalVariables._currentInquiryIDAnswering!).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
             if let inquiryDictionary = snapshot.value as? [String : AnyObject] {
                 
+                if inquiryDictionary.count == 0 {
+                    self.answersTableView.hideLoadingIndicator()
+                }
+                
                 for answer in inquiryDictionary {
                     self.answers.insertObject(answer.1, atIndex: 0)
                 }
+                                
                 self.answersTableView.reloadData()
+            } else {
+                self.answersTableView.hideLoadingIndicator()
             }
         })
     }

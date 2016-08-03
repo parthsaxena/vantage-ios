@@ -26,7 +26,7 @@ class AnswerViewController: UIViewController, UITextViewDelegate, UIImagePickerC
         
         self.navigationController!.navigationBar.barTintColor = UIColor.whiteColor()
         self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Roboto", size: 30)!, NSForegroundColorAttributeName: UIColor.blackColor()]
-        self.title = "Post To \(GlobalVariables._currentSubjectPostingTo)"
+        self.title = "Answer"
         
         // Do any additional setup after loading the view.
     }
