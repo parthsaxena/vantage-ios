@@ -24,8 +24,8 @@ class ViewOwnInquiryViewController: UIViewController, UITableViewDelegate, UITab
         override func viewDidLoad() {
             super.viewDidLoad()
             
-            self.navigationController!.navigationBar.barTintColor = UIColor.blackColor()
-            self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Roboto", size: 30)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
+            self.navigationController!.navigationBar.barTintColor = UIColor.whiteColor()
+            self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Roboto", size: 30)!, NSForegroundColorAttributeName: UIColor.blackColor()]
             
             self.title = "Inquiry In \(GlobalVariables._currentSubjectPostingTo)"
             
@@ -107,7 +107,7 @@ class ViewOwnInquiryViewController: UIViewController, UITableViewDelegate, UITab
             }
             
             let image = inquiry["image"] as! String
-            let imageRef = FIRStorage.storage().referenceForURL("gs://vantage-e9003.appspot.com").child("images/\(image).jpg")
+            let imageRef = FIRStorage.storage().referenceForURL("gs://vantage-e9003.appspot.com").child("images/\(image)")
             imageRef.dataWithMaxSize(10 * 1024 * 1024) { (data, error) -> Void in
                 if error == nil {
                     let image = UIImage(data: data!)

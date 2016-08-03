@@ -1,3 +1,10 @@
+
+# v2.0.3 - changed UI theme to white, fixed image loading in posts, [un-tested build]
+- Changed NavigationBars to white
+- Changed posting to include image extensions when posting "image" value
+- Fixed image loading algorithm
+- **Note:** This is an un-tested build. All that is left in the app is reputation, profiles, and payments.
+
 # v2.0.2 - added in full timestamp support, Stripe support added, bug fixes
 - Added algorithm to compute time since inquiry added
 - Added in Stripe library and page in Settings to add credit card

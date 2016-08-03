@@ -28,7 +28,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         titleTextField.delegate = self
         
         self.navigationController!.navigationBar.barTintColor = UIColor.blackColor()
-        self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Roboto", size: 30)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Roboto", size: 30)!, NSForegroundColorAttributeName: UIColor.blackColor()]
         self.title = "\(GlobalVariables._currentSubjectPostingTo)"
     }
 
@@ -80,7 +80,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         let uploadTask = uploadRef.putData(imageData!, metadata: nil) { metadata, error in
             if error == nil {
                 NSLog("Successfully uploaded image.")
-                self.imageFileName = randomName as String
+                self.imageFileName = "\(randomName as String).jpg"
             } else {
                 // error
                 NSLog("Error while uploading file, message: \(error!.localizedDescription) .")
