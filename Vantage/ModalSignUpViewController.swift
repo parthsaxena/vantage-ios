@@ -9,13 +9,15 @@
 import UIKit
 import Firebase
 
-class ModalSignUpViewController: UIViewController {
+class ModalSignUpViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var emailField: HoshiTextField!
     @IBOutlet weak var passwordField: HoshiTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailField.delegate = self
+        passwordField.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -45,7 +47,8 @@ class ModalSignUpViewController: UIViewController {
                     "chats": ""
                 ]
                 newUserRef.setValue(newUser)
-                let vc = self.storyboard?.instantiateViewControllerWithIdentifier("mainVC")
+                let vc = self.storyboard?.instantiateViewControllerWithIdentifier("tutorialVC")
+                //self.dismissViewControllerAnimated(true, completion: nil)
                 self.presentViewController(vc!, animated: false, completion: nil)
             } else {
                 // error
@@ -53,6 +56,11 @@ class ModalSignUpViewController: UIViewController {
                 self.presentViewController(alert, animated: true, completion: nil)
             }
         })
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     /*

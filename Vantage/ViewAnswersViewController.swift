@@ -56,12 +56,14 @@ class ViewAnswersViewController: UIViewController, UITableViewDelegate, UITableV
         let answer = self.answers[indexPath.row] as! [String : AnyObject]
         
         let image = answer["image"] as! String
-        let imageRef = FIRStorage.storage().referenceForURL("gs://vantage-e9003.appspot.com").child("images/\(image).jpg")
+        let imageRef = FIRStorage.storage().referenceForURL("gs://vantage-e9003.appspot.com").child("images/\(image)")
         imageRef.dataWithMaxSize(10 * 1024 * 1024) { (data, error) -> Void in
             if error == nil {
                 let image = UIImage(data: data!)
                 
                 cell.answerImageView.image = image
+                cell.answerImageView.userInteractionEnabled = true
+                cell.answerImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ViewAnswersViewController.imageTapped(_:))))
                 cell.answerTextView.text = answer["content"] as! String
                 if let timeInterval = answer["createdAt"] as? NSTimeInterval {
                     let date = NSDate(timeIntervalSince1970: timeInterval/1000)
@@ -77,7 +79,7 @@ class ViewAnswersViewController: UIViewController, UITableViewDelegate, UITableV
                 self.answersTableView.hideLoadingIndicator()
             } else {
                 // error
-                NSLog("Error while downloading an image.")
+                NSLog("Error while downloading an image. Error: \(error?.localizedDescription)")
                 
             }
         }
@@ -85,6 +87,26 @@ class ViewAnswersViewController: UIViewController, UITableViewDelegate, UITableV
         return cell
     }
 
+    func imageTapped(sender: UITapGestureRecognizer) {
+        NSLog("image tapped")
+        
+        
+        let imageView = sender.view as! UIImageView
+        let newImageView = UIImageView()
+        newImageView.frame = self.view.frame
+        newImageView.backgroundColor = .blackColor()
+        newImageView.contentMode = .ScaleAspectFit
+        newImageView.image = imageView.image
+        newImageView.userInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: Selector("dismissFullscreenImage:"))
+        newImageView.addGestureRecognizer(tap)
+        self.view.addSubview(newImageView)
+    }
+    
+    func dismissFullscreenImage(sender: UITapGestureRecognizer) {
+        sender.view?.removeFromSuperview()
+    }
+    
     func loadAnswers() {
          FIRDatabase.database().reference().child("answers").queryOrderedByChild("inquiryID").queryEqualToValue(GlobalVariables._currentInquiryIDAnswering!).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
             if let inquiryDictionary = snapshot.value as? [String : AnyObject] {

@@ -11,7 +11,7 @@ import Firebase
 
 class ViewOwnInquiryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
  
-    @IBOutlet weak var inquiryTableView: LoadingTableView!
+    @IBOutlet weak var inquiryTableView: UITableView!
     
         var inquiry = NSMutableArray()
         
@@ -32,7 +32,7 @@ class ViewOwnInquiryViewController: UIViewController, UITableViewDelegate, UITab
             self.inquiryTableView.dataSource = self
             self.inquiryTableView.delegate = self
             
-            self.inquiryTableView.showLoadingIndicator()
+            //self.inquiryTableView.showLoadingIndicator()
             loadData()
             
             // Uncomment the following line to preserve selection between presentations
@@ -71,7 +71,26 @@ class ViewOwnInquiryViewController: UIViewController, UITableViewDelegate, UITab
             // #warning Incomplete implementation, return the number of rows
             return inquiry.count
         }
-        
+    
+    
+    func imageTapped(sender: UITapGestureRecognizer) {
+            NSLog("image tapped")
+            let imageView = sender.view as! UIImageView
+            let newImageView = UIImageView()
+            newImageView.frame = self.view.frame
+            newImageView.backgroundColor = .blackColor()
+            newImageView.contentMode = .ScaleAspectFit
+            newImageView.image = imageView.image
+            newImageView.userInteractionEnabled = true
+            let tap = UITapGestureRecognizer(target: self, action: Selector("dismissFullscreenImage:"))
+            newImageView.addGestureRecognizer(tap)
+            self.view.addSubview(newImageView)
+        }
+    
+        func dismissFullscreenImage(sender: UITapGestureRecognizer) {
+            sender.view?.removeFromSuperview()
+        }
+    
         func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! ViewInquiryTableViewCell
             
@@ -116,6 +135,8 @@ class ViewOwnInquiryViewController: UIViewController, UITableViewDelegate, UITab
                         if let answers = snapshot.value as? [String : AnyObject] {
                             cell.answerButton.setTitle("View Answers (\(answers.count))", forState: .Normal)
                             cell.inquiryImage.image = image
+                            cell.inquiryImage.userInteractionEnabled = true
+                            cell.inquiryImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ViewOwnInquiryViewController.imageTapped(_:))))
                             
                             cell.inquiryIDLabel.alpha = 0
                             cell.dateLabel.alpha = 0
@@ -158,7 +179,7 @@ class ViewOwnInquiryViewController: UIViewController, UITableViewDelegate, UITab
                     NSLog("Error while downloading an image. Error: \(error?.localizedDescription)")
                 }
             }
-            self.inquiryTableView.hideLoadingIndicator()
+            //self.inquiryTableView.hideLoadingIndicator()
             
             return cell
         }

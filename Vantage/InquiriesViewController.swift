@@ -42,7 +42,9 @@ class InquiriesViewController: UIViewController, UITableViewDelegate, UITableVie
     }
 
     func loadData() {
-        FIRDatabase.database().reference().child("posts").queryOrderedByChild("subject").queryEqualToValue(GlobalVariables._currentSubjectPostingTo).observeEventType(.Value, withBlock: { (snapshot) in
+        let ref = FIRDatabase.database().reference().child("posts").queryOrderedByChild("subject").queryEqualToValue(GlobalVariables._currentSubjectPostingTo)
+        
+        ref.observeEventType(.Value, withBlock: { (snapshot) in
             if let inquiryDictionary = snapshot.value as? [String : AnyObject] {
                 
                 if inquiryDictionary.count == 0 {
@@ -55,7 +57,7 @@ class InquiriesViewController: UIViewController, UITableViewDelegate, UITableVie
                     NSLog("Inquiries found.")
                     for object in inquiryDictionary {
                         print(object.1)
-                        self.inquiries.insertObject(object.1, atIndex: 0)
+                        self.inquiries.addObject(object.1)
                     }
                     self.inquiriesTableView.reloadData()
                     self.inquiriesTableView.hideLoadingIndicator()
@@ -68,6 +70,7 @@ class InquiriesViewController: UIViewController, UITableViewDelegate, UITableVie
                 NSLog("No inquiries found.")
             }
         })
+        
     }
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -110,13 +113,13 @@ class InquiriesViewController: UIViewController, UITableViewDelegate, UITableVie
             //let minutes =
             if hours != 0 {
                 // there are hours
-                cell.dateLabel.text = "\(hours) hours and \(minutes) minutes ago"
+                cell.dateLabel.text = "\(hours)h and \(minutes)m ago"
             } else {
                 // there are no hours
                 if minutes == 1 {
-                    cell.dateLabel.text = "\(minutes) minute ago"
+                    cell.dateLabel.text = "\(minutes)m ago"
                 } else {
-                    cell.dateLabel.text = "\(minutes) minutes ago"
+                    cell.dateLabel.text = "\(minutes)m ago"
                 }
             }
         }

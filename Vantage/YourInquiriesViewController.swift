@@ -58,6 +58,8 @@ class YourInquiriesViewController: UIViewController, UITableViewDelegate, UITabl
         let currentUID = FIRAuth.auth()?.currentUser?.uid
         
         FIRDatabase.database().reference().child("posts").queryOrderedByChild("username").queryEqualToValue(currentUID).observeEventType(.Value, withBlock: { (snapshot) in
+            self.inquiries.removeAllObjects()
+            
             if let inquiryDictionary = snapshot.value as? [String : AnyObject] {
                 if inquiryDictionary.count == 0 {
                     self.inquiries.addObject("none")
@@ -67,7 +69,7 @@ class YourInquiriesViewController: UIViewController, UITableViewDelegate, UITabl
                     NSLog("No inquiries found.")
                 } else {
                     for inquiry in inquiryDictionary {
-                        self.inquiries.insertObject(inquiry.1, atIndex: 0)
+                        self.inquiries.addObject(inquiry.1)
                     }
                     self.inquiriesTableView.hideLoadingIndicator()
                     self.inquiriesTableView.reloadData()
@@ -89,6 +91,7 @@ class YourInquiriesViewController: UIViewController, UITableViewDelegate, UITabl
             if inquiry == "none" {
                 cell.textLabel!.text = "You do not have any inquiries."
                 self.inquiriesTableView.separatorStyle = .None
+                cell.answersLabel?.hidden = true
                 return cell
             }
         } else {
@@ -126,13 +129,13 @@ class YourInquiriesViewController: UIViewController, UITableViewDelegate, UITabl
                 //let minutes =
                 if hours != 0 {
                     // there are hours
-                    cell.dateLabel.text = "\(hours) hours and \(minutes) minutes ago"
+                    cell.dateLabel.text = "\(hours)h and \(minutes)m ago"
                 } else {
                     // there are no hours
                     if minutes == 1 {
-                        cell.dateLabel.text = "\(minutes) minute ago"
+                        cell.dateLabel.text = "\(minutes)m ago"
                     } else {
-                        cell.dateLabel.text = "\(minutes) minutes ago"
+                        cell.dateLabel.text = "\(minutes)m ago"
                     }
                 }
             }
@@ -155,6 +158,41 @@ class YourInquiriesViewController: UIViewController, UITableViewDelegate, UITabl
         
         let vc = self.storyboard?.instantiateViewControllerWithIdentifier("viewOwnInquiryVC")
         self.presentViewController(vc!, animated: false, completion: nil)
+    }
+    
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .Normal, title: "Discard") { action, index in
+            let inquiry = self.inquiries[indexPath.row] as! [String : AnyObject]
+            let inquiryID = inquiry["id"]
+            
+            FIRDatabase.database().reference().child("posts").queryOrderedByChild("id").queryEqualToValue(inquiryID).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+                if let inquiryDictionary = snapshot.value as? [String : AnyObject] {
+                    if inquiryDictionary.count == 0 {
+                        let alert = PSAlert.sharedInstance.instantiateAlert("Error", alertText: "There was an error discarding your inquiry.")
+                        NSLog("something serious just went wrong...")
+                    } else {
+                        for inquiry in inquiryDictionary {
+                            FIRDatabase.database().reference().child("posts").child(inquiry.0).removeValue()
+                        }
+                    }
+                } else {
+                    let alert = PSAlert.sharedInstance.instantiateAlert("Error", alertText: "There was an error discarding your inquiry.")
+                    NSLog("something serious just went wrong...")
+                }
+            })
+        }
+        delete.backgroundColor = UIColor.redColor()
+        
+        return [delete]
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // the cells you would like the actions to appear needs to be editable
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        // you need to implement this method too or you can't swipe to display the actions
     }
     
     /*

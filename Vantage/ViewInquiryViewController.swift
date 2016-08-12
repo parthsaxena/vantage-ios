@@ -11,7 +11,7 @@ import Firebase
 
 class ViewInquiryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var inquiryTableView: LoadingTableView!    
+    @IBOutlet weak var inquiryTableView: UITableView!
     
     var inquiry = NSMutableArray()
     
@@ -32,7 +32,7 @@ class ViewInquiryViewController: UIViewController, UITableViewDelegate, UITableV
         self.inquiryTableView.dataSource = self
         self.inquiryTableView.delegate = self
         
-        self.inquiryTableView.showLoadingIndicator()
+        //self.inquiryTableView.showLoadingIndicator()
         loadData()
         
         // Uncomment the following line to preserve selection between presentations
@@ -49,7 +49,7 @@ class ViewInquiryViewController: UIViewController, UITableViewDelegate, UITableV
                 if let inquiry = inquiryDictionary.first!.1 as? [String : AnyObject] {
                     self.inquiry.addObject(inquiry)
                     self.inquiryTableView.reloadData()
-                    self.inquiryTableView.hideLoadingIndicator()
+                    //self.inquiryTableView.hideLoadingIndicator()
                 }
             }
         })
@@ -60,6 +60,26 @@ class ViewInquiryViewController: UIViewController, UITableViewDelegate, UITableV
         // Dispose of any resources that can be recreated.
     }
 
+    func imageTapped(sender: UITapGestureRecognizer) {
+        NSLog("image tapped")
+        
+        
+        let imageView = sender.view as! UIImageView
+        let newImageView = UIImageView()
+        newImageView.frame = self.view.frame
+        newImageView.backgroundColor = .blackColor()
+        newImageView.contentMode = .ScaleAspectFit
+        newImageView.image = imageView.image
+        newImageView.userInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: Selector("dismissFullscreenImage:"))
+        newImageView.addGestureRecognizer(tap)
+        self.view.addSubview(newImageView)
+    }
+    
+    func dismissFullscreenImage(sender: UITapGestureRecognizer) {
+        sender.view?.removeFromSuperview()
+    }
+    
     // MARK: - Table view data source
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -112,6 +132,8 @@ class ViewInquiryViewController: UIViewController, UITableViewDelegate, UITableV
             if error == nil {
                 let image = UIImage(data: data!)
                 cell.inquiryImage.image = image
+                cell.inquiryImage.userInteractionEnabled = true
+                cell.inquiryImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ViewInquiryViewController.imageTapped(_:))))
                 
                 cell.inquiryIDLabel.alpha = 0
                 cell.dateLabel.alpha = 0
@@ -128,7 +150,7 @@ class ViewInquiryViewController: UIViewController, UITableViewDelegate, UITableV
                     cell.contentTextView.alpha = 1
                     cell.answerButton.alpha = 1
                 }
-                self.inquiryTableView.hideLoadingIndicator()
+                //self.inquiryTableView.hideLoadingIndicator()
             } else {
                 // error
                 NSLog("Error while downloading an image. Error: \(error?.localizedDescription)")

@@ -42,7 +42,7 @@ class AnswerViewController: UIViewController, UITextViewDelegate, UIImagePickerC
     
     func sendAnswer() {
         let content = contentTextView.text!
-        let image = self.imageFileName
+        let image = "\(self.imageFileName).jpg"
         let inquiryID = GlobalVariables._currentInquiryIDAnswering
         
         if (self.imageFileName == "") {

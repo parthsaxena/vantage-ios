@@ -1,3 +1,16 @@
+# v2.0.5 - finalized build, [stable]
+- Added Tutorial screen to app
+- Fixed many compatiblity bugs with website
+- Implemented better timestamps
+- Added better image loading animation
+- Fixed bug with uploading images
+- Fixed bug where imagePicker wouldn't dismiss after picking an image
+- Fixed bug where images wouldn't download
+- Disabled "Add Payment"
+- Added "Contact Support" to settings
+- Added functionality where image will expand when being tapped on
+- Fixed many other bugs
+
 # v2.0.4 - fixed bugs, [tested build]
 - Fixed bug in which the ViewAnswers page would load forever if no answers.
 - Fixed bugs with UI

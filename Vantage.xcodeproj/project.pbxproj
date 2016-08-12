@@ -10,6 +10,7 @@
 		0C69B16452A49BCA0BFE829C /* Pods_Vantage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073F5B3E3D3AFB5CFE7D0973 /* Pods_Vantage.framework */; };
 		8B47E1441D32C1F5002488E9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B47E1431D32C1F5002488E9 /* MainViewController.swift */; };
 		8B47E1481D32C3B9002488E9 /* ChooseSubjectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B47E1471D32C3B9002488E9 /* ChooseSubjectTableViewController.swift */; };
+		8B488F001D583895002D6B6A /* LoadingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B488EFF1D583895002D6B6A /* LoadingTableView.swift */; };
 		8B4D477C1D26F62800CB0763 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B4D476A1D26F62800CB0763 /* Roboto-Black.ttf */; };
 		8B4D477D1D26F62800CB0763 /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B4D476B1D26F62800CB0763 /* Roboto-BlackItalic.ttf */; };
 		8B4D477E1D26F62800CB0763 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B4D476C1D26F62800CB0763 /* Roboto-Bold.ttf */; };
@@ -48,7 +49,6 @@
 		8B6F5E691D25E51900008FE6 /* YokoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6F5E5D1D25E51900008FE6 /* YokoTextField.swift */; };
 		8B6F5E6A1D25E51900008FE6 /* YoshikoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6F5E5E1D25E51900008FE6 /* YoshikoTextField.swift */; };
 		8B6F5E6C1D25E79B00008FE6 /* PSAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6F5E6B1D25E79B00008FE6 /* PSAlert.swift */; };
-		8B6F5E6F1D25EB4900008FE6 /* TextFieldEffects.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B6F5E5A1D25E51900008FE6 /* TextFieldEffects.framework */; };
 		8B6F5E701D25EB4900008FE6 /* TextFieldEffects.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8B6F5E5A1D25E51900008FE6 /* TextFieldEffects.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8B6F5E751D25FD0800008FE6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6F5E741D25FD0800008FE6 /* SignUpViewController.swift */; };
 		8B6F5E771D2602BB00008FE6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B6F5E761D2602BB00008FE6 /* GoogleService-Info.plist */; };
@@ -64,12 +64,12 @@
 		8B988D2B1D48AB2E00D0133B /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B988D2A1D48AB2D00D0133B /* AnswerViewController.swift */; };
 		8B988D2D1D493E8C00D0133B /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B988D2C1D493E8C00D0133B /* AnswerTableViewCell.swift */; };
 		8B988D2F1D493FDB00D0133B /* ViewAnswersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B988D2E1D493FDB00D0133B /* ViewAnswersViewController.swift */; };
+		8B9B9B231D5AD08A00CAFE3D /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9B9B221D5AD08A00CAFE3D /* TutorialPageViewController.swift */; };
 		8BA59BD41D3372B600DD82FC /* AnswerChooseSubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA59BD31D3372B600DD82FC /* AnswerChooseSubjectViewController.swift */; };
 		8BA59BD61D337B1F00DD82FC /* InquiriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA59BD51D337B1F00DD82FC /* InquiriesViewController.swift */; };
 		8BA59BD81D337B7B00DD82FC /* InquiryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA59BD71D337B7B00DD82FC /* InquiryTableViewCell.swift */; };
 		8BA59BDA1D341EA000DD82FC /* ViewInquiryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA59BD91D341EA000DD82FC /* ViewInquiryViewController.swift */; };
 		8BA59BDC1D3427C800DD82FC /* ViewInquiryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA59BDB1D3427C800DD82FC /* ViewInquiryTableViewCell.swift */; };
-		8BA59BDE1D3458D000DD82FC /* LoadingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA59BDD1D3458D000DD82FC /* LoadingTableView.swift */; };
 		8BBF55131D277A1500AED9B4 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF55121D277A1500AED9B4 /* GlobalVariables.swift */; };
 		9CECF16D73129EE16B538735 /* Pods_VantageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBF1DDF3F588BC4C3394EE85 /* Pods_VantageTests.framework */; };
 		DFEA1F3FDE12DC0C5DB2CABA /* Pods_VantageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10DA9A1586B7D20D7F6D4693 /* Pods_VantageUITests.framework */; };
@@ -114,6 +114,7 @@
 		62D17090C8279DD4843C6C7F /* Pods-VantageTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VantageTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VantageTests/Pods-VantageTests.release.xcconfig"; sourceTree = "<group>"; };
 		8B47E1431D32C1F5002488E9 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8B47E1471D32C3B9002488E9 /* ChooseSubjectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseSubjectTableViewController.swift; sourceTree = "<group>"; };
+		8B488EFF1D583895002D6B6A /* LoadingTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingTableView.swift; sourceTree = "<group>"; };
 		8B4D476A1D26F62800CB0763 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Black.ttf"; path = "Fonts/Roboto-Black.ttf"; sourceTree = "<group>"; };
 		8B4D476B1D26F62800CB0763 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-BlackItalic.ttf"; path = "Fonts/Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
 		8B4D476C1D26F62800CB0763 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Bold.ttf"; path = "Fonts/Roboto-Bold.ttf"; sourceTree = "<group>"; };
@@ -174,12 +175,12 @@
 		8B988D2A1D48AB2D00D0133B /* AnswerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
 		8B988D2C1D493E8C00D0133B /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
 		8B988D2E1D493FDB00D0133B /* ViewAnswersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAnswersViewController.swift; sourceTree = "<group>"; };
+		8B9B9B221D5AD08A00CAFE3D /* TutorialPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
 		8BA59BD31D3372B600DD82FC /* AnswerChooseSubjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerChooseSubjectViewController.swift; sourceTree = "<group>"; };
 		8BA59BD51D337B1F00DD82FC /* InquiriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InquiriesViewController.swift; sourceTree = "<group>"; };
 		8BA59BD71D337B7B00DD82FC /* InquiryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InquiryTableViewCell.swift; sourceTree = "<group>"; };
 		8BA59BD91D341EA000DD82FC /* ViewInquiryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewInquiryViewController.swift; sourceTree = "<group>"; };
 		8BA59BDB1D3427C800DD82FC /* ViewInquiryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewInquiryTableViewCell.swift; sourceTree = "<group>"; };
-		8BA59BDD1D3458D000DD82FC /* LoadingTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingTableView.swift; sourceTree = "<group>"; };
 		8BBF55121D277A1500AED9B4 /* GlobalVariables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
 		9A343B00619E030DC63C812E /* Pods-Vantage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vantage.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vantage/Pods-Vantage.release.xcconfig"; sourceTree = "<group>"; };
 		CA3DB715400AFB65ED9D6C3F /* Pods-Vantage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vantage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vantage/Pods-Vantage.debug.xcconfig"; sourceTree = "<group>"; };
@@ -193,7 +194,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C69B16452A49BCA0BFE829C /* Pods_Vantage.framework in Frameworks */,
-				8B6F5E6F1D25EB4900008FE6 /* TextFieldEffects.framework in Frameworks */,
 				8B6F5E671D25E51900008FE6 /* TextFieldEffects.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,9 +268,9 @@
 				8B83C5CC1D49853A0072D423 /* Vantage-Bridging-Header.h */,
 				8B6F5E6B1D25E79B00008FE6 /* PSAlert.swift */,
 				8B6F5E781D26065900008FE6 /* Post.swift */,
+				8B488EFF1D583895002D6B6A /* LoadingTableView.swift */,
 				8B6F5E231D25E48E00008FE6 /* AppDelegate.swift */,
 				8BBF55121D277A1500AED9B4 /* GlobalVariables.swift */,
-				8BA59BDD1D3458D000DD82FC /* LoadingTableView.swift */,
 				8B47E1431D32C1F5002488E9 /* MainViewController.swift */,
 				8B6F5EA31D266FE400008FE6 /* PostViewController.swift */,
 				8B6F5E251D25E48E00008FE6 /* ViewController.swift */,
@@ -281,6 +281,7 @@
 				8B988D261D47343500D0133B /* ModalLoginViewController.swift */,
 				8B988D281D47642A00D0133B /* ModalSettingsViewController.swift */,
 				8B6F5E271D25E48E00008FE6 /* Main.storyboard */,
+				8B9B9B221D5AD08A00CAFE3D /* TutorialPageViewController.swift */,
 				8B750E091D4BE68500331DAA /* AddPaymentViewController.swift */,
 				8B988D2E1D493FDB00D0133B /* ViewAnswersViewController.swift */,
 				8B988D2C1D493E8C00D0133B /* AnswerTableViewCell.swift */,
@@ -683,7 +684,9 @@
 				8B6F5E681D25E51900008FE6 /* TextFieldsEffects.swift in Sources */,
 				8B7B641B1D3AD1E10074F35F /* YourInquiriesViewController.swift in Sources */,
 				8B6F5E6C1D25E79B00008FE6 /* PSAlert.swift in Sources */,
+				8B488F001D583895002D6B6A /* LoadingTableView.swift in Sources */,
 				8B988D291D47642A00D0133B /* ModalSettingsViewController.swift in Sources */,
+				8B9B9B231D5AD08A00CAFE3D /* TutorialPageViewController.swift in Sources */,
 				8BA59BD61D337B1F00DD82FC /* InquiriesViewController.swift in Sources */,
 				8B988D231D4721F900D0133B /* ModalSignUpViewController.swift in Sources */,
 				8B6F5E241D25E48E00008FE6 /* AppDelegate.swift in Sources */,
@@ -695,7 +698,6 @@
 				8B7B641D1D3ADDED0074F35F /* ViewOwnInquiryViewController.swift in Sources */,
 				8B988D2F1D493FDB00D0133B /* ViewAnswersViewController.swift in Sources */,
 				8BA59BDC1D3427C800DD82FC /* ViewInquiryTableViewCell.swift in Sources */,
-				8BA59BDE1D3458D000DD82FC /* LoadingTableView.swift in Sources */,
 				8BA59BD81D337B7B00DD82FC /* InquiryTableViewCell.swift in Sources */,
 				8B988D251D472A0F00D0133B /* FirstActionViewController.swift in Sources */,
 				8B6F5E601D25E51900008FE6 /* HoshiTextField.swift in Sources */,
@@ -848,8 +850,10 @@
 			baseConfigurationReference = CA3DB715400AFB65ED9D6C3F /* Pods-Vantage.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BITCODE_GENERATION_MODE = marker;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vantage/TextFieldEffects",
@@ -860,7 +864,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Vantage-Bridging-Header.h";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -869,8 +873,10 @@
 			baseConfigurationReference = 9A343B00619E030DC63C812E /* Pods-Vantage.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BITCODE_GENERATION_MODE = bitcode;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vantage/TextFieldEffects",
@@ -881,7 +887,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Vantage-Bridging-Header.h";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

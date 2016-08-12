@@ -9,13 +9,15 @@
 import UIKit
 import Firebase
 
-class ModalLoginViewController: UIViewController {
+class ModalLoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var emailField: HoshiTextField!
     @IBOutlet weak var passwordField: HoshiTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailField.delegate = self
+        passwordField.delegate = self
         view.backgroundColor = UIColor.clearColor()
         // Do any additional setup after loading the view.
     }
@@ -49,6 +51,11 @@ class ModalLoginViewController: UIViewController {
             }
         })
     }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }        
     
     /*
      // MARK: - Navigation

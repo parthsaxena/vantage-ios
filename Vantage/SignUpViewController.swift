@@ -59,11 +59,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                     "chats": ""
                 ]
                 newUserRef.setValue(newUser)
-                let vc = self.storyboard?.instantiateViewControllerWithIdentifier("mainVC")
+                let vc = self.storyboard?.instantiateViewControllerWithIdentifier("tutorialVC")
                 self.presentViewController(vc!, animated: false, completion: nil)
             } else {
                 // error
-                let alert = PSAlert.sharedInstance.instantiateAlert("Error", alertText: "There was an error while created account!")
+                let alert = PSAlert.sharedInstance.instantiateAlert("Error", alertText: "There was an error creating your account!")
                 self.presentViewController(alert, animated: true, completion: nil)
             }
         })

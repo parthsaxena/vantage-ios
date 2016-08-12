@@ -67,6 +67,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                     self.selectImageButton.alpha = 0
                     postImageView.image = pickedImage
                     uploadImage(pickedImage)
+                    dismissViewControllerAnimated(true, completion: nil)
                 }
             }
         }
