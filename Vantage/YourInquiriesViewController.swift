@@ -68,7 +68,14 @@ class YourInquiriesViewController: UIViewController, UITableViewDelegate, UITabl
                     
                     NSLog("No inquiries found.")
                 } else {
-                    for inquiry in inquiryDictionary {
+                    let sortedDictionary = inquiryDictionary.sort {
+                        let createdAtOne = ($0.1 as! [String : AnyObject])["createdAt"] as! Int
+                        let createdAtTwo = ($1.1 as! [String : AnyObject])["createdAt"] as! Int
+                        return createdAtOne > createdAtTwo
+                    }
+                    print(sortedDictionary)
+                    
+                    for inquiry in sortedDictionary {
                         self.inquiries.addObject(inquiry.1)
                     }
                     self.inquiriesTableView.hideLoadingIndicator()
@@ -90,6 +97,7 @@ class YourInquiriesViewController: UIViewController, UITableViewDelegate, UITabl
         if let inquiry = self.inquiries[indexPath.row] as? String {
             if inquiry == "none" {
                 cell.textLabel!.text = "You do not have any inquiries."
+                cell.textLabel!.numberOfLines = 0
                 self.inquiriesTableView.separatorStyle = .None
                 cell.answersLabel?.hidden = true
                 return cell
@@ -129,7 +137,7 @@ class YourInquiriesViewController: UIViewController, UITableViewDelegate, UITabl
                 //let minutes =
                 if hours != 0 {
                     // there are hours
-                    cell.dateLabel.text = "\(hours)h and \(minutes)m ago"
+                    cell.dateLabel.text = "\(hours)h, \(minutes)m ago"
                 } else {
                     // there are no hours
                     if minutes == 1 {

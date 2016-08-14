@@ -115,10 +115,13 @@ class ViewInquiryViewController: UIViewController, UITableViewDelegate, UITableV
             //let minutes =
             if hours != 0 {
                 // there are hours
-                cell.dateLabel.text = "\(hours) hours and \(minutes) minutes ago"
+                cell.dateLabel.text = "\(hours)h, \(minutes)m ago"
             } else {
                 // there are no hours
-                if minutes == 1 {
+                if minutes == 0 {
+                    cell.dateLabel.text = "a moment ago"
+                }
+                else if minutes == 1 {
                     cell.dateLabel.text = "\(minutes) minute ago"
                 } else {
                     cell.dateLabel.text = "\(minutes) minutes ago"
@@ -126,14 +129,18 @@ class ViewInquiryViewController: UIViewController, UITableViewDelegate, UITableV
             }
         }
         
-        let image = inquiry["image"] as! String
-        let imageRef = FIRStorage.storage().referenceForURL("gs://vantage-e9003.appspot.com").child("images/\(image)")
+        let imageName = inquiry["image"] as! String
+        let imageRef = FIRStorage.storage().referenceForURL("gs://vantage-e9003.appspot.com").child("images/\(imageName)")
         imageRef.dataWithMaxSize(10 * 1024 * 1024) { (data, error) -> Void in
             if error == nil {
                 let image = UIImage(data: data!)
                 cell.inquiryImage.image = image
-                cell.inquiryImage.userInteractionEnabled = true
-                cell.inquiryImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ViewInquiryViewController.imageTapped(_:))))
+                
+                if (imageName != "NO_IMAGE_WHITE.jpg") {
+                    NSLog("image value: \(imageName)")
+                    cell.inquiryImage.userInteractionEnabled = true
+                    cell.inquiryImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ViewInquiryViewController.imageTapped(_:))))
+                }
                 
                 cell.inquiryIDLabel.alpha = 0
                 cell.dateLabel.alpha = 0

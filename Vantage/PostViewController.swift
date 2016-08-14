@@ -20,6 +20,8 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     var imageFileName = ""
     
+    var hasImage = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -53,16 +55,17 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             let sizeImage = UIImageJPEGRepresentation(pickedImage, 1.0)
             if let bytesSize = sizeImage?.length {
-                if (bytesSize > 10 * 1024 * 1024) {
+                if (bytesSize > 25 * 1024 * 1024) {
                     // image is too big
                     dismissViewControllerAnimated(true, completion: nil)
                     NSLog("Bytes of image selected: \(bytesSize)")
                     let xMbSize = bytesSize/1000000
                     let mbSize = round(100.0 * Double(xMbSize)) / 100.0
                 
-                    let alert = PSAlert.sharedInstance.instantiateAlert("Error", alertText: "Your image is \(mbSize) which exceeds the limit of 10 megabytes. Please pick a new image.")
+                    let alert = PSAlert.sharedInstance.instantiateAlert("Error", alertText: "Your image is \(mbSize) which exceeds the limit of 25 megabytes. Please pick a new image.")
                     self.presentViewController(alert, animated: true, completion: nil)
                 } else {
+                    hasImage = true
                     NSLog("Bytes of image selected: \(bytesSize)")
                     self.selectImageButton.alpha = 0
                     postImageView.image = pickedImage
@@ -105,7 +108,9 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     @IBAction func postTapped(sender: AnyObject) {
-        if (self.imageFileName == "") {
+        if (self.titleTextField.text != "" && (self.contentTextView.text != "" || self.contentTextView.text != "What is your problem or assignment?")) {
+            NSLog("Posting...")
+        if (self.imageFileName == "" && hasImage == true) {
             let alert = PSAlert.sharedInstance.instantiateAlert("Error", alertText: "Your image has not finished uploading. Please wait a moment...")
             self.presentViewController(alert, animated: true, completion: nil)
         } else {
@@ -116,38 +121,54 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             
             let randomID = randomStringWithLength(15)
             
-            let post: Dictionary<String, AnyObject> = [
-                "title": self.titleTextField.text!,
-                "content": self.contentTextView.text!,
-                "image": self.imageFileName,
-                "username": currentUID!,
-                "subject": GlobalVariables._currentSubjectPostingTo,
-                "createdAt": timestamp,
-                "id": randomID
-            ]
-        
-            let postObject = FIRDatabase.database().reference().child("posts").childByAutoId()
-            postObject.setValue(post)
+            if (hasImage == false) {
+                self.imageFileName = "NO_IMAGE_WHITE.jpg"
+            }
+            
+            FIRDatabase.database().reference().child("users").queryOrderedByChild("email").queryEqualToValue(FIRAuth.auth()?.currentUser?.email!).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+                if let inquiryDictionary = snapshot.value as? [String : AnyObject] {
+                    for object in inquiryDictionary {
+                        print(object.0)
+                        let post: Dictionary<String, AnyObject> = [
+                            "title": self.titleTextField.text!,
+                            "content": self.contentTextView.text!,
+                            "image": self.imageFileName,
+                            "username": object.0,
+                            "subject": GlobalVariables._currentSubjectPostingTo,
+                            "createdAt": timestamp,
+                            "id": randomID
+                        ]
                         
-            let alert = UIAlertController(title: "Success", message: "Your inquiry has been sent! Expect a reply within the next 6 hours!", preferredStyle: .Alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: { (action) in
-                let vc = self.storyboard?.instantiateViewControllerWithIdentifier("mainVC")
-                self.presentViewController(vc!, animated: false, completion: nil)
+                        let postObject = FIRDatabase.database().reference().child("posts").childByAutoId()
+                        postObject.setValue(post)
+                        
+                        let alert = UIAlertController(title: "Success", message: "Your inquiry has been sent! Expect a reply within the next 6 hours!", preferredStyle: .Alert)
+                        let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: { (action) in
+                            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("mainVC")
+                            self.presentViewController(vc!, animated: false, completion: nil)
+                        })
+                        alert.addAction(defaultAction)
+                        self.presentViewController(alert, animated: true, completion: nil)
+                    }
+                }
             })
-            alert.addAction(defaultAction)
+        }
+        } else {
+            NSLog("Fields not filled...")
+            let alert = PSAlert.sharedInstance.instantiateAlert("Error", alertText: "You did not fill out one or more fields.")
             self.presentViewController(alert, animated: true, completion: nil)
-        }        
+        }
     }
     
     func textViewDidBeginEditing(textView: UITextView) {
-        if contentTextView.text == "What is your assignment about?" {
+        if contentTextView.text == "What is your problem or assignment?" {
             contentTextView.text = nil
         }
     }
     
     func textViewDidEndEditing(textView: UITextView) {
         if textView.text.isEmpty {
-            textView.text = "What is your assignment about?"
+            textView.text = "What is your problem or assignment?"
         }
     }
     
@@ -163,12 +184,12 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         }
         let newText = (contentTextView.text as NSString).stringByReplacingCharactersInRange(range, withString: text)
         let numberOfChars = newText.characters.count // for Swift use count(newText)
-        return numberOfChars <= 140;
+        return numberOfChars <= 300;
     }
     
     func textViewDidChange(textView: UITextView) {
         let numberOfChars = contentTextView.text.characters.count
-        self.letterCounterLabel.text = "\(numberOfChars) / 140"
+        self.letterCounterLabel.text = "\(numberOfChars) / 300"
     }
     /*
     // MARK: - Navigation

@@ -55,7 +55,15 @@ class InquiriesViewController: UIViewController, UITableViewDelegate, UITableVie
                     NSLog("No inquiries found.")
                 } else {
                     NSLog("Inquiries found.")
-                    for object in inquiryDictionary {
+                    
+                    let sortedDictionary = inquiryDictionary.sort {
+                        let createdAtOne = ($0.1 as! [String : AnyObject])["createdAt"] as! Int
+                        let createdAtTwo = ($1.1 as! [String : AnyObject])["createdAt"] as! Int
+                        return createdAtOne > createdAtTwo
+                    }
+                    print(sortedDictionary)
+                    
+                    for object in sortedDictionary {
                         print(object.1)
                         self.inquiries.addObject(object.1)
                     }
@@ -89,7 +97,8 @@ class InquiriesViewController: UIViewController, UITableViewDelegate, UITableVie
         
         if let inquiry = self.inquiries[indexPath.row] as? String {
             if inquiry == "none" {
-                cell.textLabel!.text = "There are currently no inquiries in \(GlobalVariables._currentSubjectPostingTo)"
+                cell.textLabel!.text = "There are currently no inquiries in \(GlobalVariables._currentSubjectPostingTo)."
+                cell.textLabel!.numberOfLines = 0
                 self.inquiriesTableView.separatorStyle = .None
                 return cell
             }
@@ -113,7 +122,7 @@ class InquiriesViewController: UIViewController, UITableViewDelegate, UITableVie
             //let minutes =
             if hours != 0 {
                 // there are hours
-                cell.dateLabel.text = "\(hours)h and \(minutes)m ago"
+                cell.dateLabel.text = "\(hours)h, \(minutes)m ago"
             } else {
                 // there are no hours
                 if minutes == 1 {

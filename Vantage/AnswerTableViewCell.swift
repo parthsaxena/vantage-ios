@@ -12,7 +12,7 @@ class AnswerTableViewCell: UITableViewCell {
 
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var answerImageView: UIImageView!
-    @IBOutlet weak var answerTextView: UITextView!
+    @IBOutlet weak var answerTextView: UITextView!    
     
     override func awakeFromNib() {
         super.awakeFromNib()

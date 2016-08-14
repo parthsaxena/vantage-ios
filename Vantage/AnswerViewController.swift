@@ -17,6 +17,7 @@ class AnswerViewController: UIViewController, UITextViewDelegate, UIImagePickerC
     
     @IBOutlet weak var postImageView: UIImageView!
     
+    var hasImage = false
     var imageFileName = ""
     
     override func viewDidLoad() {
@@ -42,10 +43,10 @@ class AnswerViewController: UIViewController, UITextViewDelegate, UIImagePickerC
     
     func sendAnswer() {
         let content = contentTextView.text!
-        let image = "\(self.imageFileName).jpg"
+        var image = "\(self.imageFileName).jpg"
         let inquiryID = GlobalVariables._currentInquiryIDAnswering
         
-        if (self.imageFileName == "") {
+        if (self.imageFileName == "" && hasImage == true) {
             let alert = PSAlert.sharedInstance.instantiateAlert("Error", alertText: "Your image has not finished uploading. Please wait a moment...")
             self.presentViewController(alert, animated: true, completion: nil)
         } else {
@@ -56,6 +57,10 @@ class AnswerViewController: UIViewController, UITextViewDelegate, UIImagePickerC
             
             let randomID = randomStringWithLength(15)
             
+            if hasImage == false {
+                image = "NO_IMAGE_WHITE.jpg"
+            }
+            
             let post: Dictionary<String, AnyObject> = [
                 "content": content,
                 "image": image,
@@ -65,10 +70,11 @@ class AnswerViewController: UIViewController, UITextViewDelegate, UIImagePickerC
                 "id": randomID
             ]
             
-            let postObject = FIRDatabase.database().reference().child("answers").childByAutoId()
+            let postObject = FIRDatabase.database().reference().child("answers").childByAutoId()            
             postObject.setValue(post)
             
             let username = GlobalVariables._currentUserAnswering
+            NSLog("USERNAME ANSWERING: \(username)")
             FIRDatabase.database().reference().child("users").child(username).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
                 if let userDictionary = snapshot.value as? [String : AnyObject] {
                     let notificationID = userDictionary["notification_id"] as! String
@@ -135,7 +141,7 @@ class AnswerViewController: UIViewController, UITextViewDelegate, UIImagePickerC
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             self.selectImageButton.alpha = 0
             postImageView.image = pickedImage
-            
+            hasImage = true
             uploadImage(pickedImage)
         }
         

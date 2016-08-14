@@ -114,13 +114,16 @@ class ViewOwnInquiryViewController: UIViewController, UITableViewDelegate, UITab
                 //let minutes =
                 if hours != 0 {
                     // there are hours
-                    cell.dateLabel.text = "\(hours) hours and \(minutes) minutes ago"
+                    cell.dateLabel.text = "\(hours)h, \(minutes)m ago"
                 } else {
                     // there are no hours
-                    if minutes == 1 {
-                        cell.dateLabel.text = "\(minutes) minute ago"
+                    if minutes == 0 {
+                        cell.dateLabel.text = "a moment ago"
+                    }
+                    else if minutes == 1 {
+                        cell.dateLabel.text = "\(minutes)m ago"
                     } else {
-                        cell.dateLabel.text = "\(minutes) minutes ago"
+                        cell.dateLabel.text = "\(minutes)m ago"
                     }
                 }
             }

@@ -1,3 +1,7 @@
+# v2.0.6 - bug fixes
+- Bug fixes
+- Fixed many bugs relating to screen size issues 
+
 # v2.0.5 - finalized build, [stable]
 - Added Tutorial screen to app
 - Fixed many compatiblity bugs with website

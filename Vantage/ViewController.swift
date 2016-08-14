@@ -84,7 +84,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             } else {
                 // error
                 NSLog("Error logging in.")
-                let alert = PSAlert.sharedInstance.instantiateAlert("Error", alertText: "There was an error logging you in.")
+                let alert = PSAlert.sharedInstance.instantiateAlert("Error", alertText: (error?.localizedDescription)!)
                 self.presentViewController(alert, animated: true, completion: nil)
             }
         })

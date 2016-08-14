@@ -84,7 +84,7 @@ class AnswerChooseSubjectViewController: UIViewController, UITableViewDelegate, 
         
         let cellSubject = (self.items[indexPath.section] as! NSMutableArray)[indexPath.row]
         
-        cell.textLabel!.text = cellSubject as! String
+        cell.textLabel!.text = "     \(cellSubject as! String)"
         
         cell.textLabel?.alpha = 0
         

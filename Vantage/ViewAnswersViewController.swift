@@ -13,7 +13,7 @@ class ViewAnswersViewController: UIViewController, UITableViewDelegate, UITableV
 
     let answers = NSMutableArray()
     
-    @IBOutlet weak var answersTableView: LoadingTableView!
+    @IBOutlet weak var answersTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,7 @@ class ViewAnswersViewController: UIViewController, UITableViewDelegate, UITableV
         self.answersTableView.delegate = self
         self.answersTableView.dataSource = self
         
-        self.answersTableView.showLoadingIndicator()
+        //self.answersTableView.showLoadingIndicator()
         loadAnswers()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -55,15 +55,18 @@ class ViewAnswersViewController: UIViewController, UITableViewDelegate, UITableV
         print("Viewing answers...")
         let answer = self.answers[indexPath.row] as! [String : AnyObject]
         
-        let image = answer["image"] as! String
-        let imageRef = FIRStorage.storage().referenceForURL("gs://vantage-e9003.appspot.com").child("images/\(image)")
+        let imageName = answer["image"] as! String
+        let imageRef = FIRStorage.storage().referenceForURL("gs://vantage-e9003.appspot.com").child("images/\(imageName)")
         imageRef.dataWithMaxSize(10 * 1024 * 1024) { (data, error) -> Void in
             if error == nil {
                 let image = UIImage(data: data!)
                 
                 cell.answerImageView.image = image
-                cell.answerImageView.userInteractionEnabled = true
-                cell.answerImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ViewAnswersViewController.imageTapped(_:))))
+                if (imageName != "NO_IMAGE_WHITE.jpg") {
+                    NSLog("image value: \(imageName)")
+                    cell.answerImageView.userInteractionEnabled = true
+                    cell.answerImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ViewAnswersViewController.imageTapped(_:))))
+                }
                 cell.answerTextView.text = answer["content"] as! String
                 if let timeInterval = answer["createdAt"] as? NSTimeInterval {
                     let date = NSDate(timeIntervalSince1970: timeInterval/1000)
@@ -76,7 +79,7 @@ class ViewAnswersViewController: UIViewController, UITableViewDelegate, UITableV
                 
                 cell.configureCell()
                 
-                self.answersTableView.hideLoadingIndicator()
+                //self.answersTableView.hideLoadingIndicator()
             } else {
                 // error
                 NSLog("Error while downloading an image. Error: \(error?.localizedDescription)")
@@ -112,18 +115,40 @@ class ViewAnswersViewController: UIViewController, UITableViewDelegate, UITableV
             if let inquiryDictionary = snapshot.value as? [String : AnyObject] {
                 
                 if inquiryDictionary.count == 0 {
-                    self.answersTableView.hideLoadingIndicator()
+                    //self.answersTableView.hideLoadingIndicator()
                 }
                 
-                for answer in inquiryDictionary {
-                    self.answers.insertObject(answer.1, atIndex: 0)
+                let sortedDictionary = inquiryDictionary.sort {
+                    let createdAtOne = ($0.1 as! [String : AnyObject])["createdAt"] as! Int
+                    let createdAtTwo = ($1.1 as! [String : AnyObject])["createdAt"] as! Int
+                    return createdAtOne > createdAtTwo
                 }
-                                
-                self.answersTableView.reloadData()
+                print(sortedDictionary)
+                
+                for answer in sortedDictionary {
+                    self.answers.addObject(answer.1)
+                }
+                if (self.answers.count == 1) {
+                    self.answersTableView.separatorColor = UIColor.clearColor()
+                    self.answersTableView.reloadData()
+                } else {
+                    self.answersTableView.reloadData()
+                }
             } else {
-                self.answersTableView.hideLoadingIndicator()
+                //self.answersTableView.hideLoadingIndicator()
             }
         })
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let answer = self.answers[indexPath.row] as! [String : AnyObject]
+        
+        let imageString = answer["image"] as! String
+        NSLog("cell height. imageString: \(imageString)")
+        guard imageString != "NO_IMAGE_WHITE.jpg" else {
+            return 245
+        }
+        return 476
     }
     
     /*
