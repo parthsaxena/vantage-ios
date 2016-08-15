@@ -63,7 +63,7 @@ class InquiriesViewController: UIViewController, UITableViewDelegate, UITableVie
                     }
                     print(sortedDictionary)
                     
-                    for object in sortedDictionary {
+                    for object in sortedDictionary {                        
                         print(object.1)
                         self.inquiries.addObject(object.1)
                     }

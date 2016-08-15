@@ -1,6 +1,13 @@
-# v2.0.6 - bug fixes
+# v2.0.7 - bug fixes, finalized build, [stable]
+- Many text-wrapping issues have been fixed
+- Changed some navigation-bar titles
+- UI Tweaks
+- Character limit for inquiries increased to 300
 - Bug fixes
+
+# v2.0.6 - bug fixes
 - Fixed many bugs relating to screen size issues 
+- Bug fixes
 
 # v2.0.5 - finalized build, [stable]
 - Added Tutorial screen to app

@@ -27,7 +27,7 @@ class ViewOwnInquiryViewController: UIViewController, UITableViewDelegate, UITab
             self.navigationController!.navigationBar.barTintColor = UIColor.whiteColor()
             self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Roboto", size: 30)!, NSForegroundColorAttributeName: UIColor.blackColor()]
             
-            self.title = "Inquiry In \(GlobalVariables._currentSubjectPostingTo)"
+            self.title = "\(GlobalVariables._currentSubjectPostingTo) Inquiry"
             
             self.inquiryTableView.dataSource = self
             self.inquiryTableView.delegate = self
@@ -97,6 +97,7 @@ class ViewOwnInquiryViewController: UIViewController, UITableViewDelegate, UITab
             let inquiry = self.inquiry[indexPath.row] as! [String : AnyObject]
             
             cell.titleLabel.text = inquiry["title"] as? String
+            cell.titleLabel.numberOfLines = 0
             cell.contentTextView.text = inquiry["content"] as? String
             cell.inquiryIDLabel.text = "Inquiry ID: \(inquiry["id"] as! String)"                        
             
