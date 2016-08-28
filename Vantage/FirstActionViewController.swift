@@ -16,6 +16,32 @@ class FirstActionViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        
+        if (NSUserDefaults.standardUserDefaults().boolForKey("HasLaunchedOnce")) {
+            // app has been launched before
+            
+            NSLog("The app has been run before.")
+            
+        } else {
+            // first launch
+            
+            NSLog("This is the first launch.")
+            
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey:"HasLaunchedOnce")
+            NSUserDefaults.standardUserDefaults().synchronize()
+            
+            let alert = UIAlertController(title: "Notifications", message: "Many features will not be available without enabling notifications. Would you like to enable notifications?", preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action) in
+                OneSignal.defaultClient().registerForPushNotifications()
+                OneSignal.defaultClient().enableInAppAlertNotification(true)
+            }))
+            alert.addAction(UIAlertAction(title: "No", style: .Cancel, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

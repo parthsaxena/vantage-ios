@@ -108,7 +108,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     @IBAction func postTapped(sender: AnyObject) {
-        if (self.titleTextField.text != "" && (self.contentTextView.text != "" || self.contentTextView.text != "What is your problem or assignment?")) {
+        if (self.titleTextField.text != "" && (self.contentTextView.text != "" && self.contentTextView.text != "What is your problem or assignment?")) {
             NSLog("Posting...")
         if (self.imageFileName == "" && hasImage == true) {
             let alert = PSAlert.sharedInstance.instantiateAlert("Error", alertText: "Your image has not finished uploading. Please wait a moment...")

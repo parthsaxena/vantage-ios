@@ -50,6 +50,10 @@ class ViewAnswersViewController: UIViewController, UITableViewDelegate, UITableV
         return answers.count
     }
     
+    @IBAction func rejectAnswerTapped(sender: AnyObject) {
+        let buttonPosition = sender.convertPoint(CGPointZero, toView: self.answersTableView)
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! AnswerTableViewCell
         print("Viewing answers...")

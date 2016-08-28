@@ -42,9 +42,40 @@ class MainViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-
+    
+    func showRate() {
+        if (NSUserDefaults.standardUserDefaults().integerForKey("numberOfLaunches") % 7 == 0 && NSUserDefaults.standardUserDefaults().boolForKey("userRated") == false) {
+            // show rate app alert
+            let alert = UIAlertController(title: ":)", message: "Liking Vantage? Help the developers and give the app a rating!", preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "Not Now", style: .Cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Sure", style: .Default, handler: { (action) in
+                NSUserDefaults.standardUserDefaults().setBool(true, forKey: "userRated")
+                UIApplication.sharedApplication().openURL(NSURL(string: "itmss://itunes.apple.com/us/app/vantage-homework-help/id1140243092?mt=8ign-msr=https%3A%2F%2Fwww.google.com%2F")!)
+            }))
+            self.presentViewController(alert, animated: true, completion: nil)
+        } else {
+            NSLog("userRated: \(NSUserDefaults.standardUserDefaults().boolForKey("userRated")), timesLaunched: \(NSUserDefaults.standardUserDefaults().integerForKey("numberOfLaunches"))")
+        }
+    }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:Selector("showRate"), name:
+            UIApplicationWillEnterForegroundNotification, object: nil)
+        
+        if (NSUserDefaults.standardUserDefaults().integerForKey("numberOfLaunches") % 7 == 0 && NSUserDefaults.standardUserDefaults().boolForKey("userRated") == false) {
+            // show rate app alert
+            let alert = UIAlertController(title: ":)", message: "Liking Vantage? Help the developers and give the app a rating!", preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "Not Now", style: .Cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Sure", style: .Default, handler: { (action) in
+                NSUserDefaults.standardUserDefaults().setBool(true, forKey: "userRated")
+                UIApplication.sharedApplication().openURL(NSURL(string: "itmss://itunes.apple.com/us/app/vantage-homework-help/id1140243092?mt=8ign-msr=https%3A%2F%2Fwww.google.com%2F")!)
+            }))
+            self.presentViewController(alert, animated: true, completion: nil)
+        } else {
+            NSLog("userRated: \(NSUserDefaults.standardUserDefaults().boolForKey("userRated"))")
+        }
         
         if FIRAuth.auth()?.currentUser == nil {
             // user is not logged in

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A270f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9zc-Vi-WiA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A304a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9zc-Vi-WiA">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -1382,6 +1381,20 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyr-Km-na0">
+                                                    <rect key="frame" x="439" y="437" width="153" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="153" id="8wL-O9-iOk"/>
+                                                        <constraint firstAttribute="height" constant="30" id="t5V-Nw-pN5"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <state key="normal" title="Reject Answer">
+                                                        <color key="titleColor" red="1" green="0.04390516664" blue="0.06589008482" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="rejectAnswerTapped:" destination="vJZ-nh-obv" eventType="touchUpInside" id="czc-mw-S2I"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="lag-LR-bQO" firstAttribute="trailing" secondItem="uzf-7Z-ci7" secondAttribute="trailingMargin" id="F1N-BT-aCr"/>
@@ -1389,9 +1402,11 @@
                                                 <constraint firstItem="xPU-c3-yx3" firstAttribute="top" secondItem="9xt-Je-qdi" secondAttribute="bottom" constant="-96" id="KYT-v8-SBV"/>
                                                 <constraint firstItem="9xt-Je-qdi" firstAttribute="top" secondItem="lag-LR-bQO" secondAttribute="bottom" constant="13" id="P9Z-52-IUf"/>
                                                 <constraint firstItem="9xt-Je-qdi" firstAttribute="centerX" secondItem="uzf-7Z-ci7" secondAttribute="centerX" id="Ply-BL-QHZ"/>
+                                                <constraint firstItem="lyr-Km-na0" firstAttribute="trailing" secondItem="uzf-7Z-ci7" secondAttribute="trailingMargin" id="Vje-hg-W4f"/>
                                                 <constraint firstItem="1DH-M5-oSr" firstAttribute="top" secondItem="9xt-Je-qdi" secondAttribute="bottom" constant="19" id="i8T-O8-rWe"/>
                                                 <constraint firstItem="lag-LR-bQO" firstAttribute="top" secondItem="uzf-7Z-ci7" secondAttribute="topMargin" id="o2L-Bg-Urc"/>
                                                 <constraint firstItem="9xt-Je-qdi" firstAttribute="trailing" secondItem="uzf-7Z-ci7" secondAttribute="trailingMargin" id="oGP-PI-E6Y"/>
+                                                <constraint firstItem="lyr-Km-na0" firstAttribute="bottom" secondItem="uzf-7Z-ci7" secondAttribute="bottomMargin" id="sJi-xp-DnT"/>
                                                 <constraint firstItem="xPU-c3-yx3" firstAttribute="centerX" secondItem="uzf-7Z-ci7" secondAttribute="centerX" id="wFm-ns-ExQ"/>
                                                 <constraint firstItem="1DH-M5-oSr" firstAttribute="centerX" secondItem="uzf-7Z-ci7" secondAttribute="centerX" id="za7-4b-b2j"/>
                                             </constraints>

@@ -42,7 +42,11 @@ class AnswerViewController: UIViewController, UITextViewDelegate, UIImagePickerC
     }
     
     func sendAnswer() {
+        
         let content = contentTextView.text!
+        
+        if (content != "" && content != "What is your solution?") {
+        
         var image = "\(self.imageFileName).jpg"
         let inquiryID = GlobalVariables._currentInquiryIDAnswering
         
@@ -94,6 +98,10 @@ class AnswerViewController: UIViewController, UITextViewDelegate, UIImagePickerC
                 self.presentViewController(vc!, animated: false, completion: nil)
             })
             alert.addAction(defaultAction)
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        } else {
+            let alert = PSAlert.sharedInstance.instantiateAlert("Error", alertText: "You did not fill out one or more fields. ")
             self.presentViewController(alert, animated: true, completion: nil)
         }
     }

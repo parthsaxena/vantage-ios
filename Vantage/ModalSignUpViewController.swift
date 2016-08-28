@@ -48,7 +48,8 @@ class ModalSignUpViewController: UIViewController, UITextFieldDelegate {
                 let newUser = [
                     "email": email,
                     "username": email,
-                    "chats": ""
+                    "chats": "",
+                    "notification_id": ""
                 ]
                 newUserRef.setValue(newUser)
                 let vc = self.storyboard?.instantiateViewControllerWithIdentifier("tutorialVC")

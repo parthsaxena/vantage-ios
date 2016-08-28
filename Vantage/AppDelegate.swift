@@ -20,10 +20,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         FIRApp.configure()
-    Stripe.setDefaultPublishableKey("pk_test_NnzeD5zsk1xqPSvEGGhGT5f0")
-        _ = OneSignal(launchOptions: launchOptions, appId: "9fffb537-914a-481a-9f17-a22e2df2c5bb", handleNotification: nil)
+        Stripe.setDefaultPublishableKey("pk_test_NnzeD5zsk1xqPSvEGGhGT5f0")
         
-        OneSignal.defaultClient().enableInAppAlertNotification(true)                                
+        _ = OneSignal(launchOptions: launchOptions, appId: "9fffb537-914a-481a-9f17-a22e2df2c5bb", handleNotification: nil, autoRegister: false)
+        
+        if (NSUserDefaults.standardUserDefaults().boolForKey("HasLaunchedOnce")) {
+            // app has been launched before
+            
+            let launches = NSUserDefaults.standardUserDefaults().integerForKey("numberOfLaunches")
+            NSUserDefaults.standardUserDefaults().setInteger(launches + 1, forKey: "numberOfLaunches")
+            
+        } else {
+            // app is being run for first time
+            NSUserDefaults.standardUserDefaults().setBool(false, forKey: "userRated")
+            NSUserDefaults.standardUserDefaults().setInteger(1, forKey: "numberOfLaunches")
+        }
+        
+        //OneSignal.defaultClient().enableInAppAlertNotification(true)
         
         return true
     }
@@ -44,6 +57,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        if (NSUserDefaults.standardUserDefaults().boolForKey("HasLaunchedOnce")) {
+            // app launched for first time
+            
+            NSUserDefaults.standardUserDefaults().setInteger(1, forKey: "numberOfLaunches")
+            
+        } else {
+            // app has been launched before
+            let launches = NSUserDefaults.standardUserDefaults().integerForKey("numberOfLaunches")
+            NSUserDefaults.standardUserDefaults().setInteger(launches + 1, forKey: "numberOfLaunches")
+        }
     }
 
     func applicationWillTerminate(application: UIApplication) {
