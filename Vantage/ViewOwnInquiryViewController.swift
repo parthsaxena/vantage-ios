@@ -20,7 +20,9 @@ class ViewOwnInquiryViewController: UIViewController, UITableViewDelegate, UITab
         var inquiryID: String!
         var inquiryCreatedAt: AnyObject!
         var inquiryImage: String!
-        
+    
+    var numberOfAnswers = 0
+    
         override func viewDidLoad() {
             super.viewDidLoad()
             
@@ -96,6 +98,38 @@ class ViewOwnInquiryViewController: UIViewController, UITableViewDelegate, UITab
             
             let inquiry = self.inquiry[indexPath.row] as! [String : AnyObject]
             
+            let answersRef = FIRDatabase.database().reference().child("answers").queryOrderedByChild("inquiryID").queryEqualToValue(inquiry["id"] as! String).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+                if let dictionary = snapshot.value as? [String : AnyObject] {
+                    let actualAnswers = NSMutableArray()
+                    var inquiryAnswered = false
+                    for answer in dictionary {
+                        if ((answer.1)["accepted"] == "true") {
+                            cell.answerButton.setTitle("View Accepted Answer", forState: UIControlState.Normal)
+                            inquiryAnswered = true
+                            self.numberOfAnswers = 1
+                            break
+                        } else if ((answer.1 )["accepted"] == "none") {
+                            actualAnswers.addObject(answer.1)
+                        } else {
+                            NSLog("accepted value: \(answer.1["accepted"])")
+                        }
+                    }
+                    if (inquiryAnswered == false) {
+                        self.numberOfAnswers = actualAnswers.count
+                        if actualAnswers.count != 0 {
+                            if actualAnswers.count == 1 {
+                                cell.answerButton.setTitle("\(actualAnswers.count) Answer", forState: UIControlState.Normal)
+                            } else {
+                                cell.answerButton.setTitle("\(actualAnswers.count) Answers", forState: UIControlState.Normal)
+                            }
+                        
+                        } else {
+                            //cell.answerButton!.textColor = UIColor.redColor()
+                        }
+                    }
+                }
+            })
+            
             cell.titleLabel.text = inquiry["title"] as? String
             cell.titleLabel.numberOfLines = 0
             cell.contentTextView.text = inquiry["content"] as? String
@@ -137,7 +171,7 @@ class ViewOwnInquiryViewController: UIViewController, UITableViewDelegate, UITab
                     
                     FIRDatabase.database().reference().child("answers").queryOrderedByChild("inquiryID").queryEqualToValue(inquiry["id"] as! String).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
                         if let answers = snapshot.value as? [String : AnyObject] {
-                            cell.answerButton.setTitle("View Answers (\(answers.count))", forState: .Normal)
+                            //cell.answerButton.setTitle("View Answers (\(answers.count))", forState: .Normal)
                             cell.inquiryImage.image = image
                             cell.inquiryImage.userInteractionEnabled = true
                             cell.inquiryImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ViewOwnInquiryViewController.imageTapped(_:))))
@@ -158,7 +192,7 @@ class ViewOwnInquiryViewController: UIViewController, UITableViewDelegate, UITab
                                 cell.answerButton.alpha = 1
                             }
                         } else {
-                            cell.answerButton.setTitle("View Answers (0)", forState: .Normal)
+                            //cell.answerButton.setTitle("View Answers (0)", forState: .Normal)
                             cell.inquiryImage.image = image
                             
                             cell.inquiryIDLabel.alpha = 0
@@ -189,8 +223,15 @@ class ViewOwnInquiryViewController: UIViewController, UITableViewDelegate, UITab
         }
         
         @IBAction func viewAnswersTapped(sender: AnyObject) {
-            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("viewAnswersVC")
-            self.presentViewController(vc!, animated: false, completion: nil)
+            if (numberOfAnswers == 0) {
+                let alert = UIAlertController(title: "Alert", message: "You have not received any answers for your inquiry yet.", preferredStyle: .Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                alert.view.tintColor = UIColor.redColor()
+                self.presentViewController(alert, animated: true, completion: nil)
+            } else {
+                let vc = self.storyboard?.instantiateViewControllerWithIdentifier("viewAnswersVC")
+                self.presentViewController(vc!, animated: false, completion: nil)
+            }
         }
     
     

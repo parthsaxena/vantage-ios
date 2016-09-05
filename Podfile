@@ -7,9 +7,9 @@ target 'Vantage' do
 
   # Pods for Vantage
   pod 'Stripe', '~> 6.2.0'
-  pod 'Alamofire', '~> 3.3'
+  pod 'Alamofire', '~> 3.4'
   pod 'OneSignal' 
-  pod 'SwiftyButton/CustomContent' 
+  pod 'SwiftyButton'
   pod 'Firebase'
   pod 'Firebase/AdMob'
   pod 'Firebase/Analytics'
@@ -32,5 +32,13 @@ target 'Vantage' do
     inherit! :search_paths
     # Pods for testing
   end
+
+	post_install do |installer|
+		installer.pods_project.targets.each do |target|
+			target.build_configurations.each do |config|
+				config.build_settings['SWIFT_VERSION'] = '2.3'
+			end
+		end
+	end
 
 end

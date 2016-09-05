@@ -1,4 +1,4 @@
-//
+/*
 //  AddPaymentViewController.swift
 //  Vantage
 //
@@ -8,7 +8,7 @@
 
 import UIKit
 import Stripe
-import Alamofire
+//import Alamofire
 
 class AddPaymentViewController: UIViewController, STPPaymentCardTextFieldDelegate {
 
@@ -81,3 +81,4 @@ class AddPaymentViewController: UIViewController, STPPaymentCardTextFieldDelegat
     */
 
 }
+ */

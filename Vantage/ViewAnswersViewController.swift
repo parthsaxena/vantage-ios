@@ -11,6 +11,7 @@ import Firebase
 
 class ViewAnswersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    let answersIDs = NSMutableArray()
     let answers = NSMutableArray()
     
     @IBOutlet weak var answersTableView: UITableView!
@@ -52,6 +53,67 @@ class ViewAnswersViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBAction func rejectAnswerTapped(sender: AnyObject) {
         let buttonPosition = sender.convertPoint(CGPointZero, toView: self.answersTableView)
+        let indexPath = self.answersTableView.indexPathForRowAtPoint(buttonPosition)
+        
+        let alertController = UIAlertController(title: "Confirm", message: "Are you sure you would like to reject this answer?", preferredStyle: .Alert)
+        alertController.addAction(UIAlertAction(title: "No", style: .Cancel, handler: nil))
+        alertController.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action) in
+            let answerID = self.answersIDs[indexPath!.row] as! String
+            FIRDatabase.database().reference().child("answers").child(answerID).updateChildValues(["accepted":"false"])
+            
+            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("viewOwnInquiryVC")
+            self.presentViewController(vc!, animated: false, completion: nil)
+        }))
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    @IBAction func acceptAnswerTapped(sender: AnyObject) {
+        let buttonPosition = sender.convertPoint(CGPointZero, toView: self.answersTableView)
+        let indexPath = self.answersTableView.indexPathForRowAtPoint(buttonPosition)
+        
+        let alertController = UIAlertController(title: "Confirm", message: "Are you sure you would like to accept this answer?", preferredStyle: .Alert)
+        alertController.addAction(UIAlertAction(title: "No", style: .Cancel, handler: nil))
+        alertController.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action) in
+            let answerID = self.answersIDs[indexPath!.row] as! String
+            FIRDatabase.database().reference().child("answers").child(answerID).updateChildValues(["accepted":"true"])
+            
+            let inquiryID = GlobalVariables._currentInquiryIDAnswering!
+            FIRDatabase.database().reference().child("posts").queryLimitedToFirst(1).queryOrderedByChild("id").queryEqualToValue(inquiryID).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+                if let inquiryDictionary = snapshot.value as? [String : AnyObject] {
+                    for inquiry in inquiryDictionary {
+                        let actualInquiryID = inquiry.0
+                        FIRDatabase.database().reference().child("posts").child(actualInquiryID).updateChildValues(["active":"false"])
+                        
+                        let answererUsername = (self.answers[indexPath!.row] as! [String : AnyObject])["username"] as! String
+                        FIRDatabase.database().reference().child("users").child(answererUsername).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+                            if let userDictionary = snapshot.value as? [String : AnyObject] {
+                                if let notification_id = userDictionary["notification_id"] as? String {
+                                    OneSignal.postNotification(["contents": ["en": "Your answer has been accepted!"], "include_player_ids": [notification_id]],         onSuccess: { (nil) in
+                                        NSLog("Sent answer-accepted notification.")
+                                        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("viewOwnInquiryVC")
+                                        self.presentViewController(vc!, animated: false, completion: nil)
+                                        }, onFailure: { (error) in
+                                            NSLog("Error sending answer-accepted notification: \(error.localizedDescription)")
+                                            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("viewOwnInquiryVC")
+                                            self.presentViewController(vc!, animated: false, completion: nil)
+                                    })
+                                } else {
+                                    // cannot send notification
+                                    let vc = self.storyboard?.instantiateViewControllerWithIdentifier("viewOwnInquiryVC")
+                                    self.presentViewController(vc!, animated: false, completion: nil)
+                                }
+                            } else {
+                                let alert = PSAlert.sharedInstance.instantiateAlert("Error", alertText: "Something went wrong :/")
+                                self.presentViewController(alert, animated: true, completion: nil)
+                            }
+                        })
+                    }
+                } else {
+                    let alert = PSAlert.sharedInstance.instantiateAlert("Error", alertText: "Something went wrong :/")
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }
+            })
+        }))
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -82,7 +144,14 @@ class ViewAnswersViewController: UIViewController, UITableViewDelegate, UITableV
                 }
                 
                 cell.configureCell()
-                
+                if (answer["accepted"] as! String == "true") {
+                    //disable accept/reject buttons
+                    cell.acceptButton.enabled = false
+                    cell.acceptButton.hidden = true
+                    
+                    cell.rejectButton.enabled = false
+                    cell.rejectButton.hidden = true
+                }
                 //self.answersTableView.hideLoadingIndicator()
             } else {
                 // error
@@ -130,7 +199,14 @@ class ViewAnswersViewController: UIViewController, UITableViewDelegate, UITableV
                 print(sortedDictionary)
                 
                 for answer in sortedDictionary {
-                    self.answers.addObject(answer.1)
+                    if ((answer.1 as! [String : AnyObject])["accepted"] as! String == "true") {
+                        self.answersIDs.addObject(answer.0)
+                        self.answers.addObject(answer.1)
+                        break
+                    } else if ((answer.1 as! [String: AnyObject])["accepted"] as! String == "none") {
+                        self.answersIDs.addObject(answer.0)
+                        self.answers.addObject(answer.1)
+                    }
                 }
                 if (self.answers.count == 1) {
                     self.answersTableView.separatorColor = UIColor.clearColor()

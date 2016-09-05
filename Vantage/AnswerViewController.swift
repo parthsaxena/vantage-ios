@@ -71,8 +71,19 @@ class AnswerViewController: UIViewController, UITextViewDelegate, UIImagePickerC
                 "username": currentUID!,
                 "inquiryID": inquiryID,
                 "createdAt": timestamp,
+                "accepted":"none",
                 "id": randomID
             ]
+            
+            FIRDatabase.database().reference().child("posts").queryOrderedByChild("id").queryEqualToValue(inquiryID).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+                if let inquiryDictionary = snapshot.value as? [String : AnyObject] {
+                    for inquiry in inquiryDictionary {
+                        let actualInquiryID = inquiry.0
+                        FIRDatabase.database().reference().child("posts").child(actualInquiryID).updateChildValues(["active":"false"])
+                        NSLog("updated inquiry to set active to false. \(inquiryID)")
+                    }
+                }
+            })
             
             let postObject = FIRDatabase.database().reference().child("answers").childByAutoId()            
             postObject.setValue(post)
@@ -81,14 +92,15 @@ class AnswerViewController: UIViewController, UITextViewDelegate, UIImagePickerC
             NSLog("USERNAME ANSWERING: \(username)")
             FIRDatabase.database().reference().child("users").child(username).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
                 if let userDictionary = snapshot.value as? [String : AnyObject] {
-                    let notificationID = userDictionary["notification_id"] as! String
-                    NSLog("Attempting to send notification to ID: \(notificationID)")
-                    
-                    OneSignal.defaultClient().postNotification(["contents": ["en": "You have received an answer for your inquiry!"], "include_player_ids": [notificationID]], onSuccess: { (nil) in
+                    if let notificationID = userDictionary["notification_id"] as? String {
+                    NSLog("Attempting to send notification to ID: \(notificationID)")                                            
+                        
+                    OneSignal.postNotification(["contents": ["en": "You have received an answer for your inquiry!"], "include_player_ids": [notificationID]], onSuccess: { (nil) in
                         NSLog("Sent answer-received notification.")
                         }, onFailure: { (error) in
                             NSLog("Error sending answer-received notification: \(error.localizedDescription)")
                     })
+                    }
                 }
             })
             

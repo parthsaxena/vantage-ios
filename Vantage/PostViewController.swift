@@ -111,7 +111,8 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         if (self.titleTextField.text != "" && (self.contentTextView.text != "" && self.contentTextView.text != "What is your problem or assignment?")) {
             NSLog("Posting...")
         if (self.imageFileName == "" && hasImage == true) {
-            let alert = PSAlert.sharedInstance.instantiateAlert("Error", alertText: "Your image has not finished uploading. Please wait a moment...")
+            NSLog("Error posting.")
+            let alert = PSAlert.sharedInstance.instantiateAlert("Please Wait...", alertText: "Your image has not finished uploading. Please wait a moment...")
             self.presentViewController(alert, animated: true, completion: nil)
         } else {
         
@@ -125,7 +126,9 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                 self.imageFileName = "NO_IMAGE_WHITE.jpg"
             }
             
-            FIRDatabase.database().reference().child("users").queryOrderedByChild("email").queryEqualToValue(FIRAuth.auth()?.currentUser?.email!).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+            if let email = FIRAuth.auth()?.currentUser?.email {
+            
+            FIRDatabase.database().reference().child("users").queryOrderedByChild("email").queryEqualToValue(email).queryLimitedToFirst(1).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
                 if let inquiryDictionary = snapshot.value as? [String : AnyObject] {
                     for object in inquiryDictionary {
                         print(object.0)
@@ -136,6 +139,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                             "username": object.0,
                             "subject": GlobalVariables._currentSubjectPostingTo,
                             "createdAt": timestamp,
+                            "active":"true",
                             "id": randomID
                         ]
                         
@@ -150,12 +154,21 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                         alert.addAction(defaultAction)
                         self.presentViewController(alert, animated: true, completion: nil)
                     }
+                } else {
+                    NSLog("something went wrong... \(email)")
+                    let alert = UIAlertController(title: "Alert", message: "Something went wrong... Please try again later. If this issue persists, please contact support.", preferredStyle: .Alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                    alert.view.tintColor = UIColor.redColor()
+                    self.presentViewController(alert, animated: true, completion: nil)
                 }
             })
+            }
         }
         } else {
             NSLog("Fields not filled...")
-            let alert = PSAlert.sharedInstance.instantiateAlert("Error", alertText: "You did not fill out one or more fields.")
+            let alert = UIAlertController(title: "Alert", message: "You did not fill out one or more fields.", preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            alert.view.tintColor = UIColor.redColor()
             self.presentViewController(alert, animated: true, completion: nil)
         }
     }

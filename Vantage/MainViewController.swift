@@ -23,7 +23,7 @@ class MainViewController: UIViewController {
         self.navigationController!.navigationBar.barTintColor = UIColor.whiteColor()
         self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Roboto", size: 30)!, NSForegroundColorAttributeName: UIColor.blackColor()]
         
-        OneSignal.defaultClient().IdsAvailable({ (userId, pushToken) in
+        OneSignal.IdsAvailable({ (userId, pushToken) in
             NSLog("UserId:%@", userId);
             if (pushToken != nil) {
                 
@@ -50,7 +50,7 @@ class MainViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "Not Now", style: .Cancel, handler: nil))
             alert.addAction(UIAlertAction(title: "Sure", style: .Default, handler: { (action) in
                 NSUserDefaults.standardUserDefaults().setBool(true, forKey: "userRated")
-                UIApplication.sharedApplication().openURL(NSURL(string: "itmss://itunes.apple.com/us/app/vantage-homework-help/id1140243092?mt=8ign-msr=https%3A%2F%2Fwww.google.com%2F")!)
+                UIApplication.sharedApplication().openURL(NSURL(string: "itmss://itunes.apple.com/us/app/vantage-homework-help/id1140243092?mt=8")!)
             }))
             self.presentViewController(alert, animated: true, completion: nil)
         } else {
@@ -60,6 +60,23 @@ class MainViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
+        NSLog("Checking for alerts...")
+        FIRDatabase.database().reference().child("miscellaneous").observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+            if let miscDictionary = snapshot.value as? [String : AnyObject] {
+                if (miscDictionary["mainAlert"] as! String != "none") {
+                    // there is a custom mainAlert we must show
+                    NSLog("alert found.")
+                    let alertText = miscDictionary["mainAlert"] as! String
+                    let alert = UIAlertController(title: "Alert", message: alertText, preferredStyle: .Alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                    alert.view.tintColor = UIColor.redColor()
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }
+                NSLog("no alerts found. \(miscDictionary["mainAlert"] as! String)")
+            } else {
+                NSLog("something went wrong finding alerts.")
+            }
+        })
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector:Selector("showRate"), name:
             UIApplicationWillEnterForegroundNotification, object: nil)
@@ -70,7 +87,7 @@ class MainViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "Not Now", style: .Cancel, handler: nil))
             alert.addAction(UIAlertAction(title: "Sure", style: .Default, handler: { (action) in
                 NSUserDefaults.standardUserDefaults().setBool(true, forKey: "userRated")
-                UIApplication.sharedApplication().openURL(NSURL(string: "itmss://itunes.apple.com/us/app/vantage-homework-help/id1140243092?mt=8ign-msr=https%3A%2F%2Fwww.google.com%2F")!)
+                UIApplication.sharedApplication().openURL(NSURL(string: "https://appsto.re/us/uQR9db.i")!)
             }))
             self.presentViewController(alert, animated: true, completion: nil)
         } else {

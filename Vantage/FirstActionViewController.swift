@@ -35,8 +35,8 @@ class FirstActionViewController: UIViewController {
             
             let alert = UIAlertController(title: "Notifications", message: "Many features will not be available without enabling notifications. Would you like to enable notifications?", preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action) in
-                OneSignal.defaultClient().registerForPushNotifications()
-                OneSignal.defaultClient().enableInAppAlertNotification(true)
+                OneSignal.registerForPushNotifications()
+                //OneSignal.enableInAppAlertNotification(true)
             }))
             alert.addAction(UIAlertAction(title: "No", style: .Cancel, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)

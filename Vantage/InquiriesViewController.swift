@@ -65,10 +65,19 @@ class InquiriesViewController: UIViewController, UITableViewDelegate, UITableVie
                     
                     for object in sortedDictionary {                        
                         print(object.1)
-                        self.inquiries.addObject(object.1)
+                        if ((object.1 as! [String: AnyObject])["active"] as? String == "true") {
+                            self.inquiries.addObject(object.1)
+                        }
                     }
-                    self.inquiriesTableView.reloadData()
-                    self.inquiriesTableView.hideLoadingIndicator()
+                    
+                    if (self.inquiries.count == 0) {
+                        self.inquiries.addObject("none")
+                        self.inquiriesTableView.reloadData()
+                        self.inquiriesTableView.hideLoadingIndicator()
+                    } else {
+                        self.inquiriesTableView.reloadData()
+                        self.inquiriesTableView.hideLoadingIndicator()
+                    }
                 }
             } else {
                 self.inquiries.addObject("none")
@@ -97,7 +106,7 @@ class InquiriesViewController: UIViewController, UITableViewDelegate, UITableVie
         
         if let inquiry = self.inquiries[indexPath.row] as? String {
             if inquiry == "none" {
-                cell.textLabel!.text = "There are currently no inquiries in \(GlobalVariables._currentSubjectPostingTo)."
+                cell.textLabel!.text = "There are currently no active inquiries in \(GlobalVariables._currentSubjectPostingTo)."
                 cell.textLabel!.numberOfLines = 0
                 self.inquiriesTableView.separatorStyle = .None
                 return cell

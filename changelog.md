@@ -1,3 +1,11 @@
+# v2.1.0 - many bug fixes, new features [not-tested]
+- Fixed bugs with notification_id
+- Fixed UI bugs
+- Fixed bugs with posting
+- Fixed other miscellaneous bugs
+- Added feature to accept/reject answers
+- New system of tracking inquiries and answers
+
 # v2.0.7 - bug fixes, finalized build, [stable]
 - Many text-wrapping issues have been fixed
 - Changed some navigation-bar titles

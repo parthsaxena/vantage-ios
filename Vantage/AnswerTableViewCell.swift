@@ -13,6 +13,8 @@ class AnswerTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var answerImageView: UIImageView!
     @IBOutlet weak var answerTextView: UITextView!    
+    @IBOutlet weak var rejectButton: UIButton!
+    @IBOutlet weak var acceptButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,10 +31,14 @@ class AnswerTableViewCell: UITableViewCell {
         self.dateLabel.alpha = 0
         self.answerImageView.alpha = 0
         self.answerTextView.alpha = 0
+        self.rejectButton.alpha = 0
+        self.acceptButton.alpha = 0
         UIView.animateWithDuration(0.4) { 
             self.dateLabel.alpha = 1
             self.answerImageView.alpha = 1
             self.answerTextView.alpha = 1
+            self.rejectButton.alpha = 1
+            self.acceptButton.alpha = 1
         }
     }
 

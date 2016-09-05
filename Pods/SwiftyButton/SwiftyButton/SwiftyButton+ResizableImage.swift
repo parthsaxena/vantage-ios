@@ -54,7 +54,7 @@ extension SwiftyButton {
         
         // Create resizable image
         let capInsets = UIEdgeInsets(top: cornerRadius + frontImageOffset, left: cornerRadius, bottom: cornerRadius + shadowHeight - frontImageOffset, right: cornerRadius)
-        let resizableImage = nonResizableImage.resizableImageWithCapInsets(capInsets, resizingMode: .Stretch)
+        let resizableImage = nonResizableImage!.resizableImageWithCapInsets(capInsets, resizingMode: .Stretch)
             
         return resizableImage
     }
@@ -66,8 +66,8 @@ extension SwiftyButton {
         // Create a non-rounded image
     	UIGraphicsBeginImageContextWithOptions(size, false, 0)
         let context = UIGraphicsGetCurrentContext()
-        CGContextSetFillColorWithColor(context, color.CGColor)
-        CGContextFillRect(context, rect)
+        CGContextSetFillColorWithColor(context!, color.CGColor)
+        CGContextFillRect(context!, rect)
         let nonRoundedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
@@ -77,11 +77,11 @@ extension SwiftyButton {
             roundedRect: rect,
             cornerRadius: cornerRadius
         ).addClip()
-        nonRoundedImage.drawInRect(rect)
+        nonRoundedImage!.drawInRect(rect)
         
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        return image
+        return image!
     }
 }

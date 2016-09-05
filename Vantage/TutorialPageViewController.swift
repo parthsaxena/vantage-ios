@@ -16,7 +16,7 @@ class TutorialPageViewController: UIPageViewController {
         dataSource = self
         
         self.view.alpha = 0
-        UIView.animateWithDuration(0.4) { 
+        UIView.animateWithDuration(0.4) {
             self.view.alpha = 1
         }
         
@@ -134,7 +134,7 @@ extension TutorialPageViewController: UIPageViewControllerDataSource {
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
         guard let firstViewController = viewControllers?.first,
-            firstViewControllerIndex = orderedViewControllers.indexOf(firstViewController) else {
+            let firstViewControllerIndex = orderedViewControllers.indexOf(firstViewController) else {
                 return 0
         }
         

@@ -57,7 +57,7 @@ class YourInquiriesViewController: UIViewController, UITableViewDelegate, UITabl
     func loadData() {
         let currentUID = FIRAuth.auth()?.currentUser?.uid
         
-        FIRDatabase.database().reference().child("posts").queryOrderedByChild("username").queryEqualToValue(currentUID).observeEventType(.Value, withBlock: { (snapshot) in
+        FIRDatabase.database().reference().child("posts").queryOrderedByChild("username").queryEqualToValue(currentUID).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
             self.inquiries.removeAllObjects()
             
             if let inquiryDictionary = snapshot.value as? [String : AnyObject] {
@@ -108,14 +108,32 @@ class YourInquiriesViewController: UIViewController, UITableViewDelegate, UITabl
             
             let answersRef = FIRDatabase.database().reference().child("answers").queryOrderedByChild("inquiryID").queryEqualToValue(inquiry["id"] as! String).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
                 if let dictionary = snapshot.value as? [String : AnyObject] {
-                    if dictionary.count != 0 {
-                        if dictionary.count == 1 {
-                            cell.answersLabel!.text = "\(dictionary.count) Answer"                            
+                    let actualAnswers = NSMutableArray()
+                    var inquiryAnswered = false
+                    for answer in dictionary {
+                        if ((answer.1)["accepted"] == "true") {
+                            cell.answersLabel!.text = "✓"
+                            cell.answersLabel!.font = UIFont(name: "Helvetica", size: 27.0)
+                            cell.answersLabel!.textColor = UIColor(red: 0, green: 128, blue: 0, alpha: 1)
+                            inquiryAnswered = true
+                            break
+                        } else if ((answer.1 )["accepted"] == "none") {
+                            actualAnswers.addObject(answer.1)
                         } else {
-                            cell.answersLabel!.text = "\(dictionary.count) Answers"                            
+                            NSLog("accepted value: \(answer.1["accepted"])")
                         }
-                    } else {
-                        cell.answersLabel!.textColor = UIColor.redColor()
+                    }
+                    if (inquiryAnswered == false) {
+                        if actualAnswers.count != 0 {
+                            if actualAnswers.count == 1 {
+                                cell.answersLabel!.text = "\(actualAnswers.count) Answer"
+                            } else {
+                                cell.answersLabel!.text = "\(actualAnswers.count) Answers"
+                            }
+                    
+                        } else {
+                            cell.answersLabel!.textColor = UIColor.redColor()
+                        }
                     }
                 }
             })
@@ -181,6 +199,8 @@ class YourInquiriesViewController: UIViewController, UITableViewDelegate, UITabl
                     } else {
                         for inquiry in inquiryDictionary {
                             FIRDatabase.database().reference().child("posts").child(inquiry.0).removeValue()
+                            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("mainVC")
+                            self.presentViewController(vc!, animated: false, completion: nil)
                         }
                     }
                 } else {
