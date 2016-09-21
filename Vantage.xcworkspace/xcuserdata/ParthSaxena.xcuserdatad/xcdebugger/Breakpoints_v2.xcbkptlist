@@ -128,7 +128,7 @@
             startingLineNumber = "33"
             endingLineNumber = "33"
             landmarkName = "didReceiveMemoryWarning()"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -202,12 +202,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Vantage/AppDelegate.swift"
-            timestampString = "494109196.221077"
+            timestampString = "494924690.650819"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "application(application:performActionForShortcutItem:completionHandler:)"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "application(_:performActionForShortcutItem:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -234,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Vantage/MainViewController.swift"
-            timestampString = "494663738.972933"
+            timestampString = "494921213.266818"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "viewDidAppear(animated:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -257,22 +257,6 @@
             endingLineNumber = "37"
             landmarkName = "AkiraTextField"
             landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Vantage/AppDelegate.swift"
-            timestampString = "494701667.78229"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "application(application:didFinishLaunchingWithOptions:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

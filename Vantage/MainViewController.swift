@@ -58,8 +58,18 @@ class MainViewController: UIViewController {
         }
     }
     
+    func displayVersionError() {
+        let alert = UIAlertController(title: "Alert", message: "You are not on the most recent version of Vantage. Please visit the app store and update Vantage.", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) in
+            self.displayVersionError()
+        }))
+        alert.view.tintColor = UIColor.redColor()
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
+        
         NSLog("Checking for alerts...")
         FIRDatabase.database().reference().child("miscellaneous").observeSingleEventOfType(.Value, withBlock: { (snapshot) in
             if let miscDictionary = snapshot.value as? [String : AnyObject] {
@@ -71,6 +81,14 @@ class MainViewController: UIViewController {
                     alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
                     alert.view.tintColor = UIColor.redColor()
                     self.presentViewController(alert, animated: true, completion: nil)
+                }
+                
+                if (miscDictionary["iosVersion"] as! String != VERSION_NUMBER_STRING) {
+                    // user is not on current version
+                    NSLog("user is not on the current version of Vantage.")
+                    self.displayVersionError()
+                } else {
+                    NSLog(miscDictionary["iosVersion"] as! String)
                 }
                 NSLog("no alerts found. \(miscDictionary["mainAlert"] as! String)")
             } else {

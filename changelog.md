@@ -1,3 +1,6 @@
+# v2.1.2 - UI changes
+- Blur animations on Login / Signup page
+
 # v2.1.0 - many bug fixes, new features [not-tested]
 - Fixed bugs with notification_id
 - Fixed UI bugs

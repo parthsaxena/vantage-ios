@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="16A270f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9zc-Vi-WiA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9zc-Vi-WiA">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -343,11 +343,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="login-bg" translatesAutoresizingMaskIntoConstraints="NO" id="FyA-Zc-pvM">
-                                <frame key="frameInset" width="600" height="600"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Vantage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="We8-gk-4XR">
-                                <frame key="frameInset" minX="206" minY="70" width="188" height="66"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-bg" translatesAutoresizingMaskIntoConstraints="NO" id="FyA-Zc-pvM"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vantage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="We8-gk-4XR">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="188" id="80n-oL-J1b"/>
                                     <constraint firstAttribute="height" constant="66" id="mbK-mE-An2"/>
@@ -356,8 +353,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Schoolwork made easy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beB-hp-3bQ">
-                                <frame key="frameInset" minX="125" minY="208" width="351" height="33"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Schoolwork made easy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beB-hp-3bQ">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="351" id="IAr-O4-Ho9"/>
                                     <constraint firstAttribute="height" constant="33" id="Mno-Mv-ZMk"/>
@@ -366,8 +362,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Already have a Vantage account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBx-RF-HiG">
-                                <frame key="frameInset" minX="166" minY="526" width="269" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have a Vantage account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBx-RF-HiG">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="269" id="fOr-x6-YsT"/>
                                     <constraint firstAttribute="height" constant="21" id="vht-gL-AaQ"/>
@@ -376,8 +371,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVd-Sy-Ei1">
-                                <frame key="frameInset" minX="265" minY="555" width="71" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVd-Sy-Ei1">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="71" id="Bd2-Rk-kjh"/>
                                     <constraint firstAttribute="height" constant="30" id="ZNp-GX-HcG"/>
@@ -387,11 +381,10 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="QMQ-VL-7tK" kind="presentation" id="nqo-YJ-jT1"/>
+                                    <action selector="loginTapped:" destination="LSe-yB-49E" eventType="touchUpInside" id="vhh-KW-IBt"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Wy-Gw-o0S">
-                                <frame key="frameInset" minX="164" minY="434" width="273" height="52"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Wy-Gw-o0S">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="DU0-os-ujN"/>
                                     <constraint firstAttribute="width" constant="273" id="SeJ-IZ-Fii"/>
@@ -399,9 +392,18 @@
                                 <state key="normal" backgroundImage="signup-email"/>
                                 <connections>
                                     <action selector="signUpWithEmailTapped:" destination="LSe-yB-49E" eventType="touchUpInside" id="n62-9Y-uSh"/>
-                                    <segue destination="pUw-uz-drb" kind="presentation" id="vpY-fo-RmN"/>
+                                    <action selector="signupTapped:" destination="LSe-yB-49E" eventType="touchUpInside" id="yy7-b4-Nzy"/>
                                 </connections>
                             </button>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zeb-3H-Z48">
+                                <frame key="frameInset"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="JW0-Lk-Jkp">
+                                    <frame key="frameInset"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" red="0.46749988198280334" green="0.46223986148834229" blue="0.4854971170425415" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -421,10 +423,144 @@
                             <constraint firstItem="IBx-RF-HiG" firstAttribute="top" secondItem="0Wy-Gw-o0S" secondAttribute="bottom" constant="40" id="sLa-0t-BaW"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginEmailField" destination="fIX-tN-DgO" id="xE8-2q-4gu"/>
+                        <outlet property="loginPasswordField" destination="tZc-Ba-QlH" id="5Ez-JY-G3O"/>
+                        <outlet property="loginView" destination="uK1-Fb-uoh" id="T1S-mN-EVy"/>
+                        <outlet property="signInButton" destination="OyJ-bP-uYF" id="7OV-WE-sbW"/>
+                        <outlet property="signUpButton" destination="UdH-0n-0hh" id="SbE-JZ-TVP"/>
+                        <outlet property="signupEmailField" destination="MSB-Yx-0Y3" id="eos-0e-0TN"/>
+                        <outlet property="signupPasswordField" destination="Crv-ZC-y0B" id="GM4-DM-peJ"/>
+                        <outlet property="signupView" destination="M1L-CY-bdg" id="ZJd-db-97M"/>
+                        <outlet property="visualEffectView" destination="Zeb-3H-Z48" id="6mD-U9-kBk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R1j-sj-iIT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="M1L-CY-bdg">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="260"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Crv-ZC-y0B" customClass="HoshiTextField" customModule="Vantage" customModuleProvider="target">
+                            <frame key="frameInset" minX="12" minY="116" width="217" height="66"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                            <color key="textColor" red="0.3422979712" green="0.39760923390000003" blue="0.46281796689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                    <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                    <color key="value" red="0.049557573850000002" green="0.59165427069999998" blue="0.92353707110000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                    <color key="value" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MSB-Yx-0Y3" customClass="HoshiTextField" customModule="Vantage" customModuleProvider="target">
+                            <frame key="frameInset" minX="12" minY="51" width="217" height="66"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                            <color key="textColor" red="0.3422979712" green="0.39760923390000003" blue="0.46281796689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                    <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                    <color key="value" red="0.049557573850000002" green="0.59165427069999998" blue="0.92353707110000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                    <color key="value" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0g-qF-2Ly">
+                            <frame key="frameInset" minX="12" minY="13" width="30" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="x"/>
+                            <connections>
+                                <action selector="close:" destination="LzF-tg-hXZ" eventType="touchUpInside" id="Mew-n6-6EQ"/>
+                                <action selector="exitLoginTapped:" destination="LSe-yB-49E" eventType="touchUpInside" id="fOI-Ae-cx4"/>
+                                <action selector="exitSignupTapped:" destination="LSe-yB-49E" eventType="touchUpInside" id="NEc-CG-vY9"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UdH-0n-0hh">
+                            <frame key="frameInset" minX="61" width="119" height="30" maxY="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                            <state key="normal" title="Get Started &gt;"/>
+                            <connections>
+                                <action selector="signUpTapped:" destination="LzF-tg-hXZ" eventType="touchUpInside" id="Hcf-EV-NQc"/>
+                                <action selector="viewSignupTapped:" destination="LSe-yB-49E" eventType="touchUpInside" id="zSA-Yy-c1m"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" id="uK1-Fb-uoh">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="260"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tZc-Ba-QlH" customClass="HoshiTextField" customModule="Vantage" customModuleProvider="target">
+                            <frame key="frameInset" minX="12" minY="115" width="217" height="66"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                            <color key="textColor" red="0.3422979712" green="0.39760923390000003" blue="0.46281796689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                    <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                    <color key="value" red="0.049557573850000002" green="0.59165427069999998" blue="0.92353707110000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                    <color key="value" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OyJ-bP-uYF">
+                            <frame key="frameInset" minX="74" width="92" height="30" maxY="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                            <state key="normal" title="Log In &gt;"/>
+                            <connections>
+                                <action selector="signUpTapped:" destination="LzF-tg-hXZ" eventType="touchUpInside" id="HQu-Sj-6Dz"/>
+                                <action selector="viewLoginTapped:" destination="LSe-yB-49E" eventType="touchUpInside" id="7kh-Ha-NTP"/>
+                            </connections>
+                        </button>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fIX-tN-DgO" customClass="HoshiTextField" customModule="Vantage" customModuleProvider="target">
+                            <frame key="frameInset" minX="12" minY="50" width="217" height="66"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                            <color key="textColor" red="0.3422979712" green="0.39760923390000003" blue="0.46281796689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                    <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                    <color key="value" red="0.049557573850000002" green="0.59165427069999998" blue="0.92353707110000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                    <color key="value" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="02g-9B-ST6">
+                            <frame key="frameInset" minX="12" minY="12" width="30" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="x"/>
+                            <connections>
+                                <action selector="close:" destination="LzF-tg-hXZ" eventType="touchUpInside" id="WDY-06-uTb"/>
+                                <action selector="exitLoginTapped:" destination="LSe-yB-49E" eventType="touchUpInside" id="MoW-Ie-R05"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </objects>
-            <point key="canvasLocation" x="-616" y="136"/>
+            <point key="canvasLocation" x="-617.39130434782612" y="135.32608695652175"/>
         </scene>
         <!--Ask-->
         <scene sceneID="jfX-M5-V76">

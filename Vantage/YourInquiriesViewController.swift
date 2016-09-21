@@ -132,6 +132,7 @@ class YourInquiriesViewController: UIViewController, UITableViewDelegate, UITabl
                             }
                     
                         } else {
+                            cell.answersLabel!.text = "No Answers"
                             cell.answersLabel!.textColor = UIColor.redColor()
                         }
                     }

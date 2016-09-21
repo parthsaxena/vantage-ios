@@ -71,6 +71,7 @@
 		8BA59BDA1D341EA000DD82FC /* ViewInquiryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA59BD91D341EA000DD82FC /* ViewInquiryViewController.swift */; };
 		8BA59BDC1D3427C800DD82FC /* ViewInquiryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA59BDB1D3427C800DD82FC /* ViewInquiryTableViewCell.swift */; };
 		8BBF55131D277A1500AED9B4 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF55121D277A1500AED9B4 /* GlobalVariables.swift */; };
+		8BD953D71D7FD5A100D888CF /* VERSION_NUMBER.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD953D61D7FD5A100D888CF /* VERSION_NUMBER.swift */; };
 		9CECF16D73129EE16B538735 /* Pods_VantageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBF1DDF3F588BC4C3394EE85 /* Pods_VantageTests.framework */; };
 		DFEA1F3FDE12DC0C5DB2CABA /* Pods_VantageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10DA9A1586B7D20D7F6D4693 /* Pods_VantageUITests.framework */; };
 /* End PBXBuildFile section */
@@ -183,6 +184,7 @@
 		8BA59BDB1D3427C800DD82FC /* ViewInquiryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewInquiryTableViewCell.swift; sourceTree = "<group>"; };
 		8BBF55121D277A1500AED9B4 /* GlobalVariables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
 		8BD953D51D7E0A5400D888CF /* Vantage.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Vantage.entitlements; sourceTree = "<group>"; };
+		8BD953D61D7FD5A100D888CF /* VERSION_NUMBER.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VERSION_NUMBER.swift; sourceTree = "<group>"; };
 		9A343B00619E030DC63C812E /* Pods-Vantage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vantage.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vantage/Pods-Vantage.release.xcconfig"; sourceTree = "<group>"; };
 		CA3DB715400AFB65ED9D6C3F /* Pods-Vantage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vantage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vantage/Pods-Vantage.debug.xcconfig"; sourceTree = "<group>"; };
 		D06CA38762B270CFA1FBD151 /* Pods-VantageTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VantageTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VantageTests/Pods-VantageTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 				8B988D2E1D493FDB00D0133B /* ViewAnswersViewController.swift */,
 				8B988D2C1D493E8C00D0133B /* AnswerTableViewCell.swift */,
 				8B988D241D472A0F00D0133B /* FirstActionViewController.swift */,
+				8BD953D61D7FD5A100D888CF /* VERSION_NUMBER.swift */,
 				8B988D201D4721AB00D0133B /* Inquiry */,
 				8B988D2A1D48AB2D00D0133B /* AnswerViewController.swift */,
 				8B6F5E2A1D25E48E00008FE6 /* Assets.xcassets */,
@@ -690,6 +693,7 @@
 				8B988D291D47642A00D0133B /* ModalSettingsViewController.swift in Sources */,
 				8B9B9B231D5AD08A00CAFE3D /* TutorialPageViewController.swift in Sources */,
 				8BA59BD61D337B1F00DD82FC /* InquiriesViewController.swift in Sources */,
+				8BD953D71D7FD5A100D888CF /* VERSION_NUMBER.swift in Sources */,
 				8B988D231D4721F900D0133B /* ModalSignUpViewController.swift in Sources */,
 				8B6F5E241D25E48E00008FE6 /* AppDelegate.swift in Sources */,
 				8BA59BD41D3372B600DD82FC /* AnswerChooseSubjectViewController.swift in Sources */,

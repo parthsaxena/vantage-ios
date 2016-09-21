@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FIRApp.configure()
         Stripe.setDefaultPublishableKey("pk_test_NnzeD5zsk1xqPSvEGGhGT5f0")
         
-        OneSignal.initWithLaunchOptions(launchOptions, appId: "9fffb537-914a-481a-9f17-a22e2df2c5bb", handleNotificationAction: nil, settings: [kOSSettingsKeyAutoPrompt : false])
+        OneSignal.initWithLaunchOptions(launchOptions, appId: "9fffb537-914a-481a-9f17-a22e2df2c5bb", handleNotificationReceived: nil, handleNotificationAction: nil, settings: [kOSSettingsKeyAutoPrompt : false])
         
         if (NSUserDefaults.standardUserDefaults().boolForKey("HasLaunchedOnce")) {
             // app has been launched before
