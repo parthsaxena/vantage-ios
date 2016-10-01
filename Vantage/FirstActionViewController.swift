@@ -30,6 +30,9 @@ class FirstActionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
+        
         effect = visualEffectView.effect
         visualEffectView.effect = nil
         self.view.sendSubviewToBack(visualEffectView)
@@ -188,7 +191,7 @@ class FirstActionViewController: UIViewController {
                     "notification_id": ""
                 ]
                 newUserRef.setValue(newUser)
-                let vc = self.storyboard?.instantiateViewControllerWithIdentifier("tutorialVC")
+                let vc = self.storyboard?.instantiateViewControllerWithIdentifier("FirstStageVC")
                 //self.dismissViewControllerAnimated(true, completion: nil)
                 self.presentViewController(vc!, animated: false, completion: nil)
             } else {
@@ -215,6 +218,24 @@ class FirstActionViewController: UIViewController {
         //showModal()
     }
     
+    func keyboardWillShow(notification: NSNotification) {
+        
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue()  {
+            //keyboardHeight = keyboardSize.height
+            if self.view.frame.origin.y == 0{
+                self.view.frame.origin.y -= 150
+            }
+        }
+        
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            if self.view.frame.origin.y != 0 {
+                self.view.frame.origin.y += 150
+            }
+        }
+    }
     
     /*
     // MARK: - Navigation

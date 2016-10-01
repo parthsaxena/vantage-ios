@@ -6,6 +6,7 @@ target 'Vantage' do
   use_frameworks!
 
   # Pods for Vantage
+  pod 'IQKeyboardManagerSwift', '4.0.5'
   pod 'Stripe', '~> 6.2.0'
   pod 'Alamofire', '~> 3.4'
   pod 'OneSignal' 

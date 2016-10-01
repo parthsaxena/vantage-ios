@@ -1,3 +1,8 @@
+# v2.1.3 - finalized, polished version
+- Bug fixes
+- Added push notifications for accept/reject
+- Finalized build for release
+
 # v2.1.2 - UI changes
 - Blur animations on Login / Signup page
 

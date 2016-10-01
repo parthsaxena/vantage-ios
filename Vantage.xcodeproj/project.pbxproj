@@ -70,6 +70,11 @@
 		8BA59BD81D337B7B00DD82FC /* InquiryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA59BD71D337B7B00DD82FC /* InquiryTableViewCell.swift */; };
 		8BA59BDA1D341EA000DD82FC /* ViewInquiryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA59BD91D341EA000DD82FC /* ViewInquiryViewController.swift */; };
 		8BA59BDC1D3427C800DD82FC /* ViewInquiryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA59BDB1D3427C800DD82FC /* ViewInquiryTableViewCell.swift */; };
+		8BBA46A51D9663700049F254 /* FirstStageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBA46A41D9663700049F254 /* FirstStageViewController.swift */; };
+		8BBA46A81D966A600049F254 /* SecondStageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBA46A71D966A600049F254 /* SecondStageViewController.swift */; };
+		8BBA46AA1D966A6D0049F254 /* ThirdStageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBA46A91D966A6D0049F254 /* ThirdStageViewController.swift */; };
+		8BBA46AC1D966AE90049F254 /* FourthStageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBA46AB1D966AE90049F254 /* FourthStageViewController.swift */; };
+		8BBA46AE1D966AF60049F254 /* FifthStageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBA46AD1D966AF60049F254 /* FifthStageViewController.swift */; };
 		8BBF55131D277A1500AED9B4 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF55121D277A1500AED9B4 /* GlobalVariables.swift */; };
 		8BD953D71D7FD5A100D888CF /* VERSION_NUMBER.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD953D61D7FD5A100D888CF /* VERSION_NUMBER.swift */; };
 		9CECF16D73129EE16B538735 /* Pods_VantageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBF1DDF3F588BC4C3394EE85 /* Pods_VantageTests.framework */; };
@@ -182,6 +187,11 @@
 		8BA59BD71D337B7B00DD82FC /* InquiryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InquiryTableViewCell.swift; sourceTree = "<group>"; };
 		8BA59BD91D341EA000DD82FC /* ViewInquiryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewInquiryViewController.swift; sourceTree = "<group>"; };
 		8BA59BDB1D3427C800DD82FC /* ViewInquiryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewInquiryTableViewCell.swift; sourceTree = "<group>"; };
+		8BBA46A41D9663700049F254 /* FirstStageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstStageViewController.swift; sourceTree = "<group>"; };
+		8BBA46A71D966A600049F254 /* SecondStageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondStageViewController.swift; sourceTree = "<group>"; };
+		8BBA46A91D966A6D0049F254 /* ThirdStageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdStageViewController.swift; sourceTree = "<group>"; };
+		8BBA46AB1D966AE90049F254 /* FourthStageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthStageViewController.swift; sourceTree = "<group>"; };
+		8BBA46AD1D966AF60049F254 /* FifthStageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FifthStageViewController.swift; sourceTree = "<group>"; };
 		8BBF55121D277A1500AED9B4 /* GlobalVariables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
 		8BD953D51D7E0A5400D888CF /* Vantage.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Vantage.entitlements; sourceTree = "<group>"; };
 		8BD953D61D7FD5A100D888CF /* VERSION_NUMBER.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VERSION_NUMBER.swift; sourceTree = "<group>"; };
@@ -285,6 +295,7 @@
 				8B988D261D47343500D0133B /* ModalLoginViewController.swift */,
 				8B988D281D47642A00D0133B /* ModalSettingsViewController.swift */,
 				8B6F5E271D25E48E00008FE6 /* Main.storyboard */,
+				8BBA46A61D9663800049F254 /* Introduction */,
 				8B9B9B221D5AD08A00CAFE3D /* TutorialPageViewController.swift */,
 				8B750E091D4BE68500331DAA /* AddPaymentViewController.swift */,
 				8B988D2E1D493FDB00D0133B /* ViewAnswersViewController.swift */,
@@ -386,6 +397,18 @@
 				8B47E1471D32C3B9002488E9 /* ChooseSubjectTableViewController.swift */,
 			);
 			name = Answer;
+			sourceTree = "<group>";
+		};
+		8BBA46A61D9663800049F254 /* Introduction */ = {
+			isa = PBXGroup;
+			children = (
+				8BBA46A41D9663700049F254 /* FirstStageViewController.swift */,
+				8BBA46A71D966A600049F254 /* SecondStageViewController.swift */,
+				8BBA46A91D966A6D0049F254 /* ThirdStageViewController.swift */,
+				8BBA46AB1D966AE90049F254 /* FourthStageViewController.swift */,
+				8BBA46AD1D966AF60049F254 /* FifthStageViewController.swift */,
+			);
+			name = Introduction;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -683,12 +706,15 @@
 				8B6F5E261D25E48E00008FE6 /* ViewController.swift in Sources */,
 				8B988D2B1D48AB2E00D0133B /* AnswerViewController.swift in Sources */,
 				8B6F5E661D25E51900008FE6 /* MinoruTextField.swift in Sources */,
+				8BBA46A51D9663700049F254 /* FirstStageViewController.swift in Sources */,
 				8B6F5E641D25E51900008FE6 /* KaedeTextField.swift in Sources */,
 				8B6F5E6A1D25E51900008FE6 /* YoshikoTextField.swift in Sources */,
 				8BBF55131D277A1500AED9B4 /* GlobalVariables.swift in Sources */,
+				8BBA46A81D966A600049F254 /* SecondStageViewController.swift in Sources */,
 				8B6F5E681D25E51900008FE6 /* TextFieldsEffects.swift in Sources */,
 				8B7B641B1D3AD1E10074F35F /* YourInquiriesViewController.swift in Sources */,
 				8B6F5E6C1D25E79B00008FE6 /* PSAlert.swift in Sources */,
+				8BBA46AC1D966AE90049F254 /* FourthStageViewController.swift in Sources */,
 				8B488F001D583895002D6B6A /* LoadingTableView.swift in Sources */,
 				8B988D291D47642A00D0133B /* ModalSettingsViewController.swift in Sources */,
 				8B9B9B231D5AD08A00CAFE3D /* TutorialPageViewController.swift in Sources */,
@@ -703,6 +729,7 @@
 				8B6F5E691D25E51900008FE6 /* YokoTextField.swift in Sources */,
 				8B7B641D1D3ADDED0074F35F /* ViewOwnInquiryViewController.swift in Sources */,
 				8B988D2F1D493FDB00D0133B /* ViewAnswersViewController.swift in Sources */,
+				8BBA46AE1D966AF60049F254 /* FifthStageViewController.swift in Sources */,
 				8BA59BDC1D3427C800DD82FC /* ViewInquiryTableViewCell.swift in Sources */,
 				8BA59BD81D337B7B00DD82FC /* InquiryTableViewCell.swift in Sources */,
 				8B988D251D472A0F00D0133B /* FirstActionViewController.swift in Sources */,
@@ -714,6 +741,7 @@
 				8B47E1481D32C3B9002488E9 /* ChooseSubjectTableViewController.swift in Sources */,
 				8B988D2D1D493E8C00D0133B /* AnswerTableViewCell.swift in Sources */,
 				8B6F5E631D25E51900008FE6 /* JiroTextField.swift in Sources */,
+				8BBA46AA1D966A6D0049F254 /* ThirdStageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

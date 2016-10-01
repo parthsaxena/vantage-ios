@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseMessaging
 import Stripe
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FIRApp.configure()
         Stripe.setDefaultPublishableKey("pk_test_NnzeD5zsk1xqPSvEGGhGT5f0")
+        
+        IQKeyboardManager.sharedManager().enable = true        
         
         OneSignal.initWithLaunchOptions(launchOptions, appId: "9fffb537-914a-481a-9f17-a22e2df2c5bb", handleNotificationReceived: nil, handleNotificationAction: nil, settings: [kOSSettingsKeyAutoPrompt : false])
         

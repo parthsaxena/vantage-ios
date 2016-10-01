@@ -47,7 +47,7 @@ class ViewOwnInquiryViewController: UIViewController, UITableViewDelegate, UITab
         func loadData() {
             let inquiryID = GlobalVariables._currentInquiryIDAnswering
             NSLog(inquiryID)
-            let inquiryRef = FIRDatabase.database().reference().child("posts").queryOrderedByChild("id").queryEqualToValue(inquiryID).queryLimitedToFirst(1).observeEventType(.Value, withBlock: { (snapshot) in
+            let inquiryRef = FIRDatabase.database().reference().child("posts").queryOrderedByChild("id").queryEqualToValue(inquiryID).queryLimitedToFirst(1).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
                 if let inquiryDictionary = snapshot.value as? [String : AnyObject] {
                     if let inquiry = inquiryDictionary.first!.1 as? [String : AnyObject] {
                         self.inquiry.addObject(inquiry)
@@ -56,7 +56,7 @@ class ViewOwnInquiryViewController: UIViewController, UITableViewDelegate, UITab
                 }
             })
         }
-        
+    
         override func didReceiveMemoryWarning() {
             super.didReceiveMemoryWarning()
             // Dispose of any resources that can be recreated.

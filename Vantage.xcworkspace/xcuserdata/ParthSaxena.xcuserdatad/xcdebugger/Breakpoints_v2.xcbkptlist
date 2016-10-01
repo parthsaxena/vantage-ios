@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Vantage/ViewAnswersViewController.swift"
-            timestampString = "494801105.598989"
+            timestampString = "496907623.348349"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "196"
-            endingLineNumber = "196"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
             landmarkName = "loadAnswers()"
             landmarkType = "7">
          </BreakpointContent>
@@ -202,13 +202,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Vantage/AppDelegate.swift"
-            timestampString = "494924690.650819"
+            timestampString = "496191579.171511"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "application(_:performActionForShortcutItem:completionHandler:)"
-            landmarkType = "7">
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "AppDelegate"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -257,6 +257,22 @@
             endingLineNumber = "37"
             landmarkName = "AkiraTextField"
             landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Vantage/FirstStageViewController.swift"
+            timestampString = "496396745.921688"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "startAnimation()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
