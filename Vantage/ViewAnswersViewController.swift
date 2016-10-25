@@ -62,13 +62,37 @@ class ViewAnswersViewController: UIViewController, UITableViewDelegate, UITableV
             FIRDatabase.database().reference().child("answers").child(answerID).updateChildValues(["accepted":"false"])
             
             let inquiryID = GlobalVariables._currentInquiryIDAnswering
-            FIRDatabase.database().reference().child("posts").queryLimitedToFirst(1).queryOrderedByChild("id").queryEqualToValue(inquiryID).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+            let answererUsername = (self.answers[indexPath!.row] as! [String : AnyObject])["username"] as! String
+            FIRDatabase.database().reference().child("users").child(answererUsername).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+                if let userDictionary = snapshot.value as? [String : AnyObject] {
+                    if let notification_id = userDictionary["notification_id"] as? String {
+                        OneSignal.postNotification(["contents": ["en": "Your answer has been rejected."], "include_player_ids": [notification_id]],         onSuccess: { (nil) in
+                            NSLog("Sent answer-rejected notification.")
+                            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("viewOwnInquiryVC")
+                            self.presentViewController(vc!, animated: false, completion: nil)
+                            }, onFailure: { (error) in
+                                NSLog("Error sending answer-rejected notification: \(error.localizedDescription)")
+                                let vc = self.storyboard?.instantiateViewControllerWithIdentifier("viewOwnInquiryVC")
+                                self.presentViewController(vc!, animated: false, completion: nil)
+                        })
+                    } else {
+                        // cannot send notification
+                        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("viewOwnInquiryVC")
+                        self.presentViewController(vc!, animated: false, completion: nil)
+                    }
+                } else {
+                    let alert = PSAlert.sharedInstance.instantiateAlert("Error", alertText: "Something went wrong :/")
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }
+            })
+
+            /*FIRDatabase.database().reference().child("posts").queryLimitedToFirst(1).queryOrderedByChild("id").queryEqualToValue(inquiryID).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
                 if let inquiryDictionary = snapshot.value as? [String : AnyObject] {
                     for inquiry in inquiryDictionary {
                         let actualInquiryID = inquiry.0
                         FIRDatabase.database().reference().child("posts").child(actualInquiryID).updateChildValues(["active":"true"])
                         
-                        let answererUsername = (self.answers[indexPath!.row] as! [String : AnyObject])["username"] as! String
+                        /*let answererUsername = (self.answers[indexPath!.row] as! [String : AnyObject])["username"] as! String
                         FIRDatabase.database().reference().child("users").child(answererUsername).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
                             if let userDictionary = snapshot.value as? [String : AnyObject] {
                                 if let notification_id = userDictionary["notification_id"] as? String {
@@ -90,13 +114,13 @@ class ViewAnswersViewController: UIViewController, UITableViewDelegate, UITableV
                                 let alert = PSAlert.sharedInstance.instantiateAlert("Error", alertText: "Something went wrong :/")
                                 self.presentViewController(alert, animated: true, completion: nil)
                             }
-                        })
+                        })*/
                     }
                 } else {
                     let alert = PSAlert.sharedInstance.instantiateAlert("Error", alertText: "Something went wrong :/")
                     self.presentViewController(alert, animated: true, completion: nil)
                 }
-            })
+            })*/
             
             let vc = self.storyboard?.instantiateViewControllerWithIdentifier("viewOwnInquiryVC")
             self.presentViewController(vc!, animated: false, completion: nil)

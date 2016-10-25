@@ -51,7 +51,7 @@ class AnswerViewController: UIViewController, UITextViewDelegate, UIImagePickerC
         let inquiryID = GlobalVariables._currentInquiryIDAnswering
         
         if (self.imageFileName == "" && hasImage == true) {
-            let alert = PSAlert.sharedInstance.instantiateAlert("Error", alertText: "Your image has not finished uploading. Please wait a moment...")
+            let alert = PSAlert.sharedInstance.instantiateAlert("Please Wait...", alertText: "Your image has not finished uploading. Please wait a moment...")
             self.presentViewController(alert, animated: true, completion: nil)
         } else {
             
@@ -75,7 +75,7 @@ class AnswerViewController: UIViewController, UITextViewDelegate, UIImagePickerC
                 "id": randomID
             ]
             
-            FIRDatabase.database().reference().child("posts").queryOrderedByChild("id").queryEqualToValue(inquiryID).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+        /*FIRDatabase.database().reference().child("posts").queryOrderedByChild("id").queryEqualToValue(inquiryID).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
                 if let inquiryDictionary = snapshot.value as? [String : AnyObject] {
                     for inquiry in inquiryDictionary {
                         let actualInquiryID = inquiry.0
@@ -83,7 +83,7 @@ class AnswerViewController: UIViewController, UITextViewDelegate, UIImagePickerC
                         NSLog("updated inquiry to set active to false. \(inquiryID)")
                     }
                 }
-            })
+            })*/
             
             let postObject = FIRDatabase.database().reference().child("answers").childByAutoId()            
             postObject.setValue(post)
@@ -131,10 +131,6 @@ class AnswerViewController: UIViewController, UITextViewDelegate, UIImagePickerC
     }
     
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
-        if (text == "\n") {
-            textView.resignFirstResponder()
-            return false
-        }
         let newText = (contentTextView.text as NSString).stringByReplacingCharactersInRange(range, withString: text)
         let numberOfChars = newText.characters.count // for Swift use count(newText)
         return numberOfChars <= 600;

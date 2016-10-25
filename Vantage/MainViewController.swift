@@ -11,6 +11,10 @@ import Firebase
 
 class MainViewController: UIViewController {
     
+    var effect: UIVisualEffect!
+    @IBOutlet var visualEffectView: UIVisualEffectView!
+    
+    @IBOutlet var settingsView: UIView!
     @IBOutlet weak var askButton: UIButton!
     @IBOutlet weak var answerButton: UIButton!
     @IBOutlet weak var viewYourQuestionsButton: UIButton!
@@ -22,6 +26,12 @@ class MainViewController: UIViewController {
         self.navigationController?.navigationBar.alpha = 0
         self.navigationController!.navigationBar.barTintColor = UIColor.whiteColor()
         self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Roboto", size: 30)!, NSForegroundColorAttributeName: UIColor.blackColor()]
+        
+        effect = visualEffectView.effect
+        visualEffectView.effect = nil
+        self.view.sendSubviewToBack(visualEffectView)
+        
+        settingsView.layer.cornerRadius = 5
         
         OneSignal.IdsAvailable({ (userId, pushToken) in
             NSLog("UserId:%@", userId);
@@ -41,6 +51,79 @@ class MainViewController: UIViewController {
         });
         
         // Do any additional setup after loading the view.
+    }
+    
+    func animateSettingsIn() {
+        self.view.addSubview(settingsView)
+        settingsView.center = self.view.center
+        
+        settingsView.transform = CGAffineTransformMakeScale(1.3, 1.3)
+        settingsView.alpha = 0
+        self.view.bringSubviewToFront(visualEffectView)
+        self.view.bringSubviewToFront(settingsView)
+        UIView.animateWithDuration(0.4) {
+            self.visualEffectView.effect = self.effect
+            self.settingsView.alpha = 1
+            self.settingsView.transform = CGAffineTransformIdentity
+        }
+    }
+    
+    @IBAction func settingsTapped(sender: AnyObject) {
+        animateSettingsIn()
+    }
+    
+    @IBAction func exitSettingsTapped(sender: AnyObject) {
+        animateSettingsOut()
+    }
+    
+    @IBAction func contactSupportTapped(sender: AnyObject) {
+        let alert = UIAlertController(title: "Contact Support", message: "Need help? Email ceo@socifyinc.com for support.", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func resetPasswordTapped(sender: AnyObject) {
+        let email = FIRAuth.auth()?.currentUser?.email!
+        
+        let alert = UIAlertController(title: "Reset Password", message: "You will receive an email with instructions to reset your password. Are you sure you would like to continue?", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Continue", style: .Default, handler: { (action) in
+            FIRAuth.auth()?.sendPasswordResetWithEmail(email!, completion: { (error) in
+                if error == nil {
+                    let alert = UIAlertController(title: "Success", message: "Instructions on how to reset your password have been sent to your email.", preferredStyle: .Alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: { (action) in
+                        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("homeVC")
+                        self.presentViewController(vc!, animated: false, completion: nil)
+                    }))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }
+            })
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func logOutTapped(sender: AnyObject) {
+        do {
+            try FIRAuth.auth()?.signOut()
+            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("homeVC")
+            self.presentViewController(vc!, animated: false, completion: nil)
+        } catch {
+            let alert = PSAlert.sharedInstance.instantiateAlert("Error", alertText: "There was an error logging you out.")
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func animateSettingsOut() {
+        UIView.animateWithDuration(0.3, animations: {
+            self.settingsView.transform = CGAffineTransformMakeScale(1.3, 1.3)
+            self.settingsView.alpha = 0
+            
+            self.visualEffectView.effect = nil
+            
+        }) { (success: Bool) in
+            self.settingsView.removeFromSuperview()
+            self.view.sendSubviewToBack(self.visualEffectView)
+        }
     }
     
     func showRate() {
@@ -119,7 +202,7 @@ class MainViewController: UIViewController {
         } else {
             // user is already logged in
             UIView.animateWithDuration(0.5, delay: 0.0, options: [], animations: {
-                self.backgroundImageView.alpha = 0.4
+                self.backgroundImageView.alpha = 0.7
                 self.navigationController?.navigationBar.alpha = 1
             }) { (finished) in
                 if finished {
@@ -147,7 +230,6 @@ class MainViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation

@@ -30,6 +30,7 @@ class FourthStageViewController: UIViewController {
         descriptionTextView.center.x = 10
         
         nextButton.alpha = 0
+        nextButton.center.x = self.view.frame.width / 2
         nextButton.center.y = self.view.frame.height - 10
         // Do any additional setup after loading the view.
     }

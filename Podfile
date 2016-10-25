@@ -7,10 +7,10 @@ target 'Vantage' do
 
   # Pods for Vantage
   pod 'IQKeyboardManagerSwift', '4.0.5'
-  pod 'Stripe', '~> 6.2.0'
-  pod 'Alamofire', '~> 3.4'
+  # pod 'Stripe', '~> 6.2.0'
+  # pod 'Alamofire', '~> 3.4'
   pod 'OneSignal' 
-  pod 'SwiftyButton'
+  pod 'SwiftyButton', '0.4.0'
   pod 'Firebase'
   pod 'Firebase/AdMob'
   pod 'Firebase/Analytics'
@@ -22,7 +22,7 @@ target 'Vantage' do
   pod 'Firebase/Messaging'
   pod 'Firebase/RemoteConfig'
   pod 'Firebase/Storage'
-  pod 'JSQMessagesViewController'
+  # pod 'JSQMessagesViewController'
 
   target 'VantageTests' do
     inherit! :search_paths

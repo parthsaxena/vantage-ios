@@ -1,12 +1,20 @@
-# v2.1.3 - finalized, polished version
+# v1.9.1 - final, released to app store
+- Implemented new app icon
+- UI changes
+- Active value of inquiry is only affected when accepting an answer
+- Removed unnecessary options from settings
+- Small new features 
+- Tons of bug fixes
+
+# v1.8.1 - finalized, polished version
 - Bug fixes
 - Added push notifications for accept/reject
 - Finalized build for release
 
-# v2.1.2 - UI changes
+# v1.8.0 - UI changes
 - Blur animations on Login / Signup page
 
-# v2.1.0 - many bug fixes, new features [not-tested]
+# v1.7.0 - many bug fixes, new features [not-tested]
 - Fixed bugs with notification_id
 - Fixed UI bugs
 - Fixed bugs with posting
@@ -14,18 +22,18 @@
 - Added feature to accept/reject answers
 - New system of tracking inquiries and answers
 
-# v2.0.7 - bug fixes, finalized build, [stable]
+# v1.6.0 - bug fixes, finalized build, [stable]
 - Many text-wrapping issues have been fixed
 - Changed some navigation-bar titles
 - UI Tweaks
 - Character limit for inquiries increased to 300
 - Bug fixes
 
-# v2.0.6 - bug fixes
+# v1.5.0 - bug fixes
 - Fixed many bugs relating to screen size issues 
 - Bug fixes
 
-# v2.0.5 - finalized build, [stable]
+# v1.4.0 - finalized build, [stable]
 - Added Tutorial screen to app
 - Fixed many compatiblity bugs with website
 - Implemented better timestamps
@@ -38,29 +46,29 @@
 - Added functionality where image will expand when being tapped on
 - Fixed many other bugs
 
-# v2.0.4 - fixed bugs, [tested build]
+# v1.3.2 - fixed bugs, [tested build]
 - Fixed bug in which the ViewAnswers page would load forever if no answers.
 - Fixed bugs with UI
 
-# v2.0.3 - changed UI theme to white, fixed image loading in posts, [un-tested build]
+# v1.3.1 - changed UI theme to white, fixed image loading in posts, [un-tested build]
 - Changed NavigationBars to white
 - Changed posting to include image extensions when posting "image" value
 - Fixed image loading algorithm
 - **Note:** This is an un-tested build. All that is left in the app is reputation, profiles, and payments.
 
-# v2.0.2 - added in full timestamp support, Stripe support added, bug fixes
+# v1.2.0 - added in full timestamp support, Stripe support added, bug fixes
 - Added algorithm to compute time since inquiry added
 - Added in Stripe library and page in Settings to add credit card
 - Fixed many bugs
 - **Note:** All that is left in the app is reputation, profiles, and payments.
 
-# v2.0.1 - added 3D touch support, bug fixes
+# v1.1.1 - added 3D touch support, bug fixes
 - Fixed bugs with navigation buttons
 - Changed titles of some ViewControllers
 - Bug fixes
 - **Note:** All that is left in the app is reputation, profiles, and payments.
 
-# v2.0 - main update (skipped most updates)
+# v1.1 - main update (skipped most updates)
 - Sign In / Sign Up
 - Updated UI for main screen and login
 - Added ability to ask 

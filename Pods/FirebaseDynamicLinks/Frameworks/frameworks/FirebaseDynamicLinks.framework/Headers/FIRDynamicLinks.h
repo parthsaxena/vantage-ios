@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 
 #import "FIRDynamicLink.h"
+#import "FIRDynamicLinksCommon.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -8,17 +9,6 @@ NS_ASSUME_NONNULL_BEGIN
  * @file FIRDynamicLinks.h
  * @abstract Firebase Dynamic Links
  */
-
-/**
- * @abstract The definition of the block used by |resolveShortLink:completion:|
- */
-typedef void (^FIRDynamicLinkResolverHandler)(NSURL * _Nullable url, NSError * _Nullable error);
-
-/**
- * @abstract The definition of the block used by |handleUniversalLink:completion:|
- */
-typedef void (^FIRDynamicLinkUniversalLinkHandler)(FIRDynamicLink * _Nullable dynamicLink,
-                                                   NSError * _Nullable error);
 
 /**
  * @class FIRDynamicLinks

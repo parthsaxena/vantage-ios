@@ -103,12 +103,12 @@ class ViewOwnInquiryViewController: UIViewController, UITableViewDelegate, UITab
                     let actualAnswers = NSMutableArray()
                     var inquiryAnswered = false
                     for answer in dictionary {
-                        if ((answer.1)["accepted"] == "true") {
+                        if (answer.1["accepted"] == "true") {
                             cell.answerButton.setTitle("View Accepted Answer", forState: UIControlState.Normal)
                             inquiryAnswered = true
                             self.numberOfAnswers = 1
                             break
-                        } else if ((answer.1 )["accepted"] == "none") {
+                        } else if (answer.1["accepted"] == "none") {
                             actualAnswers.addObject(answer.1)
                         } else {
                             NSLog("accepted value: \(answer.1["accepted"])")

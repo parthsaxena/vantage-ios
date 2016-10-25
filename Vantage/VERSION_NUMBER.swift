@@ -8,4 +8,4 @@
 
 import Foundation
 
-let VERSION_NUMBER_STRING = "2.1.0"
+let VERSION_NUMBER_STRING = "1.9.1"

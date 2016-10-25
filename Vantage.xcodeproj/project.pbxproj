@@ -488,7 +488,8 @@
 				TargetAttributes = {
 					8B6F5E1F1D25E48E00008FE6 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = H3MR536ERJ;
+						DevelopmentTeam = 69TNSUL7ZG;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -890,6 +891,7 @@
 				CODE_SIGN_ENTITLEMENTS = Vantage/Vantage.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 69TNSUL7ZG;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -916,6 +918,7 @@
 				CODE_SIGN_ENTITLEMENTS = Vantage/Vantage.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 69TNSUL7ZG;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

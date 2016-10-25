@@ -2,60 +2,70 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
-	<key>CFBundleName</key>
-	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.9.1</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.3</string>
+	<string>1.9.1</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Used to attach images to inquiries.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Roboto-Thin.ttf</string>
+	</array>
 	<key>UIApplicationShortcutItems</key>
 	<array>
 		<dict>
 			<key>UIApplicationShortcutItemIconType</key>
 			<string>UIApplicationShortcutIconTypeAdd</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Need Help?</string>
 			<key>UIApplicationShortcutItemSubtitle</key>
 			<string>Submit an inquiry...</string>
-			<key>UIApplicationShortcutItemUserInfo</key>
-			<dict/>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Need Help?</string>
 			<key>UIApplicationShortcutItemType</key>
 			<string>$(PRODUCT_BUNDLE_IDENTIFIER).ask</string>
+			<key>UIApplicationShortcutItemUserInfo</key>
+			<dict/>
 			<key>firstShortcutKey1</key>
 			<string>firstShortcutKeyValue1</string>
 		</dict>
 		<dict>
 			<key>UIApplicationShortcutItemIconType</key>
 			<string>UIApplicationShortcutIconTypeLove</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Want to Help?</string>
 			<key>UIApplicationShortcutItemSubtitle</key>
 			<string>Answer a question...</string>
-			<key>UIApplicationShortcutItemUserInfo</key>
-			<dict/>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Want to Help?</string>
 			<key>UIApplicationShortcutItemType</key>
 			<string>$(PRODUCT_BUNDLE_IDENTIFIER).answer</string>
+			<key>UIApplicationShortcutItemUserInfo</key>
+			<dict/>
 			<key>secondShortcutKey1</key>
 			<string>secondShortcutKeyValue1</string>
 		</dict>
 	</array>
-	<key>CFBundleExecutable</key>
-	<string>$(EXECUTABLE_NAME)</string>
-	<key>LSRequiresIPhoneOS</key>
-	<true/>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Roboto-Thin.ttf</string>
-	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -66,15 +76,5 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>CFBundlePackageType</key>
-	<string>APPL</string>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Used to attach images to inquiries.</string>
-	<key>CFBundleShortVersionString</key>
-	<string>1.3</string>
 </dict>
 </plist>

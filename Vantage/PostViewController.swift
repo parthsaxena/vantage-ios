@@ -22,6 +22,10 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     var hasImage = false
     
+    override func viewDidAppear(animated: Bool) {
+        titleTextField.becomeFirstResponder()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -61,8 +65,9 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                     NSLog("Bytes of image selected: \(bytesSize)")
                     let xMbSize = bytesSize/1000000
                     let mbSize = round(100.0 * Double(xMbSize)) / 100.0
-                
-                    let alert = PSAlert.sharedInstance.instantiateAlert("Error", alertText: "Your image is \(mbSize) which exceeds the limit of 25 megabytes. Please pick a new image.")
+                    
+                    let alert = UIAlertController(title: "Error", message: "Your image is \(mbSize) which exceeds the limit of 25 megabytes. Please pick a new image.", preferredStyle: .Alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)
                 } else {
                     hasImage = true
@@ -112,7 +117,8 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             NSLog("Posting...")
         if (self.imageFileName == "" && hasImage == true) {
             NSLog("Error posting.")
-            let alert = PSAlert.sharedInstance.instantiateAlert("Please Wait...", alertText: "Your image has not finished uploading. Please wait a moment...")
+            let alert = UIAlertController(title: "Please Wait...", message: "Your image has not finished uploading. Please wait a moment...", preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
         } else {
         
@@ -185,16 +191,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         }
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
-        if (text == "\n") {
-            textView.resignFirstResponder()
-            return false
-        }
         let newText = (contentTextView.text as NSString).stringByReplacingCharactersInRange(range, withString: text)
         let numberOfChars = newText.characters.count // for Swift use count(newText)
         return numberOfChars <= 300;

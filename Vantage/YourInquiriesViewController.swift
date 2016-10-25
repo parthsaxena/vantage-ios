@@ -73,13 +73,27 @@ class YourInquiriesViewController: UIViewController, UITableViewDelegate, UITabl
                         let createdAtTwo = ($1.1 as! [String : AnyObject])["createdAt"] as! Int
                         return createdAtOne > createdAtTwo
                     }
-                    print(sortedDictionary)
+                    //print(sortedDictionary)
                     
                     for inquiry in sortedDictionary {
-                        self.inquiries.addObject(inquiry.1)
+                        
+                        if (inquiry.1["active"] == "discarded") {
+                            //NSLog("DISCARDED VALUE: \(inquiry.1["active"]), INQUIRY ID: \(inquiry.1["id"])")
+                        } else {
+                            NSLog("DISCARDED VALUE: \(inquiry.1["active"]), INQUIRY ID: \(inquiry.1["id"])")
+                            self.inquiries.addObject(inquiry.1)
+                        }
                     }
-                    self.inquiriesTableView.hideLoadingIndicator()
-                    self.inquiriesTableView.reloadData()
+                    if (self.inquiries.count == 0) {
+                        self.inquiries.addObject("none")
+                        self.inquiriesTableView.reloadData()
+                        self.inquiriesTableView.hideLoadingIndicator()
+                        
+                        NSLog("No inquiries found.")
+                    } else {
+                        self.inquiriesTableView.hideLoadingIndicator()
+                        self.inquiriesTableView.reloadData()
+                    }
                 }
             } else {
                 self.inquiries.addObject("none")
@@ -98,6 +112,7 @@ class YourInquiriesViewController: UIViewController, UITableViewDelegate, UITabl
             if inquiry == "none" {
                 cell.textLabel!.text = "You do not have any inquiries."
                 cell.textLabel!.numberOfLines = 0
+                cell.selectionStyle = UITableViewCellSelectionStyle.None
                 self.inquiriesTableView.separatorStyle = .None
                 cell.answersLabel?.hidden = true
                 return cell
@@ -106,18 +121,20 @@ class YourInquiriesViewController: UIViewController, UITableViewDelegate, UITabl
             
             let inquiry = self.inquiries[indexPath.row] as! [String : AnyObject]
             
+            NSLog("inquiry ID: \(inquiry["id"] as! String)")
             let answersRef = FIRDatabase.database().reference().child("answers").queryOrderedByChild("inquiryID").queryEqualToValue(inquiry["id"] as! String).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
                 if let dictionary = snapshot.value as? [String : AnyObject] {
+                    NSLog("ANSWERS COUNT: \(snapshot.value!.count)")
                     let actualAnswers = NSMutableArray()
                     var inquiryAnswered = false
                     for answer in dictionary {
-                        if ((answer.1)["accepted"] == "true") {
+                        if (answer.1["accepted"] == "true") {
                             cell.answersLabel!.text = "✓"
                             cell.answersLabel!.font = UIFont(name: "Helvetica", size: 27.0)
                             cell.answersLabel!.textColor = UIColor(red: 0, green: 128, blue: 0, alpha: 1)
                             inquiryAnswered = true
                             break
-                        } else if ((answer.1 )["accepted"] == "none") {
+                        } else if (answer.1["accepted"] == "none") {
                             actualAnswers.addObject(answer.1)
                         } else {
                             NSLog("accepted value: \(answer.1["accepted"])")
@@ -176,15 +193,16 @@ class YourInquiriesViewController: UIViewController, UITableViewDelegate, UITabl
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let inquiry = self.inquiries[indexPath.row] as! [String : AnyObject]
-        let inquiryID = inquiry["id"]
-        let inquirySubject = inquiry["subject"]
+        if let inquiry = self.inquiries[indexPath.row] as? [String : AnyObject] {
+            let inquiryID = inquiry["id"]
+            let inquirySubject = inquiry["subject"]
         
-        GlobalVariables._currentSubjectPostingTo = inquirySubject as! String
-        GlobalVariables._currentInquiryIDAnswering = inquiryID as! String
+            GlobalVariables._currentSubjectPostingTo = inquirySubject as! String
+            GlobalVariables._currentInquiryIDAnswering = inquiryID as! String
         
-        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("viewOwnInquiryVC")
-        self.presentViewController(vc!, animated: false, completion: nil)
+            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("viewOwnInquiryVC")
+            self.presentViewController(vc!, animated: false, completion: nil)
+        }
     }
     
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
@@ -199,7 +217,7 @@ class YourInquiriesViewController: UIViewController, UITableViewDelegate, UITabl
                         NSLog("something serious just went wrong...")
                     } else {
                         for inquiry in inquiryDictionary {
-                            FIRDatabase.database().reference().child("posts").child(inquiry.0).removeValue()
+                            FIRDatabase.database().reference().child("posts").child(inquiry.0).updateChildValues(["active":"discarded"])
                             let vc = self.storyboard?.instantiateViewControllerWithIdentifier("mainVC")
                             self.presentViewController(vc!, animated: false, completion: nil)
                         }

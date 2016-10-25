@@ -44,7 +44,7 @@ class InquiriesViewController: UIViewController, UITableViewDelegate, UITableVie
     func loadData() {
         let ref = FIRDatabase.database().reference().child("posts").queryOrderedByChild("subject").queryEqualToValue(GlobalVariables._currentSubjectPostingTo)
         
-        ref.observeEventType(.Value, withBlock: { (snapshot) in
+        ref.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
             if let inquiryDictionary = snapshot.value as? [String : AnyObject] {
                 
                 if inquiryDictionary.count == 0 {
@@ -107,6 +107,7 @@ class InquiriesViewController: UIViewController, UITableViewDelegate, UITableVie
         if let inquiry = self.inquiries[indexPath.row] as? String {
             if inquiry == "none" {
                 cell.textLabel!.text = "There are currently no active inquiries in \(GlobalVariables._currentSubjectPostingTo)."
+                cell.selectionStyle = UITableViewCellSelectionStyle.None
                 cell.textLabel!.numberOfLines = 0
                 self.inquiriesTableView.separatorStyle = .None
                 return cell
@@ -152,13 +153,14 @@ class InquiriesViewController: UIViewController, UITableViewDelegate, UITableVie
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let inquiry = self.inquiries[indexPath.row] as! [String : AnyObject]
-        let inquiryID = inquiry["id"]
+        if let inquiry = self.inquiries[indexPath.row] as? [String : AnyObject] {
+            let inquiryID = inquiry["id"]
         
-        GlobalVariables._currentInquiryIDAnswering = inquiryID as! String
+            GlobalVariables._currentInquiryIDAnswering = inquiryID as! String
         
-        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("viewInquiryVC")
-        self.presentViewController(vc!, animated: false, completion: nil)
+            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("viewInquiryVC")
+            self.presentViewController(vc!, animated: false, completion: nil)
+        }
     }
 
     /*
