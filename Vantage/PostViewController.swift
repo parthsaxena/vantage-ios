@@ -71,9 +71,29 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     @IBAction func selectImageTapped(_ sender: AnyObject) {
-        let picker = UIImagePickerController()
-        picker.delegate = self
-        present(picker, animated: true, completion: nil)
+        let alert = UIAlertController(title: "Choose Action", message: "Would you like to choose an image from your photo library or take a picture with your camera?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (action) in
+            // open photo library
+            let picker = UIImagePickerController()
+            picker.delegate = self
+            self.present(picker, animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action) in
+            // open camera
+            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+                let imagePicker = UIImagePickerController()
+                imagePicker.delegate = self
+                imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+                imagePicker.allowsEditing = false
+                self.present(imagePicker, animated: true, completion: nil)
+            } else {
+                let noCameraAlert = UIAlertController(title: "Error", message: "Your device does not support this function.", preferredStyle: .alert)
+                noCameraAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                noCameraAlert.view.tintColor = UIColor.red
+                self.present(noCameraAlert, animated: true, completion: nil)
+            }
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

@@ -165,7 +165,7 @@ class ViewInquiryViewController: UIViewController, UITableViewDelegate, UITableV
         let imageName = inquiry["image"] as! String
         let imageRef = FIRStorage.storage().reference(forURL: "gs://vantage-e9003.appspot.com").child("images/\(imageName)")
         
-        imageRef.data(withMaxSize: 10 * 1024 * 1024) { (data, error) -> Void in
+        imageRef.data(withMaxSize: 25 * 1024 * 1024) { (data, error) -> Void in
             if error == nil {
                 let image = UIImage(data: data!)
                 self.currentImageDisplaying = image!
@@ -328,6 +328,17 @@ class ViewInquiryViewController: UIViewController, UITableViewDelegate, UITableV
         }))
         alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func backTapped(sender: Any) {
+        if GlobalVariables._isViewingAllInquiries {
+            GlobalVariables._isViewingAllInquiries = false
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "ViewAllInquiriesVC")
+            self.present(vc!, animated: false, completion: nil)
+        } else {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "inquiriesVC")
+            self.present(vc!, animated: false, completion: nil)
+        }
     }
     
     /*

@@ -50,6 +50,7 @@ class YourInquiriesViewController: UIViewController, UITableViewDelegate, UITabl
         self.activityIndicatorView.startAnimating()
         //self.inquiriesTableView.showLoadingIndicator()
         loadData()
+        self.inquiriesTableView.tableFooterView = UIView()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

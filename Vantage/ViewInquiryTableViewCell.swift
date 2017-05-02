@@ -33,7 +33,7 @@ class ViewInquiryTableViewCell: UITableViewCell {
 
     func configureCell(_ image: String) {
         let imageRef = FIRStorage.storage().reference(forURL: "gs://vantage-e9003.appspot.com").child("images/\(image).jpg")
-        imageRef.data(withMaxSize: 5 * 1024 * 1024) { (data, error) -> Void in
+        imageRef.data(withMaxSize: 25 * 1024 * 1024) { (data, error) -> Void in
             if error == nil {
                 let image = UIImage(data: data!)
                 self.inquiryImage.displayImage(image!)

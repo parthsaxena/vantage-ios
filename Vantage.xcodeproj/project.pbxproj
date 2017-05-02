@@ -94,6 +94,8 @@
 		8BF432B51E9E0A500097C350 /* vg_mute_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF432AE1E9E0A500097C350 /* vg_mute_on.png */; };
 		8BF432B61E9E0A500097C350 /* vg_privacy.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BF432AF1E9E0A500097C350 /* vg_privacy.png */; };
 		8BF432B71E9E0A500097C350 /* VungleSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BF432B01E9E0A500097C350 /* VungleSDK.framework */; };
+		8BF432DB1EB04F170097C350 /* ViewAllInquiriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF432DA1EB04F170097C350 /* ViewAllInquiriesViewController.swift */; };
+		8BF432DD1EB050610097C350 /* ViewAllInquiriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF432DC1EB050610097C350 /* ViewAllInquiriesTableViewCell.swift */; };
 		9CECF16D73129EE16B538735 /* Pods_VantageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBF1DDF3F588BC4C3394EE85 /* Pods_VantageTests.framework */; };
 		DFEA1F3FDE12DC0C5DB2CABA /* Pods_VantageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10DA9A1586B7D20D7F6D4693 /* Pods_VantageUITests.framework */; };
 /* End PBXBuildFile section */
@@ -248,6 +250,8 @@
 		8BF432AE1E9E0A500097C350 /* vg_mute_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vg_mute_on.png; sourceTree = "<group>"; };
 		8BF432AF1E9E0A500097C350 /* vg_privacy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vg_privacy.png; sourceTree = "<group>"; };
 		8BF432B01E9E0A500097C350 /* VungleSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VungleSDK.framework; sourceTree = "<group>"; };
+		8BF432DA1EB04F170097C350 /* ViewAllInquiriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAllInquiriesViewController.swift; sourceTree = "<group>"; };
+		8BF432DC1EB050610097C350 /* ViewAllInquiriesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAllInquiriesTableViewCell.swift; sourceTree = "<group>"; };
 		9A343B00619E030DC63C812E /* Pods-Vantage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vantage.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vantage/Pods-Vantage.release.xcconfig"; sourceTree = "<group>"; };
 		CA3DB715400AFB65ED9D6C3F /* Pods-Vantage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vantage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vantage/Pods-Vantage.debug.xcconfig"; sourceTree = "<group>"; };
 		D06CA38762B270CFA1FBD151 /* Pods-VantageTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VantageTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VantageTests/Pods-VantageTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -383,12 +387,14 @@
 			children = (
 				8BD953D51D7E0A5400D888CF /* Vantage.entitlements */,
 				8B83C5CC1D49853A0072D423 /* Vantage-Bridging-Header.h */,
+				8BF432DA1EB04F170097C350 /* ViewAllInquiriesViewController.swift */,
 				8BEE0FA11DC460D5001E2E59 /* ConnectionManager.swift */,
 				8B6F5E231D25E48E00008FE6 /* AppDelegate.swift */,
 				8B47E1431D32C1F5002488E9 /* MainViewController.swift */,
 				8B6F5EA31D266FE400008FE6 /* PostViewController.swift */,
 				8B988D241D472A0F00D0133B /* FirstActionViewController.swift */,
 				8B6F5E271D25E48E00008FE6 /* Main.storyboard */,
+				8BF432DC1EB050610097C350 /* ViewAllInquiriesTableViewCell.swift */,
 				8B5CE90E1E8D104400F26BD0 /* ChatTableViewCell.swift */,
 				8B5CE90A1E8D056900F26BD0 /* ChatViewController.swift */,
 				8B5CE90C1E8D0EAB00F26BD0 /* ViewChatsViewController.swift */,
@@ -911,6 +917,7 @@
 				8BBA46A51D9663700049F254 /* FirstStageViewController.swift in Sources */,
 				8BBF55131D277A1500AED9B4 /* GlobalVariables.swift in Sources */,
 				8BC172DF1DE11C8E00C55A5F /* ImageScrollView.swift in Sources */,
+				8BF432DB1EB04F170097C350 /* ViewAllInquiriesViewController.swift in Sources */,
 				8BBA46A81D966A600049F254 /* SecondStageViewController.swift in Sources */,
 				8B7B641B1D3AD1E10074F35F /* YourInquiriesViewController.swift in Sources */,
 				8B6F5E6C1D25E79B00008FE6 /* PSAlert.swift in Sources */,
@@ -938,6 +945,7 @@
 				8B47E1481D32C3B9002488E9 /* ChooseSubjectTableViewController.swift in Sources */,
 				8B988D2D1D493E8C00D0133B /* AnswerTableViewCell.swift in Sources */,
 				8B5CE90B1E8D056900F26BD0 /* ChatViewController.swift in Sources */,
+				8BF432DD1EB050610097C350 /* ViewAllInquiriesTableViewCell.swift in Sources */,
 				8BBA46AA1D966A6D0049F254 /* ThirdStageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

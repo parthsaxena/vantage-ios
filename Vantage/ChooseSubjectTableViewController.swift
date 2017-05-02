@@ -84,6 +84,9 @@ class ChooseSubjectTableViewController: UIViewController, UITableViewDelegate, U
                 }
             }
             self.subjectsTableView.reloadData()
+            if let scrollPosition = GlobalVariables._chooseSubjectContentOffset {
+                self.subjectsTableView.contentOffset = scrollPosition
+            }
             self.activityIndicatorView.stopAnimating()
             UIView.animate(withDuration: 0.1, animations: {
                 self.activityIndicatorView.alpha = 0
@@ -127,6 +130,7 @@ class ChooseSubjectTableViewController: UIViewController, UITableViewDelegate, U
         let cellSubject = (self.items[indexPath.section] as! NSMutableArray)[indexPath.row] as! String
         
         GlobalVariables._currentSubjectPostingTo = cellSubject
+        GlobalVariables._chooseSubjectContentOffset = self.subjectsTableView.contentOffset
         
         //Armchair.userDidSignificantEvent(false)
         GlobalVariables._displayRateAlert = true

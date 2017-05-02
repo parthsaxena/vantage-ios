@@ -53,6 +53,7 @@ class GiftCardsViewController: UIViewController, UITableViewDelegate, UITableVie
         
         self.giftCardsTableView.delegate = self
         self.giftCardsTableView.dataSource = self
+        self.giftCardsTableView.tableFooterView = UIView()
         
         //giftCardsTableView.showLoadingIndicator()
         ConnectionManager().getGiftCards { (result) in
@@ -67,6 +68,7 @@ class GiftCardsViewController: UIViewController, UITableViewDelegate, UITableVie
                 }
                 DispatchQueue.main.async(execute: { 
                     self.giftCardsTableView.reloadData()
+                    self.giftCardsTableView.tableFooterView = UIView()
                     UIView.animate(withDuration: 0.1, animations: {
                         self.activityIndicatorView.alpha = 0
                         self.giftCardsTableView.alpha = 1

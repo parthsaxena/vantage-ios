@@ -25,4 +25,9 @@ class GlobalVariables {
     static var _displayRateAlert = false
     
     static var _isStartingNewChat = false
+    
+    static var _answerChooseSubjectContentOffset: CGPoint!
+    static var _chooseSubjectContentOffset: CGPoint!
+    
+    static var _isViewingAllInquiries = false
 }

@@ -87,6 +87,9 @@ class AnswerChooseSubjectViewController: UIViewController, UITableViewDelegate, 
                 }
             }
             self.subjectsTableView.reloadData()
+            if let scrollPosition = GlobalVariables._answerChooseSubjectContentOffset {
+                self.subjectsTableView.contentOffset = scrollPosition
+            }
             self.activityIndicatorView.stopAnimating()
             UIView.animate(withDuration: 0.1, animations: { 
                 self.activityIndicatorView.alpha = 0
@@ -131,6 +134,7 @@ class AnswerChooseSubjectViewController: UIViewController, UITableViewDelegate, 
                 print("SELECTED: \(cellSubject)")
                 
                 GlobalVariables._currentSubjectPostingTo = cellSubject
+                GlobalVariables._answerChooseSubjectContentOffset = self.subjectsTableView.contentOffset
                 
                 print("SELECTED1: \(GlobalVariables._currentSubjectPostingTo)")
                 

@@ -262,7 +262,7 @@ class ViewAnswersViewController: UIViewController, UITableViewDelegate, UITableV
         
         let imageName = answer["image"] as! String
         let imageRef = FIRStorage.storage().reference(forURL: "gs://vantage-e9003.appspot.com").child("images/\(imageName)")
-        imageRef.data(withMaxSize: 10 * 1024 * 1024) { (data, error) -> Void in
+        imageRef.data(withMaxSize: 25 * 1024 * 1024) { (data, error) -> Void in
             if error == nil {
                 let image = UIImage(data: data!)
                 self.currentImageDisplaying = image!
