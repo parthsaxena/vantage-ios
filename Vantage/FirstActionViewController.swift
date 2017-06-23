@@ -129,12 +129,14 @@ class FirstActionViewController: UIViewController {
             UserDefaults.standard.set(true, forKey:"HasLaunchedOnce")
             UserDefaults.standard.synchronize()
             
-            let alert = UIAlertController(title: "Notifications", message: "Many features will not be available without enabling notifications. Would you like to enable notifications?", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in
-                OneSignal.registerForPushNotifications()
+            let alert = UIAlertController(title: "Notifications", message: "Many features will not be available without enabling notifications. Please enable notifications if you have not already.", preferredStyle: .alert)
+            /*alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in
+                //OneSignal.registerForPushNotifications()
+                OneSignal.promptForPushNotifications(userResponse: nil)
                 //OneSignal.enableInAppAlertNotification(true)
-            }))
-            alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+            }))*/
+            //alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
     }

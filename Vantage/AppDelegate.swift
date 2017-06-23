@@ -25,10 +25,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if FIRAuth.auth()?.currentUser == nil {
             // user not logged in
+            print("USER NOT LOGGED IN")
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "homeVC")
-            let rootVC = UIApplication.shared.keyWindow?.rootViewController
-            rootVC?.present(vc, animated: false, completion: nil)
+            let homeVC : UIViewController = storyboard.instantiateViewController(withIdentifier: "homeVC") as UIViewController
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            self.window?.rootViewController = homeVC
+            self.window?.makeKeyAndVisible()
+        } else {
+            // user logged in
+            print("USER LOGGED IN")
         }
         
         var appID = "5832457719ebf7b7170001e8"

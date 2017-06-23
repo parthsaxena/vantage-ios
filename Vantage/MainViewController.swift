@@ -364,7 +364,11 @@ import Armchair
             self.coinsAmount = result as! String
             print("COINS: \(self.coinsAmount)")
             DispatchQueue.main.async(execute: {
-                self.coinsButton.setTitle("\(self.coinsAmount) coins", for: UIControlState())
+                if self.coinsAmount == "1" {
+                    self.coinsButton.setTitle("\(self.coinsAmount) coin", for: UIControlState())
+                } else {
+                    self.coinsButton.setTitle("\(self.coinsAmount) coins", for: UIControlState())
+                }
             })
             //self.coinsButton.setTitleColor(UIColor(red: 212, green: 175, blue: 55, alpha: 1.0), forState: UIControlState.Normal)
         }

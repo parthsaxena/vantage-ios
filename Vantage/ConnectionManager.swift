@@ -15,7 +15,7 @@ class ConnectionManager {
     
     func getCoins(_ completion: @escaping(_ result: AnyObject) -> Void) {
         
-        var request = NSMutableURLRequest(url: URL(string: "https://secure.vantage.social/get_coins.php")!)
+        var request = NSMutableURLRequest(url: URL(string: "https://vantage-backend-staging.herokuapp.com/get_coins.php")!)
         request.httpMethod = "POST"
         if let uid = FIRAuth.auth()?.currentUser?.uid {
             let postString = "uid=\(uid)"
@@ -42,7 +42,7 @@ class ConnectionManager {
     
     func getGiftCards(_ completion: @escaping (_ result: AnyObject) -> Void) {
         
-        var request = NSMutableURLRequest(url: URL(string: "https://secure.vantage.social/get_giftcard_list.php")!)
+        var request = NSMutableURLRequest(url: URL(string: "https://vantage-backend-staging.herokuapp.com/get_giftcard_list.php")!)
         request.httpMethod = "POST"
         if let uid = FIRAuth.auth()?.currentUser?.uid {
             let postString = ""
@@ -76,7 +76,7 @@ class ConnectionManager {
     }
     
     func transferCoins(_ uidOne: String, uidTwo: String, inquiryID: String, amount: String, completion: @escaping (_ result: AnyObject) -> Void) {
-        var request = NSMutableURLRequest(url: URL(string: "https://secure.vantage.social/transfer_coins.php")!)
+        var request = NSMutableURLRequest(url: URL(string: "https://vantage-backend-staging.herokuapp.com/transfer_coins.php")!)
         request.httpMethod = "POST"
         if let uid = FIRAuth.auth()?.currentUser?.uid {
             let postString = "uidOne=\(uidOne)&uidTwo=\(uidTwo)&amount=\(amount)&inquiryID=\(inquiryID)"
@@ -101,7 +101,7 @@ class ConnectionManager {
     }
     
     func purchaseGiftCard(_ uid: String, giftCard: String, completion: @escaping (_ result: AnyObject) -> Void) {
-        var request = NSMutableURLRequest(url: URL(string: "https://secure.vantage.social/purchase_giftcard.php")!)
+        var request = NSMutableURLRequest(url: URL(string: "https://vantage-backend-staging.herokuapp.com/purchase_giftcard.php")!)
         request.httpMethod = "POST"
         if let uid = FIRAuth.auth()?.currentUser?.uid {
             let postString = "uid=\(uid)&giftCardKey=\(giftCard)"
@@ -127,7 +127,7 @@ class ConnectionManager {
     }
     
     func sendVideoTime(_ time: Int, completion: @escaping (_ result: AnyObject) -> Void) {
-        let request = NSMutableURLRequest(url: URL(string: "https://secure.vantage.social/put_video_ad_time.php")!)
+        let request = NSMutableURLRequest(url: URL(string: "https://vantage-backend-staging.herokuapp.com/put_video_ad_time.php")!)
         request.httpMethod = "POST"
         if let uid = FIRAuth.auth()?.currentUser?.uid {
             let postString = "uid=\(uid)&time=\(time)"
@@ -152,7 +152,7 @@ class ConnectionManager {
     }
     
     func getVideoTime(_ completion: @escaping (_ result: AnyObject) -> Void) {
-        let request = NSMutableURLRequest(url: URL(string: "https://secure.vantage.social/get_video_ad_time.php")!)
+        let request = NSMutableURLRequest(url: URL(string: "https://vantage-backend-staging.herokuapp.com/get_video_ad_time.php")!)
         request.httpMethod = "POST"
         if let uid = FIRAuth.auth()?.currentUser?.uid {
             let postString = "uid=\(uid)"
@@ -177,7 +177,7 @@ class ConnectionManager {
     }
     
     func requestFourCoins(_ time: Int, completion: @escaping (_ result: AnyObject) -> Void) {
-        let request = NSMutableURLRequest(url: URL(string: "https://secure.vantage.social/request_four_coins.php")!)
+        let request = NSMutableURLRequest(url: URL(string: "https://vantage-backend-staging.herokuapp.com/request_four_coins.php")!)
         request.httpMethod = "POST"
         if let uid = FIRAuth.auth()?.currentUser?.uid {
             let postString = "uid=\(uid)&time=\(time)"

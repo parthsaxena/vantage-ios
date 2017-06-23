@@ -5,7 +5,7 @@ target 'Vantage' do
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
   # Pods for Vantage
-  pod 'Armchair', '>= 0.1'
+  pod 'Armchair', '>= 0.3'
   pod 'IQKeyboardManagerSwift'
   #  pod 'Stripe', '~> 6.2.0'
   # pod 'Alamofire', '~> 3.4'

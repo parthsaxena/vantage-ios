@@ -17,12 +17,46 @@ class InquiriesViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBOutlet weak var inquiriesTableView: UITableView!
     @IBOutlet weak var bannerView: GADBannerView!
+    @IBOutlet weak var subscribeButton: UIBarButtonItem!
     
     var activityIndicatorView: NVActivityIndicatorView!
     
+    var isUserSubscribed = false
+    
+    func checkIfSubscribed() {
+        OneSignal.getTags({ tags in
+            print("GOT USER'S TAGS, \(tags)")
+            var alreadyHasSubscription = false
+            if let subscriptionValue = tags?[GlobalVariables._currentSubjectPostingTo] as? String {
+                if subscriptionValue == "subscribed" {
+                    alreadyHasSubscription = true
+                }
+            }
+            if alreadyHasSubscription {
+                self.isUserSubscribed = true
+                DispatchQueue.main.async {
+                    let font:UIFont = UIFont.systemFont(ofSize: 17.0)
+                    let attributes:[String : Any] = [NSFontAttributeName: font]
+                    self.subscribeButton.setTitleTextAttributes(attributes, for: UIControlState.normal)
+                    self.subscribeButton.title = "Unsubscribe"
+                    self.subscribeButton.tintColor = UIColor.red
+                }
+            } else {
+                DispatchQueue.main.async {
+                    let font:UIFont = UIFont.boldSystemFont(ofSize: 17.0);
+                    let attributes:[String : Any] = [NSFontAttributeName: font]
+                    self.subscribeButton.setTitleTextAttributes(attributes, for: UIControlState.normal)
+                    self.subscribeButton.title = "Subscribe"
+                }
+            }
+        })
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        checkIfSubscribed()
+        
         let request = GADRequest()
         request.testDevices = [kGADSimulatorID]
         bannerView.delegate = self
@@ -175,7 +209,15 @@ class InquiriesViewController: UIViewController, UITableViewDelegate, UITableVie
             //let minutes =
             if hours != 0 {
                 // there are hours
-                cell.dateLabel.text = "\(hours)h, \(minutes)m ago"
+                if hours >= 24 {
+                    // more than or equal to one day
+                    let days = Int(hours/24)
+                    let remainderHours = Int(hours % 24)
+                    print("DAYS: \(days), REMAINDER HOURS: \(remainderHours)")
+                    cell.dateLabel.text = "\(days)d, \(remainderHours)h ago"
+                } else {
+                    cell.dateLabel.text = "\(hours)h, \(minutes)m ago"
+                }
             } else {
                 // there are no hours
                 if minutes == 0 {
@@ -206,6 +248,56 @@ class InquiriesViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
 
+    @IBAction func subscribeTapped(sender: Any) {
+        if !isUserSubscribed {
+            // subscribe user
+            let loadingAlert = UIAlertController(title: "Subscribing...", message: nil, preferredStyle: .alert)
+            self.present(loadingAlert, animated: true, completion: nil)
+            OneSignal.sendTag(GlobalVariables._currentSubjectPostingTo, value: "subscribed", onSuccess: { (success) in
+                print("Successfully saved tags.")
+                loadingAlert.dismiss(animated: true, completion: nil)
+                let successAlert = UIAlertController(title: "Awesome!", message: "You are now subscribed to \(GlobalVariables._currentSubjectPostingTo)!", preferredStyle: .alert)
+                successAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(successAlert, animated: true, completion: nil)
+                let font:UIFont = UIFont.systemFont(ofSize: 17.0)
+                let attributes:[String : Any] = [NSFontAttributeName: font]
+                self.subscribeButton.setTitleTextAttributes(attributes, for: UIControlState.normal)
+                self.subscribeButton.title = "Unsubscribe"
+                self.subscribeButton.tintColor = UIColor.red
+                self.isUserSubscribed = true
+            }, onFailure: { (error) in
+                print("Error saving tag, \(error?.localizedDescription)")
+                loadingAlert.dismiss(animated: true, completion: nil)
+                let errorAlert = UIAlertController(title: "Whoops!", message: "There was an issue subscribing you to \(GlobalVariables._currentSubjectPostingTo). Please try again later!", preferredStyle: .alert)
+                errorAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                errorAlert.view.tintColor = UIColor.red
+                self.present(errorAlert, animated: true, completion: nil)
+            })
+        } else {
+            // unsubscribe user
+            let loadingAlert = UIAlertController(title: "Unsubscribing...", message: nil, preferredStyle: .alert)
+            self.present(loadingAlert, animated: true, completion: nil)
+            OneSignal.deleteTag(GlobalVariables._currentSubjectPostingTo, onSuccess: { (success) in
+                loadingAlert.dismiss(animated: true, completion: nil)
+                let alert = UIAlertController(title: "Success", message: "You have been unsubscribed from \(GlobalVariables._currentSubjectPostingTo).", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                let font:UIFont = UIFont.boldSystemFont(ofSize: 17.0);
+                let attributes:[String : Any] = [NSFontAttributeName: font]
+                self.subscribeButton.setTitleTextAttributes(attributes, for: UIControlState.normal)
+                self.subscribeButton.title = "Subscribe"
+                self.subscribeButton.tintColor = self.view.tintColor
+                self.isUserSubscribed = false
+            }, onFailure: { (error) in
+                loadingAlert.dismiss(animated: true, completion: nil)
+                let alert = UIAlertController(title: "Error", message: "There was an issue unsubscribing you from this subject.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                alert.view.tintColor = UIColor.red
+                self.present(alert, animated: true, completion: nil)
+            })
+        }
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

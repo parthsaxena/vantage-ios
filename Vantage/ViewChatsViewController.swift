@@ -15,7 +15,7 @@ class ViewChatsViewController: UITableViewController {
     var conversationIDs = NSMutableArray()
     var conversations = NSMutableArray()
     
-    var activityIndicatorView: NVActivityIndicatorView!
+    var activityIndicatorView: NVActivityIndicatorView!    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -154,6 +154,40 @@ class ViewChatsViewController: UITableViewController {
             let conversation = self.conversations[indexPath.row] as? [String: Any]
             if let latestMessage = conversation?["latestMessage"] as? String {
                 if let inquiryTitle = conversation?["inquiryTitle"] as? String {
+                    if let timeInterval = conversation?["latestTimestamp"] as? TimeInterval {
+                        let secondsTimeInterval = Int(timeInterval / 1000)
+                        let currentTimeInterval = Int(Date().timeIntervalSince1970)
+                        
+                        let distanceTimeInterval = (currentTimeInterval - secondsTimeInterval)
+                        print("distanceTimeInterval: \(distanceTimeInterval)")
+                        let totalMinutes = (distanceTimeInterval / 60)
+                        let hours = totalMinutes / 60
+                        let minutes = totalMinutes % 60
+                        
+                        print("hours: \(hours)")
+                        //let minutes =
+                        if hours != 0 {
+                            // there are hours
+                            if hours >= 24 {
+                                // more than or equal to one day
+                                let days = Int(hours/24)
+                                let remainderHours = Int(hours % 24)
+                                print("DAYS: \(days), REMAINDER HOURS: \(remainderHours)")
+                                cell.timeLabel.text = "\(days)d, \(remainderHours)h ago"
+                            } else {
+                                cell.timeLabel.text = "\(hours)h, \(minutes)m ago"
+                            }
+                            
+                        } else {
+                            // there are no hours
+                            if minutes == 0 {
+                                cell.timeLabel.text = "a moment ago"
+                            } else {
+                                cell.timeLabel.text = "\(minutes)m ago"
+                            }
+                        }
+                    }
+                    
                     cell.inquiryLabel.text = inquiryTitle
                     cell.latestMessageLabel.text = latestMessage
                 }

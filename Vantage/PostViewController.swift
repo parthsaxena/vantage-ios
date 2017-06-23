@@ -229,6 +229,19 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                                                             ]
                                                             let postObject = FIRDatabase.database().reference().child("posts").childByAutoId()
                                                             postObject.setValue(post)
+                                                            
+                                                            // post has been sent, send notification
+                                                            print("Post has been sent, sending notification to subject \(GlobalVariables._currentSubjectPostingTo).")
+                                                            OneSignal.postNotification(["app_id":"9fffb537-914a-481a-9f17-a22e2df2c5bb", "headings": ["en": "New Inquiry..."], "contents": ["en": "A new question has been posted in \(GlobalVariables._currentSubjectPostingTo)!"], "filters": ["field":"tag", "key":GlobalVariables._currentSubjectPostingTo, "relation":"=", "value":"subscribed"], "include_player_ids":""], onSuccess: { (nil) in
+                                                                print("Sent new-question notification")
+                                                            }, onFailure: { (error) in
+                                                                print("Error sending new-question notification: \(error?.localizedDescription)")
+                                                            })
+                                                            
+                                                            /*
+                                                            ["headings": ["en": self.inquiryTitle], "contents": ["en": "Anonymous: \"\(message)\""], "data": ["type":"chat-message", "chatID":GlobalVariables._chatID], "include_player_ids": [self.toSendNotificationID]]
+                                                             */
+ 
                                                             DispatchQueue.main.async(execute: {
                                                                 //Armchair.userDidSignificantEvent(false)
                                                                 GlobalVariables._displayRateAlert = true

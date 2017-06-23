@@ -223,7 +223,16 @@ class YourInquiriesViewController: UIViewController, UITableViewDelegate, UITabl
                 //let minutes =
                 if hours != 0 {
                     // there are hours
-                    cell.dateLabel.text = "\(hours)h, \(minutes)m ago"
+                    if hours >= 24 {
+                        // more than or equal to one day
+                        let days = Int(hours/24)
+                        let remainderHours = Int(hours % 24)
+                        print("DAYS: \(days), REMAINDER HOURS: \(remainderHours)")
+                        cell.dateLabel.text = "\(days)d, \(remainderHours)h ago"
+                    } else {
+                        cell.dateLabel.text = "\(hours)h, \(minutes)m ago"
+                    }
+
                 } else {
                     // there are no hours
                     if minutes == 0 {

@@ -1,42 +1,42 @@
 PODS:
   - Armchair (0.3.0)
-  - BRYXBanner (0.7.2)
-  - Firebase (3.15.0):
-    - Firebase/Core (= 3.15.0)
-  - Firebase/AdMob (3.15.0):
+  - BRYXBanner (0.7.3)
+  - Firebase (3.17.0):
+    - Firebase/Core (= 3.17.0)
+  - Firebase/AdMob (3.17.0):
     - Firebase/Core
-    - Google-Mobile-Ads-SDK (= 7.19.0)
-  - Firebase/Analytics (3.15.0):
+    - Google-Mobile-Ads-SDK (= 7.19.1)
+  - Firebase/Analytics (3.17.0):
     - Firebase/Core
-  - Firebase/AppIndexing (3.15.0):
+  - Firebase/AppIndexing (3.17.0):
     - Firebase/Core
     - FirebaseAppIndexing (= 1.2.0)
-  - Firebase/Auth (3.15.0):
+  - Firebase/Auth (3.17.0):
     - Firebase/Core
     - FirebaseAuth (= 3.1.1)
-  - Firebase/Core (3.15.0):
-    - FirebaseAnalytics (= 3.7.0)
-    - FirebaseCore (= 3.5.2)
-  - Firebase/Crash (3.15.0):
+  - Firebase/Core (3.17.0):
+    - FirebaseAnalytics (= 3.9.0)
+    - FirebaseCore (= 3.6.0)
+  - Firebase/Crash (3.17.0):
     - Firebase/Core
     - FirebaseCrash (= 1.1.6)
-  - Firebase/Database (3.15.0):
+  - Firebase/Database (3.17.0):
     - Firebase/Core
     - FirebaseDatabase (= 3.1.2)
-  - Firebase/DynamicLinks (3.15.0):
+  - Firebase/DynamicLinks (3.17.0):
     - Firebase/Core
-    - FirebaseDynamicLinks (= 1.3.4)
-  - Firebase/Messaging (3.15.0):
+    - FirebaseDynamicLinks (= 1.4.0)
+  - Firebase/Messaging (3.17.0):
     - Firebase/Core
-    - FirebaseMessaging (= 1.2.2)
-  - Firebase/RemoteConfig (3.15.0):
+    - FirebaseMessaging (= 1.2.3)
+  - Firebase/RemoteConfig (3.17.0):
     - Firebase/Core
     - FirebaseRemoteConfig (= 1.3.4)
-  - Firebase/Storage (3.15.0):
+  - Firebase/Storage (3.17.0):
     - Firebase/Core
     - FirebaseStorage (= 1.1.0)
-  - FirebaseAnalytics (3.7.0):
-    - FirebaseCore (~> 3.5)
+  - FirebaseAnalytics (3.9.0):
+    - FirebaseCore (~> 3.6)
     - FirebaseInstanceID (~> 1.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
   - FirebaseAppIndexing (1.2.0)
@@ -44,7 +44,7 @@ PODS:
     - FirebaseAnalytics (~> 3.7)
     - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
     - GTMSessionFetcher/Core (~> 1.1)
-  - FirebaseCore (3.5.2):
+  - FirebaseCore (3.6.0):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
   - FirebaseCrash (1.1.6):
     - FirebaseAnalytics (~> 3.7)
@@ -54,11 +54,12 @@ PODS:
     - Protobuf (~> 3.1)
   - FirebaseDatabase (3.1.2):
     - FirebaseAnalytics (~> 3.7)
-  - FirebaseDynamicLinks (1.3.4):
-    - FirebaseAnalytics (~> 3.7)
-  - FirebaseInstanceID (1.0.9)
-  - FirebaseMessaging (1.2.2):
-    - FirebaseAnalytics (~> 3.7)
+  - FirebaseDynamicLinks (1.4.0):
+    - FirebaseAnalytics (~> 3.9)
+  - FirebaseInstanceID (1.0.10):
+    - FirebaseCore (~> 3.6)
+  - FirebaseMessaging (1.2.3):
+    - FirebaseAnalytics (~> 3.8)
     - FirebaseInstanceID (~> 1.0)
     - GoogleToolboxForMac/Logger (~> 2.1)
     - Protobuf (~> 3.1)
@@ -70,7 +71,7 @@ PODS:
   - FirebaseStorage (1.1.0):
     - FirebaseAnalytics (~> 3.7)
     - GTMSessionFetcher/Core (~> 1.1)
-  - Google-Mobile-Ads-SDK (7.19.0)
+  - Google-Mobile-Ads-SDK (7.19.1)
   - GoogleToolboxForMac/DebugUtils (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
   - GoogleToolboxForMac/Defines (2.1.1)
@@ -83,28 +84,28 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.1)
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
-  - GTMSessionFetcher/Core (1.1.9)
-  - IQKeyboardManagerSwift (4.0.9)
+  - GTMSessionFetcher/Core (1.1.10)
+  - IQKeyboardManagerSwift (4.0.10)
   - JSQMessagesViewController (7.3.4):
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
-  - NVActivityIndicatorView (3.6.0)
+  - NVActivityIndicatorView (3.6.1)
   - Onboard (2.3.1)
-  - OneSignal (2.5.2)
-  - Protobuf (3.2.1)
+  - OneSignal (2.5.4)
+  - Protobuf (3.3.0)
   - PureLayout (3.0.2)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
-  - Siren (1.2.5)
+  - Siren (2.0.4)
   - SwiftyButton (0.4.0):
     - SwiftyButton/CustomContent (= 0.4.0)
   - SwiftyButton/CustomContent (0.4.0):
     - PureLayout (~> 3.0)
-  - TextFieldEffects (1.3.2)
+  - TextFieldEffects (1.3.3)
 
 DEPENDENCIES:
-  - Armchair (>= 0.1)
+  - Armchair (>= 0.3)
   - BRYXBanner
   - Firebase
   - Firebase/AdMob
@@ -129,35 +130,35 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Armchair: c8eca9bdca868fd6f7155eee73ba70a1278b0655
-  BRYXBanner: ed407a56c53f2add0aaa16f810062eac48d802cf
-  Firebase: 2b1cdfba1cda8589f32904a697cc753322bff9d8
-  FirebaseAnalytics: 0d1b7d81d5021155be37702a94ba1ec16d45365d
-  FirebaseAppIndexing: d0fa52ce0ad13f4b5b2f09e4b47fb0dc2213f4e9
+  BRYXBanner: bd26a91cb8a5826a8bc7687891043d287dd3ee53
+  Firebase: 4b66b5b59c43edac745b87f0c87e42cdd0279c13
+  FirebaseAnalytics: e5fe8486efc01bec33f6bf82e2fa9fce4b124052
+  FirebaseAppIndexing: adf2f3b14b6828f1d4c539fc72434962cf29ea2c
   FirebaseAuth: cc8a1824170adbd351edb7f994490a3fb5c18be6
-  FirebaseCore: a024587e43778508700af8c6b1209f7c4516ba02
+  FirebaseCore: 9691ee2ade70c098d7cf92440f4303f16d83ca75
   FirebaseCrash: db4c05d9c75baa050744d31b36357c8f1efba481
   FirebaseDatabase: 05c96d7b43a7368dc91c07791adb49683e1738d1
-  FirebaseDynamicLinks: 30fb0856dd9ae6d8ba4da00972141a5c293a27b2
-  FirebaseInstanceID: 2d0518b1378fe9d685ef40cbdd63d2fdc1125339
-  FirebaseMessaging: df8267f378580a24174ce7861233aa11d5c90109
+  FirebaseDynamicLinks: 0dbfd974f560dd1bda7498afc24697adb5cce72f
+  FirebaseInstanceID: b9eedd6846fb5e1f0f7279e1deaa7a7e4cf8392e
+  FirebaseMessaging: 753d05a925e9eb8eadd09a0ffc9b808578b72fac
   FirebaseRemoteConfig: af3003f4e8daa2bd1d5cf90d3cccc1fe224f8ed9
   FirebaseStorage: a5c55b23741a49a72af8f30f95b3bb5ddbeda12d
-  Google-Mobile-Ads-SDK: d1bcdbd8347a105a687345b8511701172a5074e9
+  Google-Mobile-Ads-SDK: 43ac87810e4961f5093024d3525bfe022f956da3
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
-  GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
-  IQKeyboardManagerSwift: 2eefe6c429b86aa08bfbc1b5c891164d754adf91
+  GTMSessionFetcher: 30d874b96d0d76028f61fbd122801e3f030d47db
+  IQKeyboardManagerSwift: 75ba21a23794a1e6b6fe6d9a267ea17f80e06771
   JSQMessagesViewController: 39fed975e3c9f8eba7292071e29eeb541d105e66
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
-  NVActivityIndicatorView: c7c1c4300b418bd9ed06459e78d4df859ddbe31f
+  NVActivityIndicatorView: 9f52a7f84bf5c6a798722c450fe3c198e01c56ed
   Onboard: b6871f25ac753175b2ab9a362fb2feb26a81a311
-  OneSignal: 66d08b6b1e3c3858cbf28207ed20f1fa865ab2a2
-  Protobuf: 2ccbaf193f6c65adc67745453ca0c13234c32796
+  OneSignal: da994bcf6a2efbdceaf71e389e1d05245c562899
+  Protobuf: d582fecf68201eac3d79ed61369ef45734394b9c
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
-  Siren: dc310d3166abd771f279ff8b779ca84cbbb4ad30
+  Siren: d950610045b6c9794602f0fdf924dda54fbd9528
   SwiftyButton: fffcc0d82b2b5f9ec1681f20ee9c67bed0d5c73b
-  TextFieldEffects: 9e5cce561ea39c75b86e9d3637601727a67e8b23
+  TextFieldEffects: 8706f53525f1ce51c8921b7af32237caab50c467
 
-PODFILE CHECKSUM: dcc102ae296a29fb96ff2f7d62f417042e6c819b
+PODFILE CHECKSUM: 3ab83e65672d3d4702aca53ed0523319979ccfc5
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.2.1
