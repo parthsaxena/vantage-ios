@@ -77,7 +77,7 @@ class AnswerChooseSubjectViewController: UIViewController, UITableViewDelegate, 
                 if let subjectString = actualSubjectDictionary["subjects"] as? String {
                     // let subjectString = actualSubjectDictionary.first!.1 as! String
                     let subjectsArray = subjectString.characters.split{$0 == ","}.map(String.init)
-                
+                    
                     var currentSubjectMutableArray = NSMutableArray()
                     for realSubject in subjectsArray {
                         currentSubjectMutableArray.add(realSubject)
@@ -112,18 +112,43 @@ class AnswerChooseSubjectViewController: UIViewController, UITableViewDelegate, 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CellSubjectTableViewCell
         // Configure the cell...
         
-        let cellSubject = (self.items[indexPath.section] as! NSMutableArray)[indexPath.row]
+        if let cellSubject = (self.items[indexPath.section] as! NSMutableArray)[indexPath.row] as? String {
         
-        cell.textLabel!.text = "     \(cellSubject as! String)"
+        cell.subjectLabel.text = "     \(cellSubject)"
         
-        cell.textLabel?.alpha = 0
+        cell.subjectLabel?.alpha = 0
         
         UIView.animate(withDuration: 0.4, animations: {
-            cell.textLabel?.alpha = 1
-        }) 
+            cell.subjectLabel?.alpha = 1
+        })
+        
+        DispatchQueue.main.async {
+            FIRDatabase.database().reference().child("posts").queryOrdered(byChild: "subject").queryEqual(toValue: cellSubject).observeSingleEvent(of: .value, with: { (snapshot) in
+                if let rawInquiries = snapshot.value as? [String: Any] {
+                    var activeCount = 0
+                    for rawInquiry in rawInquiries {
+                        if let rawInquiryValue = rawInquiry.value as? [String: Any] {
+                            if rawInquiryValue["active"] as? String == "true" {
+                                // found one active inquiry
+                                activeCount+=1
+                            }
+                        }
+                    }
+                    // we have the final active count
+                    if activeCount != 1 {
+                        cell.inquiriesCountLabel?.text = "(\(activeCount) inquiries)"
+                    } else {
+                        // one inquiry
+                        cell.inquiriesCountLabel?.text = "(\(activeCount) inquiry)"
+                    }
+                    //cell.textLabel?.text = "\(cell.textLabel?.text) - (\(activeCount))"
+                }
+            })
+        }
+        }
         
         return cell
     }

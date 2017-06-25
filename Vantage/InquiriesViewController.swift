@@ -21,7 +21,7 @@ class InquiriesViewController: UIViewController, UITableViewDelegate, UITableVie
     
     var activityIndicatorView: NVActivityIndicatorView!
     
-    var isUserSubscribed = false
+    var isUserSubscribed = false        
     
     func checkIfSubscribed() {
         OneSignal.getTags({ tags in

@@ -32,8 +32,8 @@ class FirstActionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: Selector("keyboardWillShow:"), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: Selector("keyboardWillHide:"), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        //NotificationCenter.default.addObserver(self, selector: Selector("keyboardWillShow:"), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        //NotificationCenter.default.addObserver(self, selector: Selector("keyboardWillHide:"), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
         effect = visualEffectView.effect
         visualEffectView.effect = nil
@@ -149,6 +149,8 @@ class FirstActionViewController: UIViewController {
         let email = loginEmailField.text!
         let password = loginPasswordField.text!
         
+        self.view.endEditing(true)
+        
         self.signInButton.setTitle("Loading...", for: UIControlState())
         
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
@@ -179,6 +181,7 @@ class FirstActionViewController: UIViewController {
         let password = signupPasswordField.text!
         
         self.view.endEditing(true)
+        
         signUpButton.setTitle("Loading...", for: UIControlState())
         
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in

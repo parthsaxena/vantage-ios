@@ -9,11 +9,12 @@
 import UIKit
 
 class ViewAllInquiriesTableViewCell: UITableViewCell {
-    @IBOutlet weak var subjectLabel: UILabel!
+    //@IBOutlet weak var subjectLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var answersLabel: UILabel?
     @IBOutlet weak var coinsLabel: UILabel!
+    @IBOutlet weak var subjectTextLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,7 +28,9 @@ class ViewAllInquiriesTableViewCell: UITableViewCell {
     }
     
     func configureCell() {
-        self.subjectLabel.alpha = 0
+        //print("SUBJECT TEXT: \(subjectLabel.text)")
+        
+        //self.subjectLabel.alpha = 0
         self.dateLabel.alpha = 0
         self.titleLabel.alpha = 0
         if (self.coinsLabel != nil) {
@@ -38,7 +41,7 @@ class ViewAllInquiriesTableViewCell: UITableViewCell {
         }
         
         UIView.animate(withDuration: 0.4, animations: {
-            self.subjectLabel.alpha = 1
+            //self.subjectLabel.alpha = 1
             self.dateLabel.alpha = 1
             self.titleLabel.alpha = 1
             if (self.coinsLabel != nil) {

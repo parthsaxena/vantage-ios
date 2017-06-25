@@ -163,7 +163,9 @@ class ViewAllInquiriesViewController: UIViewController, UITableViewDelegate, UIT
             
             if let subject = inquiry["subject"] as? String {
                 print("Setting subject: \(subject)")
-                cell.subjectLabel.text = subject
+                cell.subjectTextLabel.text = subject
+            } else {
+                print("fuc up: \(inquiry["subject"])")
             }
             
             if let timeInterval = inquiry["createdAt"] as? TimeInterval {
